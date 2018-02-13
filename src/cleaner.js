@@ -24,3 +24,26 @@ export const cleanStats = (data) => {
   console.log(allStats);
   return allStats
 }
+
+export const cleanActivities = (data) => {
+  const cleanedActivities = data.map(ride => {
+    const {max_watts, average_watts, average_heartrate, average_speed, average_temp, distance, kilojoules, max_heartrate, max_speed, moving_time, suffer_score, total_elevation_gain } = ride;
+    return {
+      max_watts,
+      average_watts,
+      average_heartrate,
+      max_heartrate,
+      average_speed,
+      max_speed,
+      distance,
+      total_elevation_gain,
+      kilojoules,
+      average_temp,
+      moving_time,
+      suffer_score,
+      map: ride.map.summary_polyline
+    }
+  })
+  console.log("activities: ", cleanedActivities)
+  return cleanedActivities
+}

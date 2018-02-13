@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { initialCall, segmentCall, statsCall } from '../../api.js'
+import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js'
 import './App.css';
 
 class App extends Component {
   
   componentDidMount() {
     initialCall();
-    //segmentCall(609371);
-    statsCall();
+    segmentCall(609371);
+    statsCall(9560317);
+    activitiesCall(9560317);
   }
 
   render() {
