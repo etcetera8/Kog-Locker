@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockUser = {
   id: 9560317,
   username: null,

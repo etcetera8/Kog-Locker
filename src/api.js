@@ -1,4 +1,4 @@
-import { key, userId } from './apiKey.js';
+import { key } from './apiKey.js';
 import { cleanUser, cleanSegment, cleanStats, cleanActivities } from './cleaner.js';
 //import { mockUser, mockUserStats, mockActivities } from './mock-data.js';
 //GET SPECIFIC SEGMENT CALL
@@ -9,25 +9,25 @@ import { cleanUser, cleanSegment, cleanStats, cleanActivities } from './cleaner.
 const root = `https://www.strava.com/api/v3`;
 
 export const initialCall = async () => {
-  const response = await fetch(`${root}/athlete?access_token=${key}`)
-  const data = await response.json();
-  cleanUser(data)
-}
+  const response = await fetch(`${root}/athlete?access_token=${key}`);
+  const userData = await response.json();
+  cleanUser(userData);
+};
 
 export const segmentCall = async (segmentId) => {
   const response = await fetch(`${root}/segments/${segmentId}?access_token=${key}`);
-  const data = await response.json();
-  cleanSegment(data);
-}
+  const segmentData = await response.json();
+  cleanSegment(segmentData);
+};
 
 export const statsCall = async(id) => {
   const response = await fetch(`${root}/athletes/${id}/stats?access_token=${key}`);
-  const data = await response.json();
-  cleanStats(data)
-}
+  const statsData = await response.json();
+  cleanStats(statsData);
+};
 
 export const activitiesCall = async(id) => {
   const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}`);
-  const data = await response.json();
-  cleanActivities(data);
-}
+  const activityData = await response.json();
+  cleanActivities(activityData);
+};

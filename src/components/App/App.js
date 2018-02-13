@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js'
+import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 import './App.css';
 
 class App extends Component {
