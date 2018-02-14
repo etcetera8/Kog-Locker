@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addUserData } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 import './App.css';
-
+console.log(addUserData);
 class App extends Component {
   
   componentDidMount() {
-    initialCall();
-    segmentCall(609371);
-    statsCall(9560317);
-    activitiesCall(9560317);
+    // initialCall();
+    // segmentCall(609371);
+    // statsCall(9560317);
+    // activitiesCall(9560317);
   }
 
   render() {
