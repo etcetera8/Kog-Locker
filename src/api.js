@@ -17,7 +17,7 @@ export const initialCall = async () => {
 export const segmentCall = async (segmentId) => {
   const response = await fetch(`${root}/segments/${segmentId}?access_token=${key}`);
   const segmentData = await response.json();
-  cleanSegment(segmentData);
+  return cleanSegment(segmentData);
 };
 
 export const statsCall = async(id) => {
@@ -29,5 +29,5 @@ export const statsCall = async(id) => {
 export const activitiesCall = async(id) => {
   const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}`);
   const activityData = await response.json();
-  cleanActivities(activityData);
+  return cleanActivities(activityData);
 };

@@ -3,13 +3,17 @@ export const addUserData = (userData) => ({
   payload: userData
 })
 
-// add user stats
 export const addUserStats = (userStats) => ({
   type: 'ADD_USER_STATS',
   payload: userStats
 })
 
-// add user target segment
-// 
+export const addUserActivities = (userActivities) => ({
+  type: 'ADD_USER_ACTIVITIES',
+  payload: userActivities
+})
 
-//get user activities
+export const addUserTarget = (userTarget) => ({
+  type: 'ADD_USER_TARGET',
+  payload: userTarget
+})
