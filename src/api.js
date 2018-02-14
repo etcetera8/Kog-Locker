@@ -23,7 +23,7 @@ export const segmentCall = async (segmentId) => {
 export const statsCall = async(id) => {
   const response = await fetch(`${root}/athletes/${id}/stats?access_token=${key}`);
   const statsData = await response.json();
-  cleanStats(statsData);
+  return cleanStats(statsData);
 };
 
 export const activitiesCall = async(id) => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUserData } from '../../actions/actionIndex.js';
+import { addUserData, addUserStats } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 import './App.css';
 //console.log(addUserData);
@@ -9,10 +9,12 @@ class App extends Component {
   
   async componentDidMount() {
     console.log('props', this.props);
-    const userData = await initialCall();
-    console.log(userData);
-    await this.props.getUserData(userData);
-    // initialCall();
+    // const userData = await initialCall();
+    // await this.props.setUserData(userData);
+    
+    // const userStats = await statsCall(9560317)
+    // await this.props.setUserStats(userStats)
+    
     // segmentCall(609371);
     // statsCall(9560317);
     // activitiesCall(9560317);
@@ -34,7 +36,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getUserData: (data) => dispatch(addUserData(data))
+  setUserData: (data) => dispatch(addUserData(data)),
+  setUserStats: (data) => dispatch(addUserStats(data))
 })
 
 
