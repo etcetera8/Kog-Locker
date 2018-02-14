@@ -3,10 +3,15 @@ import { connect } from 'react-redux';
 import { addUserData } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 import './App.css';
-console.log(addUserData);
+//console.log(addUserData);
+
 class App extends Component {
   
-  componentDidMount() {
+  async componentDidMount() {
+    console.log('props', this.props);
+    const userData = await initialCall();
+    console.log(userData);
+    await this.props.getUserData(userData);
     // initialCall();
     // segmentCall(609371);
     // statsCall(9560317);
@@ -25,6 +30,12 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  getUserData: (data) => dispatch(addUserData(data))
+})
+
+
+export default connect(null, mapDispatchToProps)(App);

@@ -11,7 +11,7 @@ const root = `https://www.strava.com/api/v3`;
 export const initialCall = async () => {
   const response = await fetch(`${root}/athlete?access_token=${key}`);
   const userData = await response.json();
-  cleanUser(userData);
+  return cleanUser(userData);
 };
 
 export const segmentCall = async (segmentId) => {
