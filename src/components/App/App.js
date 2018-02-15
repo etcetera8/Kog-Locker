@@ -24,15 +24,18 @@ class App extends Component {
   }
 
   render() {
+    const { firstname, profile_medium } = this.props.userData;
     return (
       <div className="App">
         <Header 
-          userName={this.props.userData.firstname}
-          userPicture={this.props.userData.profile_medium}
+          userName={firstname}
+          userPicture={profile_medium}
         />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <main>
+          
+        </main>
+
       </div>
     );
   }

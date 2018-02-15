@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo|Rosario");
+body, html {
+  font-family: 'Archivo', sans-serif; }
+
+main {
+  display: flex;
+  margin: 25px auto;
+  width: 90%;
+  height: 400px;
+  border: 1px solid black; }
