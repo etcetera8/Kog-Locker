@@ -22,13 +22,10 @@ a {
   padding: 5px;
   margin: 10px;
   color: black;
-  border: 1px solid gray;
+  border: 1px solid orange;
   border-radius: 5px;
-  text-decoration: none;
-  background: orange; 
-}
+  text-decoration: none; }
 
 .selected {
-  color:red;
-  background: gray;
-}
+  color: orange;
+  border: 3px solid orange; }

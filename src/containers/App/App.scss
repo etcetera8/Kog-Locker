@@ -21,13 +21,17 @@ nav {
   width: 90%;
   margin: 0 auto;
 }
+
 a {
   padding:5px;
   margin:10px;
   color: black;
-  border: 1px solid gray;
+  border: 1px solid orange;
   border-radius: 5px;
   text-decoration: none;
-  background: orange;
+}
 
+.selected {
+  color: orange;
+  border: 3px solid orange;
 }
