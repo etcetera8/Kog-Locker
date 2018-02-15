@@ -1,0 +1,8 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 400px;
+  border: 1px solid black; }
