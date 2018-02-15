@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+export const athleteUrl = "https://www.strava.com/api/v3/athlete?access_token=4834ab5723e9f5095f99a36ab52e75380d17cb4e"
 export const mockUser = {
   id: 9560317,
   username: null,
