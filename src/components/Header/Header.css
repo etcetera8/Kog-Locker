@@ -1,0 +1,13 @@
+.header-container {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  height: 100px; }
+  .header-container .welcome {
+    margin-right: 15px;
+    float: right;
+    clear: both; }
+  .header-container .profile-img {
+    margin-right: 15px;
+    border-radius: 50%;
+    float: right;
+    clear: both; }
