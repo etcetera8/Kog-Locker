@@ -7,12 +7,12 @@ import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.j
 
 import Header from '../../components/Header/Header';
 import StatsCard from '../../components/StatsCard/StatsCard';
-import BadgeCard from '../BadgeCard/BadgeCard';
-import MapCard from '../MapCard/MapCard';
+import BadgeCard from '../../components/BadgeCard/BadgeCard';
+import MapCard from '../../components/MapCard/MapCard';
 import Home from '../../components/Home/Home';
-import StatsContainer from '../../components/StatsContainer/StatsContainer';
-import BadgeContainer from '../../components/BadgeContainer/BadgeContainer';
-import TargetContainer from '../../components/TargetContainer/TargetContainer';
+import StatsContainer from '../StatsContainer/StatsContainer';
+import BadgeContainer from '../BadgeContainer/BadgeContainer';
+import TargetContainer from '../TargetContainer/TargetContainer';
 import './App.css';
 
 class App extends Component {
@@ -22,14 +22,14 @@ class App extends Component {
     const userData = await initialCall();
     await this.props.setUserData(userData);
     
-    // const userStats = await statsCall(9560317);
-    // await this.props.setUserStats(userStats);
+    const userStats = await statsCall(9560317);
+    await this.props.setUserStats(userStats);
     
-    // const userActivities = await activitiesCall(9560317);
-    // await this.props.setUserActivities(userActivities);
+    const userActivities = await activitiesCall(9560317);
+    await this.props.setUserActivities(userActivities);
     
-    // const userTarget = await segmentCall(609371);
-    // await this.props.setUserTarget(userTarget);
+    const userTarget = await segmentCall(609371);
+    await this.props.setUserTarget(userTarget);
   }
 
   render() {

@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import StatsCard from '../StatsCard/StatsCard'
-import BadgeCard from '../../containers/BadgeCard/BadgeCard'
-import MapCard from '../../containers/MapCard/MapCard'
+import BadgeCard from '../BadgeCard/BadgeCard'
+import MapCard from '../MapCard/MapCard'
 import './Home.css';
 
 class Home extends Component {

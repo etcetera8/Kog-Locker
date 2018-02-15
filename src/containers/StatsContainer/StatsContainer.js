@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import StatsCard from '../StatsCard/StatsCard';
+import StatsCard from '../../components/StatsCard/StatsCard';
 
 class StatsContainer extends Component {
   

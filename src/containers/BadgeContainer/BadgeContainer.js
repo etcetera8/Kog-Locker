@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BadgeCard from '../../containers/BadgeCard/BadgeCard';
+import BadgeCard from '../../components/BadgeCard/BadgeCard';
 
 class BadgeContainer extends Component {
 
   render() {
     return (
       <main>
-      <BadgeCard />
+        <BadgeCard />
       </main>
     )
   }

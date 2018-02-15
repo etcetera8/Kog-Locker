@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MapCard from '../../containers/MapCard/MapCard';
+import MapCard from '../../components/MapCard/MapCard';
 
 class TargetContainer extends Component {
   
