@@ -18,20 +18,23 @@ class App extends Component {
     console.log('props', this.props.userData);
     const userData = await initialCall();
     await this.props.setUserData(userData);
-    console.log(this.props.userData);
     
     const userStats = await statsCall(9560317);
     await this.props.setUserStats(userStats);
     
-    const userActivities = await activitiesCall(9560317);
-    await this.props.setUserActivities(userActivities);
+    // const userActivities = await activitiesCall(9560317);
+    // await this.props.setUserActivities(userActivities);
     
-    const userTarget = await segmentCall(609371);
-    await this.props.setUserTarget(userTarget);
+    // const userTarget = await segmentCall(609371);
+    // await this.props.setUserTarget(userTarget);
   }
 
   render() {
     const { firstname, profile_medium } = this.props.userData;
+    console.log(firstname, profile_medium);
+    console.log(this.props.userStats.yearStats);
+
+   // console.log(count, distance, elapsed_time, elevation_gain);
     return (
       <div className="App">
         <Header 
@@ -46,7 +49,7 @@ class App extends Component {
         </nav>
         
         <main>
-          <StatsCard />
+          <StatsCard yearStats={this.props.userStats.yearStats}/>
           <BadgeCard />
           <MapCard />
         </main>
@@ -58,7 +61,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  userData: state.userData
+  userData: state.userData,
+  userStats: state.userStats
 })
 
 const mapDispatchToProps = (dispatch) => ({

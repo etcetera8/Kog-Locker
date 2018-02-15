@@ -1,10 +1,16 @@
 import React from 'react';
 import './StatsCard.css';
 
-const StatsCard = () => {
+const StatsCard = ({yearStats}) => {
+  console.log(yearStats);
   return (
     <section className="stats-card card">
-      I'm a stats card
+      <h2>Y-T-D Stats</h2>
+      { yearStats &&
+        <span>{yearStats.count}</span>
+        <span>{yearStats.distance}</span>
+        <span>{yearStats.}</span>
+      }
     </section>
   )
 }

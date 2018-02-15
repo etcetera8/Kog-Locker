@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.css';
 const Header = ({userName, userPicture}) => {
-  console.log(userName, userPicture);
   return (
     <header className="header-container"> 
       <img className="profile-img" src={userPicture} alt="profile picture" />
