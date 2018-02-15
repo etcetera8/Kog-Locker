@@ -12,6 +12,7 @@ import MapCard from '../MapCard/MapCard';
 import Home from '../../components/Home/Home';
 import StatsContainer from '../../components/StatsContainer/StatsContainer';
 import BadgeContainer from '../../components/BadgeContainer/BadgeContainer';
+import TargetContainer from '../../components/TargetContainer/TargetContainer';
 import './App.css';
 
 class App extends Component {
@@ -24,19 +25,16 @@ class App extends Component {
     const userStats = await statsCall(9560317);
     await this.props.setUserStats(userStats);
     
-    // const userActivities = await activitiesCall(9560317);
-    // await this.props.setUserActivities(userActivities);
+    const userActivities = await activitiesCall(9560317);
+    await this.props.setUserActivities(userActivities);
     
-    // const userTarget = await segmentCall(609371);
-    // await this.props.setUserTarget(userTarget);
+    const userTarget = await segmentCall(609371);
+    await this.props.setUserTarget(userTarget);
   }
 
   render() {
     const { firstname, profile_medium } = this.props.userData;
-    console.log(firstname, profile_medium);
-    console.log(this.props.userStats.yearStats);
 
-   // console.log(count, distance, elapsed_time, elevation_gain);
     return (
       <div className="App">
         <Header 
@@ -55,6 +53,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/stats" component={StatsContainer} />
           <Route path="/achievments" component={BadgeContainer} />
+          <Route path="/target" component={TargetContainer} />
         </div>
 
       </div>
