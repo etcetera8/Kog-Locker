@@ -10,6 +10,7 @@ import StatsCard from '../../components/StatsCard/StatsCard';
 import BadgeCard from '../BadgeCard/BadgeCard';
 import MapCard from '../MapCard/MapCard';
 import Home from '../../components/Home/Home';
+import StatsContainer from '../../components/StatsContainer/StatsContainer';
 import './App.css';
 
 class App extends Component {
@@ -51,8 +52,7 @@ class App extends Component {
         
         <div>
           <Route exact path="/" component={Home} />
-
-          
+          <Route path="/stats" component={StatsContainer} />
         </div>
 
       </div>
