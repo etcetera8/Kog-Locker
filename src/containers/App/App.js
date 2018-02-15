@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink, withRouter } from 'react-router-dom';
+
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
-import Header from '../Header/Header';
+
+import Header from '../../components/Header/Header';
+import StatsCard from '../../components/StatsCard/StatsCard';
+import BadgeCard from '../BadgeCard/BadgeCard';
+import MapCard from '../MapCard/MapCard';
+import Routes from '../../components/Routes/Routes';
 import './App.css';
 
 class App extends Component {
   
   async componentDidMount() {
-    console.log('props', this.props.userData);
-    const userData = await initialCall();
-    await this.props.setUserData(userData);
-    console.log(this.props.userData);
+    // console.log('props', this.props.userData);
+    // const userData = await initialCall();
+    // await this.props.setUserData(userData);
+    // console.log(this.props.userData);
     
     // const userStats = await statsCall(9560317);
     // await this.props.setUserStats(userStats);
@@ -32,8 +39,16 @@ class App extends Component {
           userPicture={profile_medium}
         />
 
+        <nav>
+          <NavLink exact to='/stats' activeClassName='selected'>Your Stats</NavLink>
+          <NavLink exact to='/achievments' activeClassName='selected'>Achievments</NavLink>
+          <NavLink exact to='/target' activeClassName='selected'>Target Segment</NavLink>
+        </nav>
+        
         <main>
-          
+          <StatsCard />
+          <BadgeCard />
+          <MapCard />
         </main>
 
       </div>
@@ -53,4 +68,4 @@ const mapDispatchToProps = (dispatch) => ({
   setUserTarget: (data) => dispatch(addUserTarget(data))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
