@@ -17,3 +17,8 @@ export const addUserTarget = (userTarget) => ({
   type: 'ADD_USER_TARGET',
   payload: userTarget
 })
+
+export const addBadge = (badge) => ({
+  type: 'ADD_BADGE',
+  payload: badge
+})

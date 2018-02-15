@@ -2,7 +2,6 @@ import React from 'react';
 import './StatsCard.css';
 
 const StatsCard = ({ yearStats, allStats }) => {
-  console.log("Heres the stats card props:", allStats, yearStats);
   return (
     <section className="stats-card card">
       { yearStats &&

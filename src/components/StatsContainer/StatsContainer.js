@@ -9,20 +9,17 @@ class StatsContainer extends Component {
     return (
       <StatsCard 
         yearStats={this.props.userStats.yearStats}
-        //allStats={this.props.userStats.all_ride_totals}
       />
       )
   }
 
   allCard = () => {
-    console.log(this.props.userStats.all_ride_totals);
     return (
       <StatsCard allStats={this.props.userStats.all_ride_totals} />
     )
   }
 
   render() {
-    console.log(this.props.userStats);
     return (
       <main>
         {this.ytdCard()}

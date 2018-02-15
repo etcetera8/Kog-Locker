@@ -12,7 +12,6 @@ import './index.css';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const middleware = applyMiddleware(logger);
 const store = createStore(rootReducer, devTools, middleware);
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
