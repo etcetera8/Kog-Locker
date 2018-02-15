@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import StatsCard from '../StatsCard/StatsCard';
+
 class StatsContainer extends Component {
+  
   render() {
     return (
       <main>
