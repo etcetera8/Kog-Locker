@@ -19,19 +19,31 @@ export const initialCall = async () => {
 };
 
 export const segmentCall = async (segmentId) => {
-  const response = await fetch(`${root}/segments/${segmentId}?access_token=${key}`);
-  const segmentData = await response.json();
-  return cleanSegment(segmentData);
+  try { 
+    const response = await fetch(`${root}/segments/${segmentId}?access_token=${key}`);
+    const segmentData = await response.json();
+    return cleanSegment(segmentData);
+  } catch (error) {
+    return error;
+  }
 };
 
 export const statsCall = async(id) => {
-  const response = await fetch(`${root}/athletes/${id}/stats?access_token=${key}`);
-  const statsData = await response.json();
-  return cleanStats(statsData);
+  try {
+    const response = await fetch(`${root}/athletes/${id}/stats?access_token=${key}`);
+    const statsData = await response.json();
+    return cleanStats(statsData);
+  } catch (error) {
+  return error;
+  }
 };
 
 export const activitiesCall = async(id) => {
-  const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}`);
-  const activityData = await response.json();
-  return cleanActivities(activityData);
+  try {
+    const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}`);
+    const activityData = await response.json();
+    return cleanActivities(activityData);
+  } catch (error) {
+    return error;
+  }
 };
