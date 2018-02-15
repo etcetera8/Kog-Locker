@@ -1,9 +1,11 @@
 import React from 'react';
+import Badge from '../Badge/Badge';
+import './Badge.css';
 
-const BadgeCard = () => {
+const BadgeCard = ({percentOfClimb}) => {
   return (
     <section className="badge-card card">
-      I'm a badge card
+      <Badge percentOfClimb={percentOfClimb}/>
     </section>
   )
 }
