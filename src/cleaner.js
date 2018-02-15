@@ -7,7 +7,6 @@ export const cleanUser = (userData) => {
 export const cleanSegment = (segmentData) => {
   const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats } = segmentData;
   const segment = { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats };
-  console.log(segment);
   return segment;
 };
 
@@ -21,7 +20,6 @@ export const cleanStats = (statsData) => {
     biggest_ride: biggest_ride_distance,
     biggest_climb : biggest_climb_elevation_gain
   };
-  console.log(allStats);
   return allStats;
 };
 
@@ -44,6 +42,5 @@ export const cleanActivities = (activityData) => {
       map: ride.map.summary_polyline
     };
   });
-  console.log("activities: ", cleanedActivities);
   return cleanedActivities;
 };
