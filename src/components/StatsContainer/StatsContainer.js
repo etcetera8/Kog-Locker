@@ -5,10 +5,28 @@ import StatsCard from '../StatsCard/StatsCard';
 
 class StatsContainer extends Component {
   
+  ytdCard = () => {
+    return (
+      <StatsCard 
+        yearStats={this.props.userStats.yearStats}
+        //allStats={this.props.userStats.all_ride_totals}
+      />
+      )
+  }
+
+  allCard = () => {
+    console.log(this.props.userStats.all_ride_totals);
+    return (
+      <StatsCard allStats={this.props.userStats.all_ride_totals} />
+    )
+  }
+
   render() {
+    console.log(this.props.userStats);
     return (
       <main>
-        <StatsCard yearStats={this.props.userStats.yearStats}/>
+        {this.ytdCard()}
+        {this.allCard()}
       </main>
     )
   }
