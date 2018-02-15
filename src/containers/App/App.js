@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
@@ -10,6 +10,7 @@ import StatsCard from '../../components/StatsCard/StatsCard';
 import BadgeCard from '../BadgeCard/BadgeCard';
 import MapCard from '../MapCard/MapCard';
 import Routes from '../../components/Routes/Routes';
+import Home from '../../components/Home/Home';
 import './App.css';
 
 class App extends Component {
@@ -43,13 +44,15 @@ class App extends Component {
         />
 
         <nav>
-          <NavLink exact to='/stats' activeClassName='selected'>Your Stats</NavLink>
-          <NavLink exact to='/achievments' activeClassName='selected'>Achievments</NavLink>
-          <NavLink exact to='/target' activeClassName='selected'>Target Segment</NavLink>
+          <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
+          <NavLink to='/stats' activeClassName='selected'>Your Stats</NavLink>
+          <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
+          <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
         </nav>
         
         <main>
-          <StatsCard yearStats={this.props.userStats.yearStats}/>
+          <Route exact path="/" component={Home} />
+
           <BadgeCard />
           <MapCard />
         </main>
