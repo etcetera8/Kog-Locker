@@ -9,7 +9,6 @@ import Header from '../../components/Header/Header';
 import StatsCard from '../../components/StatsCard/StatsCard';
 import BadgeCard from '../BadgeCard/BadgeCard';
 import MapCard from '../MapCard/MapCard';
-import Routes from '../../components/Routes/Routes';
 import Home from '../../components/Home/Home';
 import './App.css';
 
@@ -50,12 +49,11 @@ class App extends Component {
           <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
         </nav>
         
-        <main>
+        <div>
           <Route exact path="/" component={Home} />
 
-          <BadgeCard />
-          <MapCard />
-        </main>
+          
+        </div>
 
       </div>
     );
