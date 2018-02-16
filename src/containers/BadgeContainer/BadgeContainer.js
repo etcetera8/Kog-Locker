@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BadgeCard from '../../components/BadgeCard/BadgeCard';
 
-  // const climbGoal = (elevation, goal) => {
-  //   //const current = this.props.userStats.yearStats.elevation_gain;
-  //   //const goal = this.props.badges.elevation;
-  //   const percent = (elevation/goal) * 100;
-  //   return percent;
-  // }
-
 class BadgeContainer extends Component {
   
   render() {
@@ -18,13 +11,12 @@ class BadgeContainer extends Component {
       <main>
         {this.props.userStats.yearStats && 
           <BadgeCard 
-            current={this.props.userStats.yearStats.elevation_gain}
-            goal={this.props.badges.elevation}/>
+            current={yearStats.elevation_gain}
+            goal={elevation}/>
         }
       </main>
     )
   }
-
 }
 
 const mapStateToProps = (state) => ({

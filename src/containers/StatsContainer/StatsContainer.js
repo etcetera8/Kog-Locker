@@ -6,16 +6,19 @@ import StatsCard from '../../components/StatsCard/StatsCard';
 class StatsContainer extends Component {
   
   ytdCard = () => {
+    const { yearStats, all_ride_totals } = this.props.userStats;
     return (
       <StatsCard 
-        yearStats={this.props.userStats.yearStats}
+        yearStats={yearStats}
       />
-      )
+    )
   }
 
   allCard = () => {
+    const { all_ride_totals } = this.props.userStats;
+
     return (
-      <StatsCard allStats={this.props.userStats.all_ride_totals} />
+      <StatsCard allStats={all_ride_totals} />
     )
   }
 

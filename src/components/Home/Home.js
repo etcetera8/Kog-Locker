@@ -10,9 +10,10 @@ import './Home.css';
 class Home extends Component {
   
   render() {
+    const {yearStats} = this.props.userStats
     return (
       <main>
-        <StatsCard yearStats={this.props.userStats.yearStats}/>
+        <StatsCard yearStats={yearStats}/>
         <BadgeCard />
         <MapCard />
       </main>
