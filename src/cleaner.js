@@ -11,13 +11,14 @@ export const cleanSegment = (segmentData) => {
 };
 
 export const cleanStats = (statsData) => {
-  const { ytd_ride_totals, all_ride_totals, biggest_ride_distance, biggest_climb_elevation_gain } = statsData;
+  const { recent_ride_totals, ytd_ride_totals, all_ride_totals, biggest_ride_distance, biggest_climb_elevation_gain } = statsData;
   const {count, distance, elapsed_time, elevation_gain} = ytd_ride_totals;
   const yearStats = {count, distance, elapsed_time, elevation_gain};
   const allStats = {
     yearStats,
     all_ride_totals,
-    biggest_ride: biggest_ride_distance,
+    recent_ride_totals,
+    biggest_ride: biggest_ride_distance / 1000,
     biggest_climb : biggest_climb_elevation_gain
   };
   return allStats;
