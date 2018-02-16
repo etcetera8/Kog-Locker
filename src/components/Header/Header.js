@@ -7,7 +7,7 @@ const Header = ({userName, userPicture}) => {
       <span className="welcome">Welcome, {userName}</span>
       <h1>Personal Project</h1> 
     </header>
-  )
-}
+  );
+};
 
 export default Header;

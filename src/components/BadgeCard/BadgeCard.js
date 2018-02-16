@@ -7,7 +7,7 @@ const BadgeCard = ({percentOfClimb}) => {
     <section className="badge-card card">
       <Badge percentOfClimb={percentOfClimb}/>
     </section>
-  )
-}
+  );
+};
 
 export default BadgeCard;
