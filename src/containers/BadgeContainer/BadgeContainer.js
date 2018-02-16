@@ -6,13 +6,16 @@ class BadgeContainer extends Component {
   
   render() {
     const { yearStats } = this.props.userStats;
-    const { elevation } = this.props.badges;
+    const { elevation, distance } = this.props.badges;
     return (
       <main>
         {this.props.userStats.yearStats && 
           <BadgeCard 
-            current={yearStats.elevation_gain}
-            goal={elevation}/>
+            currentEl={yearStats.elevation_gain}
+            goalEl={elevation}
+            goalDist={distance}
+            yearStats={this.props.userStats.yearStats}
+          />
         }
       </main>
     )
