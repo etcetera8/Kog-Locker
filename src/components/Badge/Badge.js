@@ -1,23 +1,26 @@
 import React from 'react';
-
-const Badge = ({percentOfClimb}) => {
-  console.log(percentOfClimb);
   
-  const climbBadge = (   <div className="badge">
+const climbGoal = (current, goal) => {
+  const percent = (current/goal) * 100;
+  return percent;
+}
+
+const badgeCreator =(current, goal) => {
+  const climbBadge = ( 
+    <div className="badge">
       <div className="badge-icon">X</div>
-      <div className="badge-inner" style={{"height" : `${percentOfClimb}%`}}></div>
-    </div> )
+      <div className="badge-inner" style={{"height" : `${climbGoal(current, goal)}%`}}></div>
+    </div> 
+  )
+  const badgeArray = [climbBadge]
+  return badgeArray;
+}
 
-  const badgeArray = [
-    climbBadge
-  ]
-
+const Badge = ({current, goal}) => {
   return (
     <div>
-      {badgeArray}
+      {badgeCreator(current, goal)}
     </div>
-  
-
   );
 };
 
