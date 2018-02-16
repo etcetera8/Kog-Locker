@@ -11,10 +11,17 @@ class Home extends Component {
   
   render() {
     const {yearStats} = this.props.userStats
+    const { elevation } = this.props.badges;
+    console.log(yearStats);
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
-        <BadgeCard />
+        {yearStats &&
+        <BadgeCard
+          current={yearStats.elevation_gain}
+          goal={elevation} 
+        />
+        }
         <MapCard />
       </main>
     );
@@ -22,7 +29,9 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  userStats: state.userStats
+  userStats: state.userStats,
+  badges: state.defaultBadges
+
 });
 
 export default withRouter(connect(mapStateToProps)(Home));
