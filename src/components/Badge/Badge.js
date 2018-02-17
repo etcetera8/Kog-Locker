@@ -1,6 +1,5 @@
 import React from 'react';
 import mtn from '../../assets/mtn.png';
-console.log(mtn);
 const percentOfGoal = (current, goal) => {
   const percent = (current/goal) * 100;
   return percent;

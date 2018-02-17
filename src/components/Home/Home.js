@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { GoogleApiWrapper } from 'google-maps-react';
+import {gKey} from '../../apiKey.js';
 
 import StatsCard from '../StatsCard/StatsCard';
 import BadgeCard from '../BadgeCard/BadgeCard';
@@ -23,7 +25,7 @@ class Home extends Component {
           yearStats={yearStats} 
         />
         }
-        <MapCard />
+        <MapCard google={this.props.google}/>
       </main>
     );
   }
@@ -35,4 +37,7 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default withRouter(connect(mapStateToProps)(Home));
+const wrapper = GoogleApiWrapper({apiKey:gKey})(Home)
+
+
+export default withRouter(connect(mapStateToProps)(wrapper));

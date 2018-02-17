@@ -5,8 +5,19 @@ export const cleanUser = (userData) => {
 };
 
 export const cleanSegment = (segmentData) => {
-  const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats } = segmentData;
-  const segment = { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats };
+  const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats, end_latlng } = segmentData;
+  const segment = { 
+    name, 
+    average_grade, 
+    city, 
+    distance, 
+    total_elevation_gain, 
+    elevation_high, 
+    elevation_low, 
+    athlete_segment_stats,
+    polyline: segmentData.map.polyline,
+    end_latlng
+  };
   return segment;
 };
 
