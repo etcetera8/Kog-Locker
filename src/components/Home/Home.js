@@ -25,7 +25,10 @@ class Home extends Component {
           yearStats={yearStats} 
         />
         }
-        <MapCard google={this.props.google}/>
+        <MapCard 
+          google={this.props.google}
+          userTarget={this.props.userTarget}
+        />
       </main>
     );
   }
@@ -33,7 +36,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
   userStats: state.userStats,
-  badges: state.defaultBadges
+  badges: state.defaultBadges,
+  userTarget: state.userTarget
 
 });
 
