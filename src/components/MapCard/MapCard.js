@@ -8,33 +8,35 @@ export default class MapCard extends Component {
   }
 
   async loadMap () {
-    if (this.props && this.props.google) {
+    if (this.props && this.props.google.maps.geometry.encoding) {
       const {google} = this.props;
       const maps = google.maps;
-      console.log(maps);
       const mapRef = this.refs.map;
       const node = ReactDOM.findDOMNode(mapRef);
 
     const mapConfig = new google.maps.Map(node, {
-      zoom: 11,
-      center: {lat: 39.7392, lng: -104.9903},
+      zoom: 12,
+      center: {lat: 39.7316, lng: -105.239256},
       mapTypeId: 'terrain'
     })
 
-      let thing = await google.maps.geometry.encoding.decodePath(codedPath)
-      console.log(thing);
+    const decodedSets = google.maps.geometry.encoding.decodePath(codedPath)
+    const array = decodedSets.map(coord => JSON.stringify(coord))
+
+    const parsedArray = array.map(coord => JSON.parse(coord))
+    console.log(parsedArray);
       
-      const polyline = new google.maps.Polygon({
-        paths: [{lat: 39.7392, lng: -104.9903}, {lat:40, lng: -105}],
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0
+    const polyline = await new google.maps.Polyline({
+      path: parsedArray,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0
     })
-    console.log(polyline);
+    polyline.setPath(decodedSets)
     polyline.setMap(mapConfig)
-    this.map = new maps.Map(node, mapConfig)
+    this.map = await new maps.Map(node, mapConfig)
     }
   }
 
@@ -46,8 +48,8 @@ export default class MapCard extends Component {
 
     return (
    
-        <section className='map card' ref='map' style={style}>
-        </section>
+        <div id="map" className='map card' ref='map' style={style}>
+        </div>
       
     )
   }
