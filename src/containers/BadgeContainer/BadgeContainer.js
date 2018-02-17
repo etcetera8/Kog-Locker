@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BadgeCard from '../../components/BadgeCard/BadgeCard';
+import Badge from '../../components/Badge/Badge';
 
 class BadgeContainer extends Component {
   
@@ -9,12 +10,11 @@ class BadgeContainer extends Component {
     const { elevation, distance } = this.props.badges;
     return (
       <main>
-        {this.props.userStats.yearStats && 
-          <BadgeCard 
-            currentEl={yearStats.elevation_gain}
+        {yearStats && 
+          <Badge
+            yearStats={yearStats}
             goalEl={elevation}
             goalDist={distance}
-            yearStats={this.props.userStats.yearStats}
           />
         }
       </main>
