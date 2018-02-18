@@ -1,5 +1,5 @@
 import { initialCall, segmentCall, statsCall, activitiesCall } from './api.js';
-import { athleteUrl, segmentUrl, activitiesUrl, statsUrl, mockUserStats, cleanUserStats, mockActivities, cleanedActivities } from './mock-data';
+import { athleteUrl, segmentUrl, activitiesUrl, statsUrl, mockUserStats, cleanUserStats, mockActivities, cleanedActivities, mockSegment } from './mock-data';
 
 describe('API calls', () => {
    beforeEach(() => {
@@ -39,9 +39,14 @@ describe('API calls', () => {
     })
 
     it('should return an object with an ok status', async () => {
-      const result = await segmentCall()
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(mockSegment)
+        }));
+      const result = await segmentCall(123);
       const keys = Object.keys(result);
-      const expected = [ 'name', 'average_grade', 'city', 'distance','total_elevation_gain','elevation_high','elevation_low','athlete_segment_stats' ]
+      const expected = ["name", "average_grade", "city", "distance", "total_elevation_gain", "elevation_high", "elevation_low", "athlete_segment_stats", "polyline", "end_latlng"]
       expect(typeof result).toEqual('object');
       expect(keys).toEqual(expected);
     })

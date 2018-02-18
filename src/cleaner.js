@@ -5,7 +5,7 @@ export const cleanUser = (userData) => {
 };
 
 export const cleanSegment = (segmentData) => {
-  const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats, end_latlng } = segmentData;
+  const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats, end_latlng, map } = segmentData;
   const segment = { 
     name, 
     average_grade, 
@@ -15,7 +15,7 @@ export const cleanSegment = (segmentData) => {
     elevation_high, 
     elevation_low, 
     athlete_segment_stats,
-    polyline: segmentData.map.polyline,
+    polyline: map.polyline,
     end_latlng
   };
   return segment;

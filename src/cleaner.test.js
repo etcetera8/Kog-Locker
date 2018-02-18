@@ -5,7 +5,6 @@ describe('cleaner functions', () => {
   
   it('cleanUser should return a cleaned user', () => {
     const result = cleanUser(mock.mockUser);
-    console.log(result);
     const expected = mock.cleanUser;
     expect(result).toEqual(expected);
   })
