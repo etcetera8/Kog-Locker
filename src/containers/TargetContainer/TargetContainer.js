@@ -16,7 +16,7 @@ class TargetContainer extends Component {
         />
 
         <div className='card'>
-          <p>Grade: {average_grade}</p>
+          <p>Grade: {average_grade}%</p>
           <p>Distance: {(distance / 1000).toFixed(2)} kilometers</p>
           <p>Elevation Gain: {(elevation_high - elevation_low).toFixed(2)} meters</p>
           {athlete_segment_stats && 

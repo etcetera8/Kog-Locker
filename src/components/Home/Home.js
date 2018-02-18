@@ -38,7 +38,6 @@ const mapStateToProps = (state) => ({
   userStats: state.userStats,
   badges: state.defaultBadges,
   userTarget: state.userTarget
-
 });
 
 const wrapper = GoogleApiWrapper({apiKey:gKey})(Home)

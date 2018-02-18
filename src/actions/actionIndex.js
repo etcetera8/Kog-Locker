@@ -22,3 +22,8 @@ export const addBadge = (badge) => ({
   type: 'ADD_BADGE',
   payload: badge
 })
+
+export const addMap = (map) => ({
+  type: 'ADD_MAP',
+  payload: map
+})

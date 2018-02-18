@@ -18,14 +18,14 @@ import './App.css';
 class App extends Component {
   
   async componentDidMount() {
-    // const userData = await initialCall();
-    // await this.props.setUserData(userData);
+    const userData = await initialCall();
+    await this.props.setUserData(userData);
     
-    // const userStats = await statsCall(9560317);
-    // await this.props.setUserStats(userStats);
+    const userStats = await statsCall(9560317);
+    await this.props.setUserStats(userStats);
     
-    // const userActivities = await activitiesCall(9560317);
-    // await this.props.setUserActivities(userActivities);
+    const userActivities = await activitiesCall(9560317);
+    await this.props.setUserActivities(userActivities);
     
     const userTarget = await segmentCall(609371);
     await this.props.setUserTarget(userTarget);
