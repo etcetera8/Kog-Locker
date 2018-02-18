@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
-
 import { addMap } from '../../actions/actionIndex';
 import './MapCard.css'
 
@@ -13,8 +12,18 @@ class MapCard extends Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.targetMap && this.props.userTarget) {
+      console.log('hit');
+      const targetPolyline = this.props.userTarget.polyline;
+      const node = ReactDOM.findDOMNode(this.refs.map);
+      const mapConfig = this.initialMap()
+      const polyline = this.decodePolyline(targetPolyline);
+      polyline.setMap(mapConfig)
+    }
+  }
+
   initialMap() {
-    console.log("hit");
     const lat = this.props.userTarget.end_latlng[0];
     const lng = this.props.userTarget.end_latlng[1];
     const node = ReactDOM.findDOMNode(this.refs.map)
@@ -23,51 +32,24 @@ class MapCard extends Component {
       center: {lat, lng},
       mapTypeId: 'terrain'
     })
-
     return mapConfig
   }
 
   decodePolyline(targetPolyline) {
-      const decodedSets = this.props.google.maps.geometry.encoding.decodePath(targetPolyline)
-      const array = decodedSets.map(coord => JSON.stringify(coord));
-      const parsedArray = array.map(coord => JSON.parse(coord));
-      this.props.addMap(parsedArray)
+    const decodedSets = this.props.google.maps.geometry.encoding.decodePath(targetPolyline)
+    const array = decodedSets.map(coord => JSON.stringify(coord));
+    const parsedArray = array.map(coord => JSON.parse(coord));
+    this.props.addMap(parsedArray)
 
-      const polyline = new this.props.google.maps.Polyline({
-        path: parsedArray,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0
-      })
-      return polyline
-  }
-
-  componentDidMount() {
-    console.log('mounted')
-    if (this.props.targetMap) {
-      const targetPolyline = this.props.userTarget.polyline;
-      const { google } = this.props;
-      const maps = google.maps;
-      const mapRef = this.refs.map;
-      const node = ReactDOM.findDOMNode(mapRef)
-
-      const mapConfig = this.initialMap()
-
-      const decodedSets = google.maps.geometry.encoding.decodePath(targetPolyline)
-
-      const polyline = new google.maps.Polyline({
-        path: this.props.targetMap,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0
-      })
-      polyline.setMap(mapConfig)
-      this.map = new maps.Map(node, mapConfig)
-    }
+    const polyline = new this.props.google.maps.Polyline({
+      path: parsedArray,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0
+    })
+    return polyline
   }
 
   loadMap (targetPolyline, latLong) {
