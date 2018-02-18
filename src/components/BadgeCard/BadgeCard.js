@@ -7,12 +7,12 @@ const BadgeCard = ({currentEl, goalEl, goalDist, yearStats}) => {
     <section className="badge-card card">
       <h2 className='title'> Badges </h2>
       <div className='badge-card-inner'>
-          <Badge 
-            yearStats={yearStats}
-            currentEl={currentEl}
-            goalEl={goalEl}
-            goalDist={goalDist}
-          />
+        <Badge 
+          yearStats={yearStats}
+          currentEl={currentEl}
+          goalEl={goalEl}
+          goalDist={goalDist}
+        />
       </div>
     </section>
   );
