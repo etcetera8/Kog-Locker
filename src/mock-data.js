@@ -112,7 +112,7 @@ export const mockSegment = {
   total_elevation_gain: 0,
   map: {
   id: "s609371",
-  polyline: "_xpqF`hgaS\QHDFJCNSb@Ul@Q`AY|BA\Dl@Rt@PdA@f@E\IRKJuAr@UXSr@SpAYr@U\o@r@yAdAw@p@gAlAS^Kb@An@Jx@Nz@?h@SVIBa@EcBy@g@Oq@Ac@Je@^S`@G^?v@Bj@R`B@ZKZKB[C{@g@a@Oa@I]A]Bk@R_@\{@nAYXSNa@LaACWHGDU\Mj@EvAKd@[`@UDcC@_@Dk@PUNOPIN]hAm@xAEN@~@NxAHb@P^x@hAXv@XdBNnAB|@Eh@]bBI~@CvAO|B?HJ^H@Z[p@iEb@gBFg@D}ABERAHV@n@Ct@GvAOnB@LPVJ?RODYHwAh@wCDq@@g@C_AQu@eAcBQi@Gg@@oAFe@HUVWXGn@Bl@@XIbAo@VIZAn@Db@EZQnAiA\SRGZC`@@ZFzAXh@PPNZd@^^\NnA^XFZ@\OJKz@_B`@WPAJ@NDx@t@|Af@`@`@Vp@FTnA|GRp@Xh@pAlAX`@ZZRFV@^El@QTCJ@\JdAz@`@`@V^x@tA\r@xApDX^LHLBJ?VGPM`AeAf@e@p@e@d@Sd@?pANfDVpAArAI\?JL@LEHKJYDm@Ec@BM`@JPVHr@A`@BDF@PEJSJq@Ae@I]CwBFoBPWFW`@?LHPVLT?fAM`@@d@LzAz@VFZBn@Cr@Un@_@hBoBZ_@Rk@Jo@L{BLs@HWLSn@e@LMHg@Si@u@s@i@]uAo@]WK]IiBWgBDe@Z{@?g@GKSQm@S_Ag@cBc@U[C_@H{AHe@N]jCoDh@m@POVKTGt@Ah@Br@JPFHHXf@DRBPAr@ShCCp@@h@",
+  polyline: "_xpqF",
   resource_state: 3
   },
   effort_count: 130710,
@@ -125,7 +125,7 @@ export const mockSegment = {
   }
 }
 
-export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 7361.19, "elevation_high": 2230.3, "elevation_low": 1843, "name": "Lookout Mountain (Gate-BB Grave)", "total_elevation_gain": 0}
+export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 7361.19, "elevation_high": 2230.3, "elevation_low": 1843, "end_latlng": [39.731674, -105.239256], "name": "Lookout Mountain (Gate-BB Grave)", "polyline": "_xpqF", "total_elevation_gain": 0}
 
 export const mockUserStats = {
   biggest_ride_distance: 174857,
@@ -198,7 +198,7 @@ export const mockUserStats = {
   }
 }
 
-export const cleanUserStats = {"all_ride_totals": {"count": 612, "distance": 20215516, "elapsed_time": 3987884, "elevation_gain": 250799, "moving_time": 3290788}, "biggest_climb": 1271, "biggest_ride": 174857, "yearStats": {"count": 7, "distance": 240759, "elapsed_time": 55484, "elevation_gain": 4847}}
+export const cleanUserStats = {"all_ride_totals": {"count": 612, "distance": 20215516, "elapsed_time": 3987884, "elevation_gain": 250799, "moving_time": 3290788}, "biggest_climb": 1271, "biggest_ride": 174.857, "recent_ride_totals": {"achievement_count": 58, "count": 3, "distance": 91564.900390625, "elapsed_time": 23560, "elevation_gain": 2166, "moving_time": 18456}, "yearStats": {"count": 7, "distance": 240759, "elapsed_time": 55484, "elevation_gain": 4847}}
 
 export const mockActivities = [
     {
