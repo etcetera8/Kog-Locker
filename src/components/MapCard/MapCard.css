@@ -1,14 +1,17 @@
 .map-card {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  text-align: center; }
 
 #map {
-  margin-top: 5px; }
+  margin-top: 5px;
+  margin: 0 auto; }
 
 .target-name {
+  color: #fff;
   margin: 8px;
-  font-size: .8em; }
+  font-size: 1em; }
 
 .stats {
   margin: 0; }

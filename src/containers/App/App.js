@@ -6,6 +6,8 @@ import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+
 import StatsCard from '../../components/StatsCard/StatsCard';
 import BadgeCard from '../../components/BadgeCard/BadgeCard';
 import MapCard from '../../components/MapCard/MapCard';
@@ -54,6 +56,8 @@ class App extends Component {
           <Route path="/achievments" component={BadgeContainer} />
           <Route path="/target" component={TargetContainer} />
         </div>
+
+        <Footer />
 
       </div>
     );
