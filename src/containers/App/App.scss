@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo|Rosario');
-
+$orange: rgba(255,100,0,1);
 body, html {
   font-family: 'Archivo', sans-serif;
 }
 
 nav {
-  margin-top: 25px;
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 0 auto;
+  margin: 35px auto 0 auto;
 }
 
 a {
-  padding:5px;
+  padding: 7px 5px 5px 5px;
   margin:10px;
-  color: black;
-  border: 1px solid orange;
+  color: #fff;
+  border: 1px solid $orange;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .selected {
-  color: orange;
-  border: 3px solid orange;
+  padding: 5px 5px 7px 5px;
+  color: $orange;
+  border: 3px solid $orange;
 }

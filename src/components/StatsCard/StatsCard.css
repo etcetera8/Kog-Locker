@@ -1,12 +1,21 @@
 .card {
-  border: 1px solid black;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.3);
   min-width: 250px;
   max-width: 300px;
   height: 80%; }
 
 .card-data {
   display: block;
+  color: #ff6400;
   margin: 35px 15px 0px 25px; }
 
+.nums {
+  font-size: 1.2em;
+  color: #fff; }
+
 .title {
-  margin-left: 25px; }
+  text-align: center;
+  width: 250px;
+  margin: 10px 0 0 0;
+  color: #ff6400; }

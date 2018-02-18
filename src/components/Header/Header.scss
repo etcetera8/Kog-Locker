@@ -1,21 +1,41 @@
-
+$orange: rgba(255,100,0,1);
 
 .header-container {
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #fff;
   height: 100px;
-
+/*  background-image: url('../../assets/topo.png');
+*/
   .welcome {
-    margin-right: 15px;
+    color: #fff;
+    margin-top:40px;
+    margin-right: 5px;
+    float: right;
+  }
+
+  .profile-img {
+    border: 2px solid #fff;
+    margin-right: 20px;
+    border-radius: 50%;
     float: right;
     clear: both;
   }
 
-  .profile-img {
-    margin-right: 15px;
-    border-radius: 50%;
-    float: right;
-    clear: both;
+  .page-title {
+    color: #fff;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    background: $orange;  /*For browsers that don't support gradients*/
+    background: linear-gradient(to right, rgba(0,0,0,0), $orange);
+    width: 90%;
+    margin: 35px auto 0 auto;
+    padding: 11.5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .cog {
+    color: $orange;
   }
 
 }

@@ -8,7 +8,9 @@ import './MapCard.css'
 class MapCard extends Component {
 
   async componentDidUpdate() {
-    await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
+    if (!this.props.targetMap) {
+      await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
+    }
   }
 
   async loadMap (targetPolyline, latLong) {
@@ -49,7 +51,7 @@ class MapCard extends Component {
 
   render() {
     const {name, athlete_segment_stats} = this.props.userTarget
-    
+    console.log(this.props)
     const style = {
       width: '200px',
       height: '200px',
@@ -57,14 +59,14 @@ class MapCard extends Component {
 
     return (
       <section className='card map-card'>
+        <h2 className='title'>Target</h2>
         {
           athlete_segment_stats && 
           <div>
             <h3 className="target-name">{name}</h3>
-          
             <div id="map" className='map' ref='map' style={style}>
             </div>
-            <span>Best Time: {(athlete_segment_stats.pr_elapsed_time / 60)} minutes</span>
+            <span className='card-data stats'>Best Time: <span className='nums'>{(athlete_segment_stats.pr_elapsed_time / 60)} minutes</span></span>
           </div>
         }
       </section>  
@@ -72,8 +74,12 @@ class MapCard extends Component {
   }
 };
 
+const mapStateToProps = (state) => ({
+  targetMap: state.targetMap
+})
+
 const mapDispatchToProps = (dispatch) => ({
   addMap: (map) => dispatch(addMap(map))
 })
 
-export default connect(null, mapDispatchToProps)(MapCard)
+export default connect(mapStateToProps, mapDispatchToProps)(MapCard)

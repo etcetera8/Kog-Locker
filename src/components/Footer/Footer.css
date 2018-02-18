@@ -1,0 +1,12 @@
+footer {
+  height: 100px;
+  border-top: 2px solid #fff;
+  position: relative;
+  margin-top: 50px; }
+  footer .strava-logo {
+    margin: 0 10px 5px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8%;
+    height: auto; }
