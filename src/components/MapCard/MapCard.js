@@ -8,7 +8,9 @@ import './MapCard.css'
 class MapCard extends Component {
 
   async componentDidUpdate() {
-    await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
+    if (!this.props.targetMap) {
+      await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
+    }
   }
 
   async loadMap (targetPolyline, latLong) {
@@ -49,7 +51,7 @@ class MapCard extends Component {
 
   render() {
     const {name, athlete_segment_stats} = this.props.userTarget
-    
+    console.log(this.props)
     const style = {
       width: '200px',
       height: '200px',
@@ -72,8 +74,12 @@ class MapCard extends Component {
   }
 };
 
+const mapStateToProps = (state) => ({
+  targetMap: state.targetMap
+})
+
 const mapDispatchToProps = (dispatch) => ({
   addMap: (map) => dispatch(addMap(map))
 })
 
-export default connect(null, mapDispatchToProps)(MapCard)
+export default connect(mapStateToProps, mapDispatchToProps)(MapCard)
