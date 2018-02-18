@@ -12,7 +12,7 @@ const badgeCreator = (current, goal, type, icon) => {
       <img src={icon} className="badge-icon" />
       <div className="badge-inner" style={{"height" : `${percentOfGoal(current, goal)}%`}}></div>
       </div>
-      <h3>{type}</h3>
+      <span className="type">{type}</span>
     </div>
   )
   const badgeArray = [climbBadge]
@@ -20,8 +20,8 @@ const badgeCreator = (current, goal, type, icon) => {
 }
 
 const Badge = ({currentEl, goalEl, yearStats, goalDist}) => {
-  const elevationBadge = badgeCreator(yearStats.elevation_gain, goalEl, 'Elevation', mtn)
-  const distanceBadge = badgeCreator(yearStats.distance, goalDist, 'Distance')
+  const elevationBadge = badgeCreator(yearStats.elevation_gain, goalEl, 'Elevation Hero', mtn)
+  const distanceBadge = badgeCreator(yearStats.distance, goalDist, 'Distance Trasher')
   console.log(yearStats);
   return (
     <div>

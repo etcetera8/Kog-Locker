@@ -59,6 +59,7 @@ class MapCard extends Component {
 
     return (
       <section className='card map-card'>
+        <h2 className='title'>Target</h2>
         {
           athlete_segment_stats && 
           <div>
@@ -66,7 +67,7 @@ class MapCard extends Component {
           
             <div id="map" className='map' ref='map' style={style}>
             </div>
-            <span>Best Time: {(athlete_segment_stats.pr_elapsed_time / 60)} minutes</span>
+            <span className='card-data stats'>Best Time: <span className='nums'>{(athlete_segment_stats.pr_elapsed_time / 60)} minutes</span></span>
           </div>
         }
       </section>  

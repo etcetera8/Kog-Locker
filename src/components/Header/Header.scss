@@ -1,3 +1,4 @@
+$orange: rgba(255,100,0,1);
 
 .header-container {
   text-align: center;
@@ -24,8 +25,8 @@
     color: #fff;
     font-size: 2.2em;
     letter-spacing: 2px;
-    background: rgba(255,100,0,1);  /*For browsers that don't support gradients*/
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(255,100,0,1));
+    background: $orange;  /*For browsers that don't support gradients*/
+    background: linear-gradient(to right, rgba(0,0,0,0), $orange);
     width: 90%;
     margin: 35px auto 0 auto;
     padding: 11.5px;
@@ -34,7 +35,7 @@
   }
 
   .cog {
-    color: rgba(255,100,0,1);
+    color: $orange;
   }
 
 }

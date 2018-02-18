@@ -3,11 +3,10 @@ body, html {
   font-family: 'Archivo', sans-serif; }
 
 nav {
-  margin-top: 25px;
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 0 auto; }
+  margin: 35px auto 0 auto; }
 
 a {
   padding: 7px 5px 5px 5px;

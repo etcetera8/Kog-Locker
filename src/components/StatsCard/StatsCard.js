@@ -7,28 +7,28 @@ const StatsCard = ({ yearStats, allStats, recentStats }) => {
       { yearStats &&
         <div>
           <h2 className="title">Year To Date</h2>
-          <span className="card-data">Rides: {yearStats.count}</span>
-          <span className="card-data">Distance: {yearStats.distance / 1000} kms</span>
-          <span className="card-data">Elevation: {yearStats.elevation_gain} m</span>
-          <span className="card-data">Time: {Math.floor((yearStats.elapsed_time /60)/60) } hours</span>
+          <span className="card-data">Rides: <span className="nums">{yearStats.count}</span></span>
+          <span className="card-data">Distance: <span className="nums">{(yearStats.distance / 1000).toFixed(2)} kms</span></span>
+          <span className="card-data">Elevation: <span className="nums">{yearStats.elevation_gain} m</span></span>
+          <span className="card-data">Time: <span className="nums">{Math.floor((yearStats.elapsed_time /60)/60) } hours</span></span>
         </div>
       }
       { allStats && 
         <div>
           <h2 className="title"> All-Time</h2>
-          <span className="card-data">Rides: {allStats.count}</span>
-          <span className="card-data">Distance: {allStats.distance / 1000} kms</span>
-          <span className="card-data">Elevation: {allStats.elevation_gain} m</span>
-          <span className="card-data">Time: {Math.floor((allStats.elapsed_time / 60) /60)} hours</span>
+          <span className="card-data">Rides: <span className="nums">{allStats.count}</span></span>
+          <span className="card-data">Distance: <span className="nums">{(allStats.distance / 1000).toFixed(2)} kms</span></span>
+          <span className="card-data">Elevation: <span className="nums">{allStats.elevation_gain} m</span></span>
+          <span className="card-data">Time: <span className="nums">{Math.floor((allStats.elapsed_time / 60) /60)} hours</span></span>
         </div>
       }
       { recentStats &&
         <div>
           <h2 className="title">Recent Rides</h2>
-          <span className="card-data">Rides: {recentStats.count}</span>
-          <span className="card-data">Distance: {recentStats.distance / 1000} kms</span>
-          <span className="card-data">Elevation: {recentStats.elevation_gain} m</span>
-          <span className="card-data">Time: {Math.floor((recentStats.elapsed_time / 60) /60)} hours</span>
+          <span className="card-data">Rides: <span className="nums">{recentStats.count}</span></span>
+          <span className="card-data">Distance: <span className="nums">{(recentStats.distance / 1000).toFixed(2)} kms</span></span>
+          <span className="card-data">Elevation: <span className="nums">{recentStats.elevation_gain} m</span></span>
+          <span className="card-data">Time: <span className="nums">{Math.floor((recentStats.elapsed_time / 60) /60)} hours</span></span>
         </div>
       }
 
