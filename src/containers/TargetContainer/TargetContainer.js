@@ -17,8 +17,8 @@ class TargetContainer extends Component {
 
         <div className='card'>
           <span className='card-data'>Grade: <span className='nums'>{average_grade}%</span></span>
-          <span className='card-data'>Distance: <span className='nums'>{(distance / 1000).toFixed(2)} kilometers</span></span>
-          <span className='card-data'>Elevation Gain: <span className='nums'>{(elevation_high - elevation_low).toFixed(2)} meters</span></span>
+          <span className='card-data'>Distance: <span className='nums'>{distance} miles</span></span>
+          <span className='card-data'>Elevation Gain: <span className='nums'>{(elevation_high - elevation_low)} ft</span></span>
           {athlete_segment_stats && 
           <span className='card-data'>Number of attempts: <span className='nums'>{athlete_segment_stats.effort_count} </span></span>
           }

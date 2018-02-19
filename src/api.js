@@ -1,11 +1,5 @@
 import { key } from './apiKey.js';
 import { cleanUser, cleanSegment, cleanStats, cleanActivities } from './cleaner.js';
-//import { mockUser, mockUserStats, mockActivities } from './mock-data.js';
-//GET SPECIFIC SEGMENT CALL
-//https://www.strava.com/api/v3/segments/609371?access_token=${key}
-
-//GET LIST OF RECENT ACTIVITIES
-//https://www.strava.com/api/v3/athlete/activities?access_token=${key}
 const root = `https://www.strava.com/api/v3`;
 
 export const initialCall = async () => {
