@@ -16,6 +16,14 @@ const kilosToPounds = (kilos) => {
   return parseInt(kilos * 2.20462);
 }
 
+const mpsToMph = (mps) => {
+  return parseInt(mps * 2.23694)
+}
+
+const celsiusToF = (c) => {
+  return c * 9 / 5 + 32
+}
+
 
 export const cleanSegment = (segmentData) => {
   const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats, end_latlng, map } = segmentData;
@@ -61,12 +69,12 @@ export const cleanActivities = (activityData) => {
       average_watts,
       average_heartrate,
       max_heartrate,
-      average_speed,
-      max_speed,
-      distance,
-      total_elevation_gain,
+      average_speed: mpsToMph(average_speed),
+      max_speed: mpsToMph(max_speed),
+      distance: metersToMiles(distance),
+      total_elevation_gain: metersToFeet(total_elevation_gain),
       kilojoules,
-      average_temp,
+      average_temp: celsiusToF(average_temp),
       moving_time,
       suffer_score,
       map: ride.map.summary_polyline
