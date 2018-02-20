@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { addMap } from '../../actions/actionIndex';
 import './MapCard.css'
+import loadingGif from '../../assets/Spinner-1s-144px.gif'
 import PropTypes from 'prop-types';
 
 class MapCard extends Component {
@@ -10,7 +11,8 @@ class MapCard extends Component {
     super()
     this.state = {
       goalTime: 0,
-      newTime:0
+      newTime:0,
+      loading: false
     }
   }
 
@@ -18,6 +20,10 @@ class MapCard extends Component {
     if (!this.props.targetMap) {
       await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
     }
+  }
+
+  componentWillMount() {
+    this.setState({loading:true})
   }
 
   componentDidMount() {
@@ -28,7 +34,7 @@ class MapCard extends Component {
       const decodedPolyline = this.decodePolyline(polyline);
       decodedPolyline.setMap(mapConfig)
       const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
-      this.setState({goalTime})
+      this.setState({goalTime, loading: false})
     }
   }
 
@@ -75,8 +81,9 @@ class MapCard extends Component {
       this.map = new google.maps.Map(node, mapConfig)
 
       const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
-      this.setState({goalTime})
+      this.setState({goalTime, loading: false})
     }
+
   }
 
   handleChange = (e) => {
@@ -99,6 +106,9 @@ class MapCard extends Component {
     return (
       <section className='card map-card'>
         <h2 className='title'>Target</h2>
+        {this.state.loading && 
+          <div><img src={loadingGif} /></div>
+        }
         {
           athlete_segment_stats &&
 
