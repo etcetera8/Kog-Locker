@@ -1,10 +1,24 @@
+.badge-main-container {
+  align-items: flex-start;
+  justify-content: flex-start; }
+
+.full-badge-wrapper {
+  margin: 25px;
+  display: inline-block;
+  text-align: center;
+  display: relative;
+  width: 80px; }
+
 .badge-card-inner {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; }
 
 .badge {
-  height: 75px;
-  width: 75px;
+  margin: 0 auto;
+  height: 55px;
+  width: 55px;
   position: relative;
   border-radius: 100%;
   border: 1px solid #fff;
@@ -33,4 +47,23 @@
     height: auto; }
 
 .type {
-  color: #fff; }
+  color: #fff;
+  margin: 0; }
+
+.info {
+  display: none;
+  color: white; }
+
+.badge:hover ~ .info {
+  padding: 5px;
+  border: 1px solid white;
+  display: block; }
+
+.badge:hover {
+  background: #fff; }
+
+.details {
+  text-align: left;
+  display: block;
+  margin: 5px;
+  font-size: .8em; }

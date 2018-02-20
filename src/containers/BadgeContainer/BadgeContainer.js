@@ -9,7 +9,7 @@ class BadgeContainer extends Component {
     const { yearStats } = this.props.userStats;
     const { elevation, distance } = this.props.badges;
     return (
-      <main>
+      <main className='badge-main-container'>
         {yearStats && 
           <Badge
             yearStats={yearStats}

@@ -3,9 +3,10 @@ $orange: rgba(255,100,0,1);
 .card {
   border: 2px solid #fff;
   background: rgba(0, 0, 0, 0.3);
-  min-width: 250px;
-  max-width: 300px;
+  min-width: 260px;
   height: 80%;
+  min-height: 350px;
+  margin-top: 10px;
 }
 
 .card-data {
