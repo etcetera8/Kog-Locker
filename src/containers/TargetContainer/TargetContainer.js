@@ -67,7 +67,7 @@ class TargetContainer extends Component {
               onClick={this.helper}
               className="new-segment-button"
               >
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus"></i>
             </button>
             {this.state.segmentError && 
               <p className="error-message">You must put in a valid segment ID</p>

@@ -5,6 +5,12 @@ import { addMap } from '../../actions/actionIndex';
 import './MapCard.css'
 
 class MapCard extends Component {
+  constructor() {
+    super()
+    this.state = {
+      goalTime: 0
+    }
+  }
 
   async componentDidUpdate() {
     if (!this.props.targetMap) {
@@ -14,12 +20,13 @@ class MapCard extends Component {
 
   componentDidMount() {
     if (this.props.targetMap && this.props.userTarget) {
-      console.log('hit');
-      const targetPolyline = this.props.userTarget.polyline;
+      const {polyline, athlete_segment_stats} = this.props.userTarget;
       const node = ReactDOM.findDOMNode(this.refs.map);
       const mapConfig = this.initialMap()
-      const polyline = this.decodePolyline(targetPolyline);
-      polyline.setMap(mapConfig)
+      const decodedPolyline = this.decodePolyline(polyline);
+      decodedPolyline.setMap(mapConfig)
+      const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
+      this.setState({goalTime})
     }
   }
 
@@ -54,6 +61,7 @@ class MapCard extends Component {
 
   loadMap = (targetPolyline, latLong) => {
     if (this.props.userTarget && this.props.google.maps.geometry.encoding && latLong) {
+      const { athlete_segment_stats } = this.props.userTarget;
       const { google } = this.props;
       const mapRef = this.refs.map;
       const node = ReactDOM.findDOMNode(mapRef);
@@ -63,6 +71,9 @@ class MapCard extends Component {
 
       polyline.setMap(mapConfig)
       this.map = new google.maps.Map(node, mapConfig)
+
+      const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
+      this.setState({goalTime})
     }
   }
 
@@ -77,11 +88,13 @@ class MapCard extends Component {
       <section className='card map-card'>
         <h2 className='title'>Target</h2>
         {
-          athlete_segment_stats && 
+          athlete_segment_stats &&
+
           <div>
             <h3 className="target-name">{name}</h3>
             <div id="map" className='map' ref='map' style={style}>
             </div>
+            <span className='card-data goal'>Goal Time: <span className='nums'>{this.state.goalTime}</span></span>
             <span className='card-data stats'>Best Time: <span className='nums'>{(athlete_segment_stats.pr_elapsed_time / 60).toFixed(2)} minutes</span></span>
           </div>
         }
