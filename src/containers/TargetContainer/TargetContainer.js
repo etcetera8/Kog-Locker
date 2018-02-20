@@ -25,6 +25,7 @@ class TargetContainer extends Component {
     const response = await segmentCall(this.state.segmentId)
     console.log(response, this.props);
     this.props.setUserTarget(response);
+    localStorage.setItem('target', JSON.stringify(response));
   }
   
   render() {
