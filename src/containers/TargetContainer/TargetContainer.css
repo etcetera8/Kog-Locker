@@ -1,0 +1,21 @@
+.new-segment-input {
+  margin: 25px 5px 0 25px;
+  padding: 5px;
+  background: none;
+  border: 1px solid #ff6400;
+  color: #fff; }
+
+.new-segment-input::placeholder {
+  color: #aaa; }
+
+.new-segment-button {
+  font-size: 1.2em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ff6400; }
+
+.error-message {
+  margin: 5px 0 0 25px;
+  font-size: .8em;
+  color: red; }

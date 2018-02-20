@@ -29,8 +29,14 @@ class App extends Component {
     const userActivities = await activitiesCall(9560317);
     await this.props.setUserActivities(userActivities);
     
-    const userTarget = await segmentCall(609371);
-    await this.props.setUserTarget(userTarget);
+    if (!localStorage.getItem('target')) {
+      const userTarget = await segmentCall(609371);
+      await this.props.setUserTarget(userTarget);
+    } else {
+      const segment = JSON.parse(localStorage.getItem('target'));
+      //const userTarget = await segmentCall(609371);
+      await this.props.setUserTarget(segment)
+    }
   }
 
   render() {
@@ -62,7 +68,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 const mapStateToProps = (state) => ({
