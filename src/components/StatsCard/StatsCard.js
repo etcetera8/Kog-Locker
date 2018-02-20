@@ -1,5 +1,6 @@
 import React from 'react';
 import './StatsCard.css';
+import PropTypes from 'prop-types';
 
 const StatsCard = ({ yearStats, allStats, recentStats }) => {
   return (
@@ -34,6 +35,12 @@ const StatsCard = ({ yearStats, allStats, recentStats }) => {
 
     </section>
   );
+};
+
+StatsCard.propTypes = {
+  yearStats: PropTypes.object,
+  allStats: PropTypes.object,
+  recentStats: PropTypes.object
 };
 
 export default StatsCard;

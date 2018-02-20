@@ -46,11 +46,9 @@ export const cleanStats = (statsData) => {
   const { recent_ride_totals, ytd_ride_totals, all_ride_totals, biggest_ride_distance, biggest_climb_elevation_gain } = statsData;
   const {count, distance, elapsed_time, elevation_gain} = ytd_ride_totals;
   const yearStats = {count, distance: metersToMiles(distance), elapsed_time, elevation_gain: metersToFeet(elevation_gain)};
-  console.log(all_ride_totals);
   all_ride_totals.distance = metersToMiles(all_ride_totals.distance);
   all_ride_totals.elevation_gain = metersToFeet(all_ride_totals.elevation_gain)
   recent_ride_totals.distance = metersToMiles(recent_ride_totals.distance)
-  //recent_ride_totals.elevation_gain = metersToMiles(recent_ride_totals.elevation_gain)
   const allStats = {
     yearStats,
     all_ride_totals,

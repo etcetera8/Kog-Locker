@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, NavLink, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-
 import StatsCard from '../../components/StatsCard/StatsCard';
 import BadgeCard from '../../components/BadgeCard/BadgeCard';
 import MapCard from '../../components/MapCard/MapCard';
@@ -81,5 +81,14 @@ const mapDispatchToProps = (dispatch) => ({
   setUserActivities: (data) => dispatch(addUserActivities(data)),
   setUserTarget: (data) => dispatch(addUserTarget(data))
 })
+
+App.propTypes = {
+  userStats: PropTypes.object.isRequired,
+  userData: PropTypes.object.isRequired,
+  setUserData: PropTypes.func.isRequired,
+  setUserStats: PropTypes.func.isRequired,
+  setUserActivities: PropTypes.func.isRequired,
+  setUserTarget: PropTypes.func.isRequired,
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

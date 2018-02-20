@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import StatsCard from '../../components/StatsCard/StatsCard';
+import PropTypes from 'prop-types';
 
 class StatsContainer extends Component {
   
@@ -41,4 +41,8 @@ const mapStateToProps = (state) => ({
   userStats: state.userStats
 })
 
-export default withRouter(connect(mapStateToProps)(StatsContainer))
+StatsContainer.propTypes = {
+  userStats: PropTypes.object.isRequired,
+};
+
+export default connect(mapStateToProps)(StatsContainer)
