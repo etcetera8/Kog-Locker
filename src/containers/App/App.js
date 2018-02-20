@@ -28,6 +28,7 @@ class App extends Component {
     
     const userActivities = await activitiesCall(9560317);
     await this.props.setUserActivities(userActivities);
+    
     if (!localStorage.getItem('target')) {
       const userTarget = await segmentCall(609371);
       await this.props.setUserTarget(userTarget);

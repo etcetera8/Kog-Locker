@@ -18,7 +18,7 @@ export const segmentCall = async (segmentId) => {
     const segmentData = await response.json();
     return cleanSegment(segmentData);
   } catch (error) {
-    return error;
+    return {error, message: "failed to fetch"};
   }
 };
 
