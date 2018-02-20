@@ -5,6 +5,7 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import {gKey} from '../../apiKey.js'
 import { addUserTarget } from '../../actions/actionIndex'
 import { segmentCall } from '../../api';
+import PropTypes from 'prop-types';
 import './TargetContainer.css';
 
 class TargetContainer extends Component {
@@ -89,5 +90,10 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const wrapper = GoogleApiWrapper({apiKey:gKey})(TargetContainer)
+
+TargetContainer.propTypes = {
+  userTarget: PropTypes.object.isRequired,
+  google: PropTypes.object.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(wrapper)

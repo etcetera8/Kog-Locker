@@ -1,6 +1,7 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
 import './Badge.css';
+import PropTypes from 'prop-types';
 
 const BadgeCard = ({currentEl, goalEl, goalDist, yearStats}) => {
   return (
@@ -16,6 +17,13 @@ const BadgeCard = ({currentEl, goalEl, goalDist, yearStats}) => {
       </div>
     </section>
   );
+};
+
+BadgeCard.propTypes = {
+  currentEl: PropTypes.number.isRequired,
+  goalEl: PropTypes.number.isRequired,
+  goalDist: PropTypes.number.isRequired,
+  yearStats:PropTypes.object.isRequired
 };
 
 export default BadgeCard;

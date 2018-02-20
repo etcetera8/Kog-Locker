@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { addMap } from '../../actions/actionIndex';
 import './MapCard.css'
+import PropTypes from 'prop-types';
 
 class MapCard extends Component {
   constructor() {
@@ -79,8 +80,6 @@ class MapCard extends Component {
   }
 
   handleChange = (e) => {
-    console.log('change', this.state.goalTime)
-    console.log(e.target.value);
     this.setState({newTime: e.target.value})
   }
 
@@ -138,5 +137,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   addMap: (map) => dispatch(addMap(map))
 })
+
+MapCard.propTypes = {
+  userTarget: PropTypes.object.isRequired,
+  google: PropTypes.object.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapCard)

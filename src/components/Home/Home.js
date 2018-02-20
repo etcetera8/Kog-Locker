@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { GoogleApiWrapper } from 'google-maps-react';
 import {gKey} from '../../apiKey.js';
+import PropTypes from 'prop-types';
 
 import StatsCard from '../StatsCard/StatsCard';
 import BadgeCard from '../BadgeCard/BadgeCard';
@@ -42,5 +43,10 @@ const mapStateToProps = (state) => ({
 
 const wrapper = GoogleApiWrapper({apiKey:gKey})(Home)
 
+Home.propTypes = {
+  userTarget: PropTypes.object.isRequired,
+  userStats: PropTypes.object.isRequired,
+  badges: PropTypes.object.isRequired
+};
 
 export default withRouter(connect(mapStateToProps)(wrapper));
