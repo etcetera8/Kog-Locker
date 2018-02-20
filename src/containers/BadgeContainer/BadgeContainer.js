@@ -8,14 +8,14 @@ class BadgeContainer extends Component {
   
   render() {
     const { yearStats } = this.props.userStats;
-    const { elevation, distance } = this.props.badges;
+    const { yearElevation, yearDistance } = this.props.badges;
     return (
       <main className='badge-main-container'>
         {yearStats && 
           <Badge
             yearStats={yearStats}
-            goalEl={elevation}
-            goalDist={distance}
+            goalEl={yearElevation}
+            goalDist={yearDistance}
           />
         }
       </main>

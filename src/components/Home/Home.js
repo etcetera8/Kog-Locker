@@ -14,15 +14,15 @@ class Home extends Component {
   
   render() {
     const {yearStats} = this.props.userStats
-    const { elevation, distance } = this.props.badges;
+    const { yearElevation, yearDistance } = this.props.badges;
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
         {yearStats &&
         <BadgeCard
           currentEl={yearStats.elevation_gain}
-          goalEl={elevation}
-          goalDist={distance}
+          goalEl={yearElevation}
+          goalDist={yearDistance}
           yearStats={yearStats} 
         />
         }
