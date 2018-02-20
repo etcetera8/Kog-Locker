@@ -8,7 +8,8 @@ class MapCard extends Component {
   constructor() {
     super()
     this.state = {
-      goalTime: 0
+      goalTime: 0,
+      newTime:0
     }
   }
 
@@ -77,6 +78,18 @@ class MapCard extends Component {
     }
   }
 
+  handleChange = (e) => {
+    console.log('change', this.state.goalTime)
+    console.log(e.target.value);
+    this.setState({newTime: e.target.value})
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newGoal = this.state.newTime
+    this.setState({goalTime: newGoal, newTime: 0 })
+  }
+
   render() {
     const {name, athlete_segment_stats} = this.props.userTarget
     const style = {
@@ -94,8 +107,23 @@ class MapCard extends Component {
             <h3 className="target-name">{name}</h3>
             <div id="map" className='map' ref='map' style={style}>
             </div>
-            <span className='card-data goal'>Goal Time: <span className='nums'>{this.state.goalTime}</span></span>
-            <span className='card-data stats'>Best Time: <span className='nums'>{(athlete_segment_stats.pr_elapsed_time / 60).toFixed(2)} minutes</span></span>
+            <span className='card-data goal'>Goal Time: <span className='nums'>{this.state.goalTime} mins</span></span>
+            <form className="form">
+              <input
+                className="new-goal"
+                placeholder="Update goal time"
+                type="number"
+                value={this.state.newTime}
+                onChange={this.handleChange}
+              />
+              <button 
+                className="new-segment-button" 
+                onClick={this.handleSubmit}
+              >
+                <i className="fas fa-plus"></i>
+              </button>
+            </form>
+            <span className='card-data stats'>Best Time: <span className='nums'>{(athlete_segment_stats.pr_elapsed_time / 60).toFixed(2)} mins</span></span>
           </div>
         }
       </section>  
