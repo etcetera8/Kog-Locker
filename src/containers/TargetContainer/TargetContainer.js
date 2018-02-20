@@ -5,6 +5,7 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import {gKey} from '../../apiKey.js'
 import { addUserTarget } from '../../actions/actionIndex'
 import { segmentCall } from '../../api';
+import './TargetContainer.css';
 
 class TargetContainer extends Component {
   constructor(props) {
@@ -46,14 +47,20 @@ class TargetContainer extends Component {
           <span className='card-data'>Number of attempts: <span className='nums'>{athlete_segment_stats.effort_count} </span></span>
           }
 
-          <input 
+          <input
+            className="new-segment-input"
             type='text' 
-            placeholder="Segment Id" 
+            placeholder="Add a New Segment by it's ID#" 
             value={this.state.segmentId}
             onChange={this.changeHelper}
           />
 
-          <button onClick={this.helper}>Add new target</button>
+          <button 
+            onClick={this.helper}
+            className="new-segment-button"
+            >
+              <i class="fas fa-plus"></i>
+          </button>
         </div>
       </main>
     )

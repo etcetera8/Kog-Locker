@@ -52,7 +52,7 @@ class MapCard extends Component {
     return polyline
   }
 
-  loadMap (targetPolyline, latLong) {
+  loadMap = (targetPolyline, latLong) => {
     if (this.props.userTarget && this.props.google.maps.geometry.encoding && latLong) {
       const { google } = this.props;
       const mapRef = this.refs.map;

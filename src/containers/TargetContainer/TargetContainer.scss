@@ -1,0 +1,14 @@
+$orange: rgba(255,100,0,1);
+
+.new-segment-input {
+  margin: 25px 5px 0 25px;
+  background: none;
+  border: 1px solid $orange;
+}
+
+.new-segment-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: $orange;
+}
