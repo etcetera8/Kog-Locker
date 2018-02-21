@@ -9,12 +9,9 @@ import './Badge.css';
 import PropTypes from 'prop-types';
 import { badgeCreator } from '../../BadgeCreator';
 
-class Badge extends Component {
-  constructor(props) {
-    super(props)
-  }
+export class Badge extends Component {
 
-  badgeAmalgamation = () => {
+  badgeArray = () => {
     const {allStats, yearStats, goals} = this.props;
     const badgeArray = [];
     badgeArray.push(badgeCreator(yearStats.elevation_gain, goals.yearElevation, 'Elevation Hero', 'feet', mtn));
@@ -23,24 +20,27 @@ class Badge extends Component {
     badgeArray.push(badgeCreator(allStats.elevation_gain, goals.allElevation, 'All Time Elevation', 'feet', mtns));
     return badgeArray
   }
+
   render() {
     return (
       <div>
-        {this.badgeAmalgamation()}
+        {this.badgeArray()}
       </div>
     );
   }
 };
 
-Badge.propTypes = {
-  currentEl: PropTypes.number,
-  goalEl: PropTypes.number.isRequired,
-  goalDist: PropTypes.number.isRequired,
-  yearStats:PropTypes.object.isRequired
-};
-const mapStateToProps = (state) => ({
+
+export const mapStateToProps = (state) => ({
   allStats: state.userStats.all_ride_totals,
   yearStats: state.userStats.yearStats,
   goals: state.defaultBadges
 })
+
+Badge.propTypes = {
+  goals: PropTypes.object.isRequired,
+  allStats: PropTypes.object.isRequired,
+  yearStats:PropTypes.object.isRequired
+};
+
 export default connect(mapStateToProps)(Badge);
