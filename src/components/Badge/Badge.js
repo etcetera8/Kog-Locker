@@ -9,7 +9,6 @@ const Badge = ({currentEl, goalEl, yearStats, goalDist}) => {
   const badgeArray = []
   badgeArray.push(badgeCreator(elevation_gain, goalEl, 'Elevation Hero', 'feet', mtn));
   badgeArray.push(badgeCreator(distance, goalDist, 'Distance Trasher', 'miles'));
-
   return (
     <div>
       {badgeArray}
