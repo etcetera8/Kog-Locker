@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import StatsCard from '../../components/StatsCard/StatsCard';
 import PropTypes from 'prop-types';
 
-class StatsContainer extends Component {
+export class StatsContainer extends Component {
   
   recentCard = () => {
     const { recent_ride_totals } = this.props.userStats;
@@ -37,7 +37,7 @@ class StatsContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userStats: state.userStats
 })
 
