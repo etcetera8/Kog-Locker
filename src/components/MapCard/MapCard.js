@@ -6,13 +6,13 @@ import './MapCard.css'
 import loadingGif from '../../assets/Spinner-1s-144px.gif'
 import PropTypes from 'prop-types';
 
-class MapCard extends Component {
+export class MapCard extends Component {
   constructor() {
     super()
     this.state = {
       goalTime: 0,
       newTime:0,
-      loading: false
+      loading: true
     }
   }
 
@@ -20,10 +20,6 @@ class MapCard extends Component {
     if (!this.props.targetMap) {
       await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
     }
-  }
-
-  componentWillMount() {
-    this.setState({loading:true})
   }
 
   componentDidMount() {
@@ -41,7 +37,7 @@ class MapCard extends Component {
   initialMap() {
     const lat = this.props.userTarget.end_latlng[0];
     const lng = this.props.userTarget.end_latlng[1];
-    const node = ReactDOM.findDOMNode(this.refs.map)
+    const node = ReactDOM.findDOMNode(this.refs.map);
     const mapConfig = new this.props.google.maps.Map(node, {
       zoom: 12,
       center: {lat, lng},
@@ -51,7 +47,7 @@ class MapCard extends Component {
   }
 
   decodePolyline(targetPolyline) {
-    const decodedSets = this.props.google.maps.geometry.encoding.decodePath(targetPolyline)
+    const decodedSets = this.props.google.maps.geometry.encoding.decodePath(targetPolyline);
     const array = decodedSets.map(coord => JSON.stringify(coord));
     const parsedArray = array.map(coord => JSON.parse(coord));
     this.props.addMap(parsedArray)
@@ -64,11 +60,11 @@ class MapCard extends Component {
       fillColor: '#FF0000',
       fillOpacity: 0
     })
-    return polyline
+    return polyline;
   }
 
   loadMap = (targetPolyline, latLong) => {
-    if (this.props.userTarget && this.props.google.maps.geometry.encoding && latLong) {
+    if (this.props.userTarget && this.props.google.maps.geometry.encoding) {
       const { athlete_segment_stats } = this.props.userTarget;
       const { google } = this.props;
       const mapRef = this.refs.map;
