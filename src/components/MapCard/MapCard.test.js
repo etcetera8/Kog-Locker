@@ -51,5 +51,4 @@ describe('MapCard' , () => {
     expect(wrapper.state().goalTime).toEqual(7)
   })
 
-
 })

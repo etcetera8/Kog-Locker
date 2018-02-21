@@ -17,7 +17,7 @@ import BadgeContainer from '../BadgeContainer/BadgeContainer';
 import TargetContainer from '../TargetContainer/TargetContainer';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
   
   async componentDidMount() {
     const userData = await initialCall();
@@ -69,12 +69,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userData: state.userData,
   userStats: state.userStats
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   setUserData: (data) => dispatch(addUserData(data)),
   setUserStats: (data) => dispatch(addUserStats(data)),
   setUserActivities: (data) => dispatch(addUserActivities(data)),
