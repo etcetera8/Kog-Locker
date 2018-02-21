@@ -8,7 +8,7 @@ class BadgeContainer extends Component {
   
   render() {
     const { yearStats, all_ride_totals } = this.props.userStats;
-    const { yearElevation, yearDistance } = this.props.badges;
+    const { yearElevation, yearDistance, allDistance, allElevation } = this.props.badges;
     return (
       <main className='badge-main-container'>
         {yearStats && 
@@ -17,6 +17,8 @@ class BadgeContainer extends Component {
             allStats={all_ride_totals}
             goalEl={yearElevation}
             goalDist={yearDistance}
+            allGoalEl={allElevation}
+            allGoalDist={allDistance}
           />
         }
       </main>
