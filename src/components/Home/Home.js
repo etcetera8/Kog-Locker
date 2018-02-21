@@ -19,15 +19,7 @@ class Home extends Component {
       <main>
         <StatsCard yearStats={yearStats}/>
         {yearStats &&
-        <BadgeCard
-          currentEl={yearStats.elevation_gain}
-          goalEl={yearElevation}  
-          goalDist={yearDistance}
-          allGoalDist={allDistance}
-          allGoalEl={allElevation}
-          yearStats={yearStats}
-          allStats={all_ride_totals} 
-        />
+        <BadgeCard />
         }
         <MapCard 
           google={this.props.google}
