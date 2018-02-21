@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import mtn from '../../assets/mtn.png';
 import mtns from '../../assets/mtns.png';
 import yearDistance from '../../assets/yearDistance.png';
@@ -8,21 +9,27 @@ import './Badge.css';
 import PropTypes from 'prop-types';
 import { badgeCreator } from '../../BadgeCreator';
 
-const Badge = ({currentEl, goalEl, yearStats, goalDist, allStats, allGoalDist, allGoalEl}) => {
-  const { elevation_gain, distance } = yearStats;
-  console.log("im the all stats in badge", allStats, allGoalEl);
-  
-  const badgeArray = []
-  badgeArray.push(badgeCreator(elevation_gain, goalEl, 'Elevation Hero', 'feet', mtn));
-  badgeArray.push(badgeCreator(distance, goalDist, 'Distance Trasher', 'miles', yearDistance));
-  badgeArray.push(badgeCreator(allStats.distance, allGoalDist, 'All Time Distance', 'miles', allDistance)) //all time distance
-  badgeArray.push(badgeCreator(allStats.elevation_gain, allGoalEl, 'All Time Elevation', 'feet', mtns)) //all time elevation
-  
-  return (
-    <div>
-      {badgeArray}
-    </div>
-  );
+class Badge extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  badgeAmalgamation = () => {
+    const {allStats, yearStats, goals} = this.props;
+    const badgeArray = [];
+    badgeArray.push(badgeCreator(yearStats.elevation_gain, goals.yearElevation, 'Elevation Hero', 'feet', mtn));
+    badgeArray.push(badgeCreator(yearStats.distance, goals.yearDistance, 'Distance Trasher', 'miles', yearDistance));
+    badgeArray.push(badgeCreator(allStats.distance, goals.allDistance, 'All Time Distance', 'miles', allDistance));
+    badgeArray.push(badgeCreator(allStats.elevation_gain, goals.allElevation, 'All Time Elevation', 'feet', mtns));
+    return badgeArray
+  }
+  render() {
+    return (
+      <div>
+        {this.badgeAmalgamation()}
+      </div>
+    );
+  }
 };
 
 Badge.propTypes = {
@@ -31,5 +38,9 @@ Badge.propTypes = {
   goalDist: PropTypes.number.isRequired,
   yearStats:PropTypes.object.isRequired
 };
-
-export default Badge;
+const mapStateToProps = (state) => ({
+  allStats: state.userStats.all_ride_totals,
+  yearStats: state.userStats.yearStats,
+  goals: state.defaultBadges
+})
+export default connect(mapStateToProps)(Badge);

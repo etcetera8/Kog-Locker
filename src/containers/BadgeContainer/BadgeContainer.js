@@ -7,19 +7,12 @@ import PropTypes from 'prop-types';
 class BadgeContainer extends Component {
   
   render() {
-    const { yearStats, all_ride_totals } = this.props.userStats;
-    const { yearElevation, yearDistance, allDistance, allElevation } = this.props.badges;
+    const { yearStats } = this.props.userStats;
+    
     return (
       <main className='badge-main-container'>
         {yearStats && 
-          <Badge
-            yearStats={yearStats}
-            allStats={all_ride_totals}
-            goalEl={yearElevation}
-            goalDist={yearDistance}
-            allGoalEl={allElevation}
-            allGoalDist={allDistance}
-          />
+          <Badge />
         }
       </main>
     )
@@ -27,8 +20,7 @@ class BadgeContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  userStats: state.userStats,
-  badges: state.defaultBadges
+  userStats: state.userStats
 })
 
 BadgeContainer.propTypes = {

@@ -15,7 +15,6 @@ class Home extends Component {
   render() {
     const {yearStats, all_ride_totals} = this.props.userStats
     const { yearElevation, yearDistance, allDistance, allElevation } = this.props.badges;
-    console.log(allElevation, "hi");
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
