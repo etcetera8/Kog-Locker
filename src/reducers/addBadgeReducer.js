@@ -1,4 +1,9 @@
-const defaultChallenges = {elevation: 52800, distance: 500}
+const defaultChallenges = {
+  yearElevation: 52800, 
+  yearDistance: 500,
+  allElevation: 528000,
+  allDistance: 25000
+}
 
 export const addBadge = (state = defaultChallenges, action) => {
   switch (action.type) {

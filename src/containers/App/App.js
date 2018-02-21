@@ -34,7 +34,6 @@ class App extends Component {
       await this.props.setUserTarget(userTarget);
     } else {
       const segment = JSON.parse(localStorage.getItem('target'));
-      //const userTarget = await segmentCall(609371);
       await this.props.setUserTarget(segment)
     }
   }

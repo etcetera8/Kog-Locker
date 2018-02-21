@@ -1,38 +1,26 @@
 import React from 'react';
 import mtn from '../../assets/mtn.png';
+import mtns from '../../assets/mtns.png';
+import yearDistance from '../../assets/yearDistance.png';
+import allDistance from '../../assets/allDistance.png';
+
 import './Badge.css';
 import PropTypes from 'prop-types';
+import { badgeCreator } from '../../BadgeCreator';
 
-const percentOfGoal = (current, goal) => {
-  const percent = (current/goal) * 100;
-  return percent;
-}
-
-const badgeCreator = (current, goal, type, unit, icon) => {
-  const badge = ( 
-    <div className="full-badge-wrapper">
-      <div className="badge">
-      <img src={icon} alt="badge icon"className="badge-icon" />
-      <div className="badge-inner" style={{"height" : `${percentOfGoal(current, goal)}%`}}></div>
-      </div>
-      <div className="info">
-        <span className="type">{type}</span>
-        <span className="details">{percentOfGoal(current, goal).toFixed(2)} %</span>
-        <span className="details">{current} {unit} of {goal} {unit}</span>
-      </div>
-    </div>
-  )
-  return badge;
-}
-
-const Badge = ({currentEl, goalEl, yearStats, goalDist}) => {
-  const elevationBadge = badgeCreator(yearStats.elevation_gain, goalEl, 'Elevation Hero', 'feet', mtn)
-  const distanceBadge = badgeCreator(yearStats.distance, goalDist, 'Distance Trasher', 'miles')
+const Badge = ({currentEl, goalEl, yearStats, goalDist, allStats, allGoalDist, allGoalEl}) => {
+  const { elevation_gain, distance } = yearStats;
+  console.log("im the all stats in badge", allStats, allGoalEl);
+  
+  const badgeArray = []
+  badgeArray.push(badgeCreator(elevation_gain, goalEl, 'Elevation Hero', 'feet', mtn));
+  badgeArray.push(badgeCreator(distance, goalDist, 'Distance Trasher', 'miles', yearDistance));
+  badgeArray.push(badgeCreator(allStats.distance, allGoalDist, 'All Time Distance', 'miles', allDistance)) //all time distance
+  badgeArray.push(badgeCreator(allStats.elevation_gain, allGoalEl, 'All Time Elevation', 'feet', mtns)) //all time elevation
   
   return (
     <div>
-      {elevationBadge}
-      {distanceBadge}
+      {badgeArray}
     </div>
   );
 };

@@ -13,17 +13,21 @@ import './Home.css';
 class Home extends Component {
   
   render() {
-    const {yearStats} = this.props.userStats
-    const { elevation, distance } = this.props.badges;
+    const {yearStats, all_ride_totals} = this.props.userStats
+    const { yearElevation, yearDistance, allDistance, allElevation } = this.props.badges;
+    console.log(allElevation, "hi");
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
         {yearStats &&
         <BadgeCard
           currentEl={yearStats.elevation_gain}
-          goalEl={elevation}
-          goalDist={distance}
-          yearStats={yearStats} 
+          goalEl={yearElevation}  
+          goalDist={yearDistance}
+          allGoalDist={allDistance}
+          allGoalEl={allElevation}
+          yearStats={yearStats}
+          allStats={all_ride_totals} 
         />
         }
         <MapCard 
