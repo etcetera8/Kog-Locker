@@ -4,7 +4,7 @@ import BadgeCard from '../../components/BadgeCard/BadgeCard';
 import Badge from '../../components/Badge/Badge';
 import PropTypes from 'prop-types';
 
-class BadgeContainer extends Component {
+export class BadgeContainer extends Component {
   
   render() {
     const { yearStats } = this.props.userStats;
@@ -19,7 +19,7 @@ class BadgeContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userStats: state.userStats
 })
 

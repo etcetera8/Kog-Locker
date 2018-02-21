@@ -13,7 +13,7 @@ class StatsContainer extends Component {
   }
 
   ytdCard = () => {
-    const { yearStats, all_ride_totals } = this.props.userStats;
+    const { yearStats } = this.props.userStats;
     return (
       <StatsCard yearStats={yearStats} />
     )
