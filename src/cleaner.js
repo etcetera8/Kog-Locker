@@ -27,6 +27,8 @@ const celsiusToF = (c) => {
 
 export const cleanSegment = (segmentData) => {
   const { name, average_grade, city, distance, total_elevation_gain, elevation_high, elevation_low, athlete_segment_stats, end_latlng, map } = segmentData;
+  const goalTime = {goalTime: ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03))};
+  const copy = Object.assign({},athlete_segment_stats, goalTime)
   const segment = { 
     name, 
     average_grade, 
@@ -35,7 +37,7 @@ export const cleanSegment = (segmentData) => {
     total_elevation_gain, 
     elevation_high: metersToFeet(elevation_high), 
     elevation_low: metersToFeet(elevation_low),
-    athlete_segment_stats,
+    athlete_segment_stats: copy,
     polyline: map.polyline,
     end_latlng
   };

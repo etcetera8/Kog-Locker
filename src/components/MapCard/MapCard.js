@@ -70,14 +70,14 @@ export class MapCard extends Component {
       const mapRef = this.refs.map;
       const node = ReactDOM.findDOMNode(mapRef);
 
-      const mapConfig = this.initialMap()
-      const polyline = this.decodePolyline(targetPolyline)
+      const mapConfig = this.initialMap();
+      const polyline = this.decodePolyline(targetPolyline);
 
-      polyline.setMap(mapConfig)
-      this.map = new google.maps.Map(node, mapConfig)
+      polyline.setMap(mapConfig);
+      this.map = new google.maps.Map(node, mapConfig);
 
       const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
-      this.setState({goalTime, loading: false})
+      this.setState({goalTime, loading: false});
     }
 
   }
