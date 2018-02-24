@@ -18,6 +18,11 @@ export const addUserTarget = (userTarget) => ({
   payload: userTarget
 })
 
+export const addNewGoal = (newGoal) => ({
+  type: 'ADD_NEW_GOAL',
+  payload: newGoal
+})
+
 export const addBadge = (badge) => ({
   type: 'ADD_BADGE',
   payload: badge

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { addMap } from '../../actions/actionIndex';
+import { addMap, addNewGoal } from '../../actions/actionIndex';
 import './MapCard.css'
 import loadingGif from '../../assets/Spinner-1s-144px.gif'
 import PropTypes from 'prop-types';
@@ -89,11 +89,13 @@ export class MapCard extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newGoal = this.state.newTime
-    this.setState({goalTime: newGoal, newTime: 0 })
+    this.props.userTarget.athlete_segment_stats.goalTime = parseInt(this.state.newTime)
+    this.props.addNewGoal(this.props.userTarget);
+    this.setState({newTime: 0})
   }
 
   render() {
-    const {name, athlete_segment_stats} = this.props.userTarget
+    const {name, athlete_segment_stats, goalTime} = this.props.userTarget
     const style = {
       width: '200px',
       height: '200px',
@@ -105,13 +107,12 @@ export class MapCard extends Component {
         {this.state.loading && 
           <div><img src={loadingGif}/></div>
         }
-        {
-          athlete_segment_stats &&
+        { athlete_segment_stats &&
           <div>
             <h3 className="target-name">{name}</h3>
             <div id="map" className='map' ref='map' style={style}>
             </div>
-            <span className='card-data goal'>Goal Time: <span className='nums'>{this.state.goalTime} mins</span></span>
+            <span className='card-data goal'>Goal Time: <span className='nums'>{athlete_segment_stats.goalTime.toFixed(2)} mins</span></span>
             <form className="form">
               <input
                 className="new-goal"
@@ -136,11 +137,13 @@ export class MapCard extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  targetMap: state.targetMap
+  targetMap: state.targetMap,
+  userTarget: state.userTarget
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addMap: (map) => dispatch(addMap(map))
+  addMap: (map) => dispatch(addMap(map)),
+  addNewGoal: goal => dispatch(addNewGoal(goal))
 })
 
 MapCard.propTypes = {
