@@ -5,8 +5,13 @@ $orange: rgba(255,100,0,1);
   background: rgba(0, 0, 0, 0.3);
   min-width: 260px;
   height: 80%;
+  max-height: 80%;
+  max-width: 30%;
   min-height: 350px;
+  max-height: 350px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .card-data {

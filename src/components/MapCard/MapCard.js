@@ -113,10 +113,9 @@ export class MapCard extends Component {
             <div id="map" className='map' ref='map' style={style}>
             </div>
             <span className='card-data goal'>Goal Time: <span className='nums'>{athlete_segment_stats.goalTime.toFixed(2)} mins</span></span>
-            <form className="form">
+            <form className="form card-data"> Update Goal:
               <input
                 className="new-goal"
-                placeholder="Update goal time"
                 type="number"
                 value={this.state.newTime}
                 onChange={this.handleChange}
