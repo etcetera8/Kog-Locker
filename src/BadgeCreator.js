@@ -9,7 +9,7 @@ export const badgeCreator = (current, goal, type, unit, icon) => {
   const badge = ( 
     <div className="full-badge-wrapper">
       <div className="badge">
-      <img src={icon} alt="badge icon"className="badge-icon" />
+        <img src={icon} alt="badge icon" className="badge-icon" />
       <div className="badge-inner" style={{"height" : `${percentOfGoal(current, goal)}%`}}></div>
       </div>
       <div className="info">
