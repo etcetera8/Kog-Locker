@@ -1,6 +1,6 @@
 import React from 'react';
 
-const percentOfGoal = (current, goal) => {
+export const percentOfGoal = (current, goal) => {
   const percent = (current/goal) * 100;
   return percent;
 }

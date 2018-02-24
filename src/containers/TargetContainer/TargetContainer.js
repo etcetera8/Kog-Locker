@@ -79,11 +79,11 @@ export class TargetContainer extends Component {
   
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userTarget: state.userTarget
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   setUserTarget: (data) => dispatch(addUserTarget(data))
 })
 

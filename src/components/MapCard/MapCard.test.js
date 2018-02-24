@@ -19,24 +19,6 @@ describe('MapCard' , () => {
     expect(wrapper.state()).toEqual(defaultState)
   })
 
-  it.skip('the initial map function should return a basemap object', () => {
-    const inst = wrapper.instance();
-    const result = inst.initialMap();
-    console.log(result);
-  })
-
-  it.skip('the decodePolyline function should take in a coded polyline and return a polyline in gpz form', () => {
-    const inst = wrapper.instance();
-    const result = inst.decodePolyline('1232')
-    console.log(result);
-  })
-
-  it.skip("the loadMap function should create the basemap", () => {
-    const inst = wrapper.instance();
-    const result = inst.loadMap();
-    console.log(result);
-  })
-
   it('the handleChange function shoud update the state when fired' , () => {
     expect(wrapper.state().newTime).toEqual(0)
     wrapper.find('input').first().simulate('change', {target:{value: 7}})
@@ -49,6 +31,10 @@ describe('MapCard' , () => {
     wrapper.state().newTime = 7;
     wrapper.find('button').first().simulate('click', mockEvent)
     expect(wrapper.state().goalTime).toEqual(7)
+  })
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   })
 
 })

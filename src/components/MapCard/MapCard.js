@@ -103,11 +103,10 @@ export class MapCard extends Component {
       <section className='card map-card'>
         <h2 className='title'>Target</h2>
         {this.state.loading && 
-          <div><img src={loadingGif} /></div>
+          <div><img src={loadingGif}/></div>
         }
         {
           athlete_segment_stats &&
-
           <div>
             <h3 className="target-name">{name}</h3>
             <div id="map" className='map' ref='map' style={style}>

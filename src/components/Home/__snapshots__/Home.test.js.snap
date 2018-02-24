@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home
+    badges={
+        Object {
+            "allDistance": 120000,
+            "allElevation": 100000,
+            "yearDistance": 500000,
+            "yearElevation": 5280,
+          }
+    }
+    userStats={
+        Object {
+            "all_ride_totals": Object {
+              "count": 612,
+              "distance": 12561,
+              "elapsed_time": 3987884,
+              "elevation_gain": 804563,
+              "moving_time": 3290788,
+            },
+            "biggest_climb": 4077,
+            "biggest_ride": 108,
+            "recent_ride_totals": Object {
+              "achievement_count": 58,
+              "count": 3,
+              "distance": 56,
+              "elapsed_time": 23560,
+              "elevation_gain": 2166,
+              "moving_time": 18456,
+            },
+            "yearStats": Object {
+              "count": 7,
+              "distance": 149,
+              "elapsed_time": 55484,
+              "elevation_gain": 15549,
+            },
+          }
+    }
+    userTarget={
+        Object {
+            "athlete_segment_stats": Object {
+              "effort_count": 8,
+              "pr_date": "2017-09-17",
+              "pr_elapsed_time": 1383,
+            },
+            "average_grade": 5.4,
+            "city": "Golden",
+            "distance": 4,
+            "elevation_high": 7155,
+            "elevation_low": 5912,
+            "end_latlng": Array [
+              39.731674,
+              -105.239256,
+            ],
+            "name": "Lookout Mountain (Gate-BB Grave)",
+            "polyline": "_xpqF",
+            "total_elevation_gain": 0,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <StatsCard
+          yearStats={
+                    Object {
+                              "count": 7,
+                              "distance": 149,
+                              "elapsed_time": 55484,
+                              "elevation_gain": 15549,
+                            }
+          }
+/>,
+        <BadgeCard />,
+        <Connect(MapCard)
+          google={undefined}
+          userTarget={
+                    Object {
+                              "athlete_segment_stats": Object {
+                                "effort_count": 8,
+                                "pr_date": "2017-09-17",
+                                "pr_elapsed_time": 1383,
+                              },
+                              "average_grade": 5.4,
+                              "city": "Golden",
+                              "distance": 4,
+                              "elevation_high": 7155,
+                              "elevation_low": 5912,
+                              "end_latlng": Array [
+                                39.731674,
+                                -105.239256,
+                              ],
+                              "name": "Lookout Mountain (Gate-BB Grave)",
+                              "polyline": "_xpqF",
+                              "total_elevation_gain": 0,
+                            }
+          }
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "yearStats": Object {
+            "count": 7,
+            "distance": 149,
+            "elapsed_time": 55484,
+            "elevation_gain": 15549,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "google": undefined,
+          "userTarget": Object {
+            "athlete_segment_stats": Object {
+              "effort_count": 8,
+              "pr_date": "2017-09-17",
+              "pr_elapsed_time": 1383,
+            },
+            "average_grade": 5.4,
+            "city": "Golden",
+            "distance": 4,
+            "elevation_high": 7155,
+            "elevation_low": 5912,
+            "end_latlng": Array [
+              39.731674,
+              -105.239256,
+            ],
+            "name": "Lookout Mountain (Gate-BB Grave)",
+            "polyline": "_xpqF",
+            "total_elevation_gain": 0,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <StatsCard
+            yearStats={
+                        Object {
+                                    "count": 7,
+                                    "distance": 149,
+                                    "elapsed_time": 55484,
+                                    "elevation_gain": 15549,
+                                  }
+            }
+/>,
+          <BadgeCard />,
+          <Connect(MapCard)
+            google={undefined}
+            userTarget={
+                        Object {
+                                    "athlete_segment_stats": Object {
+                                      "effort_count": 8,
+                                      "pr_date": "2017-09-17",
+                                      "pr_elapsed_time": 1383,
+                                    },
+                                    "average_grade": 5.4,
+                                    "city": "Golden",
+                                    "distance": 4,
+                                    "elevation_high": 7155,
+                                    "elevation_low": 5912,
+                                    "end_latlng": Array [
+                                      39.731674,
+                                      -105.239256,
+                                    ],
+                                    "name": "Lookout Mountain (Gate-BB Grave)",
+                                    "polyline": "_xpqF",
+                                    "total_elevation_gain": 0,
+                                  }
+            }
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "yearStats": Object {
+              "count": 7,
+              "distance": 149,
+              "elapsed_time": 55484,
+              "elevation_gain": 15549,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "google": undefined,
+            "userTarget": Object {
+              "athlete_segment_stats": Object {
+                "effort_count": 8,
+                "pr_date": "2017-09-17",
+                "pr_elapsed_time": 1383,
+              },
+              "average_grade": 5.4,
+              "city": "Golden",
+              "distance": 4,
+              "elevation_high": 7155,
+              "elevation_low": 5912,
+              "end_latlng": Array [
+                39.731674,
+                -105.239256,
+              ],
+              "name": "Lookout Mountain (Gate-BB Grave)",
+              "polyline": "_xpqF",
+              "total_elevation_gain": 0,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "main",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

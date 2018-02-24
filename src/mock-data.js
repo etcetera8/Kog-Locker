@@ -124,8 +124,8 @@ export const mockSegment = {
     effort_count: 8
   }
 }
-
-export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 7361.19, "elevation_high": 2230.3, "elevation_low": 1843, "end_latlng": [39.731674, -105.239256], "name": "Lookout Mountain (Gate-BB Grave)", "polyline": "_xpqF", "total_elevation_gain": 0}
+export const defaultBadges = {yearElevation: 5280, yearDistance: 500000, allElevation: 100000, allDistance: 120000}
+export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 4, "elevation_high": 7155, "elevation_low": 5912, "end_latlng": [39.731674, -105.239256], "name": "Lookout Mountain (Gate-BB Grave)", "polyline": "_xpqF", "total_elevation_gain": 0}
 
 export const mockUserStats = {
   biggest_ride_distance: 174857,
@@ -198,7 +198,7 @@ export const mockUserStats = {
   }
 }
 
-export const cleanUserStats = {"all_ride_totals": {"count": 612, "distance": 20215516, "elapsed_time": 3987884, "elevation_gain": 250799, "moving_time": 3290788}, "biggest_climb": 1271, "biggest_ride": 174.857, "recent_ride_totals": {"achievement_count": 58, "count": 3, "distance": 91564.900390625, "elapsed_time": 23560, "elevation_gain": 2166, "moving_time": 18456}, "yearStats": {"count": 7, "distance": 240759, "elapsed_time": 55484, "elevation_gain": 4847}}
+export const cleanUserStats = {"all_ride_totals": {"count": 612, "distance": 12561, "elapsed_time": 3987884, "elevation_gain": 804563, "moving_time": 3290788}, "biggest_climb": 4077, "biggest_ride": 108, "recent_ride_totals": {"achievement_count": 58, "count": 3, "distance": 56, "elapsed_time": 23560, "elevation_gain": 2166, "moving_time": 18456}, "yearStats": {"count": 7, "distance": 149, "elapsed_time": 55484, "elevation_gain": 15549}}
 
 export const mockActivities = [
     {
@@ -329,4 +329,5 @@ export const mockActivities = [
   }
 ]
 
-export const cleanedActivities = [{"average_heartrate": 119.1, "average_speed": 2.607, "average_temp": undefined, "average_watts": undefined, "distance": 4240.9, "kilojoules": undefined, "map": "glpqFpdv_SA_n@vKOBiU~KgDb^dALfS_CtDyAgAsq@p@k@fv@", "max_heartrate": 143, "max_speed": 4.9, "max_watts": undefined, "moving_time": 1627, "suffer_score": 23, "total_elevation_gain": 34.4}, {"average_heartrate": 135.3, "average_speed": 7.195, "average_temp": 16, "average_watts": 136.9, "distance": 62867.3, "kilojoules": 1195.8, "map": "a line", "max_heartrate": 172, "max_speed": 17, "max_watts": 868, "moving_time": 8738, "suffer_score": 111, "total_elevation_gain": 949}];
+export const cleanedActivities = [{"average_heartrate": 119.1, "average_speed": 5, "average_temp": NaN, "average_watts": undefined, "distance": 2, "kilojoules": undefined, "map": "glpqFpdv_SA_n@vKOBiU~KgDb^dALfS_CtDyAgAsq@p@k@fv@", "max_heartrate": 143, "max_speed": 10, "max_watts": undefined, "moving_time": 1627, "suffer_score": 23, "total_elevation_gain": 110}, {"average_heartrate": 135.3, "average_speed": 16, "average_temp": 60.8, "average_watts": 136.9, "distance": 39, "kilojoules": 1195.8, "map": "a line", "max_heartrate": 172, "max_speed": 38, "max_watts": 868, "moving_time": 8738, "suffer_score": 111, "total_elevation_gain": 3044}]
+    

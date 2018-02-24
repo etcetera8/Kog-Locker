@@ -10,7 +10,7 @@ import BadgeCard from '../BadgeCard/BadgeCard';
 import MapCard from '../MapCard/MapCard';
 import './Home.css';
 
-class Home extends Component {
+export class Home extends Component {
   
   render() {
     const {yearStats, all_ride_totals} = this.props.userStats
@@ -30,7 +30,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userStats: state.userStats,
   badges: state.defaultBadges,
   userTarget: state.userTarget

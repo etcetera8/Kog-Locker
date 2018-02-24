@@ -27,8 +27,8 @@ describe('API calls', () => {
           error: "Call Failed"
         }));
       const result = await initialCall();
-      const errorResult = { error: 'Call Failed' };
-      expect(result).toEqual(errorResult);
+      const errorResult = 'Call Failed';
+      expect(result.error).toEqual(errorResult);
     })
   })
 
@@ -58,7 +58,7 @@ describe('API calls', () => {
         }));
       const result = await segmentCall();
       const errorResult = { error: 'Call Failed' };
-      expect(result).toEqual(errorResult);
+      expect(result.error).toEqual(errorResult);
     })  
   })
 
@@ -82,7 +82,8 @@ describe('API calls', () => {
         }));
       const result = await statsCall(123)
       expect(typeof result).toEqual('object')
-      expect(result).toEqual(cleanUserStats)
+      const expected ={"all_ride_totals": {"count": 612, "distance": 7, "elapsed_time": 3987884, "elevation_gain": 2581038, "moving_time": 3290788}, "biggest_climb": 4077, "biggest_ride": 108, "recent_ride_totals": {"achievement_count": 58, "count": 3, "distance": 0, "elapsed_time": 23560, "elevation_gain": 2166, "moving_time": 18456}, "yearStats": {"count": 7, "distance": 149, "elapsed_time": 55484, "elevation_gain": 15549}}
+      expect(result).toEqual(expected)
     })
 
     it('should return an error message if that status is not ok', async () => {

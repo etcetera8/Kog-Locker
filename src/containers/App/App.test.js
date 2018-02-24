@@ -21,7 +21,6 @@ describe('App', () => {
 
   it('mapDispatchToProps should return an object with the right key values', () => {
     const results = mapDispatchToProps();
-    console.log(results);
     const expected = ["setUserData", "setUserStats", "setUserActivities", "setUserTarget"]
 
     expect(Object.keys(results)).toEqual(expected)

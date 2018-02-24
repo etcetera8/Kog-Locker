@@ -2,7 +2,13 @@ import { addBadge } from '../addBadgeReducer';
 import * as actions from '../../actions/actionIndex';
 
 it('should return the default state', () => {
-  const expected = {elevation: 10000, distance: 550000};
+  const expected = {
+    allDistance: 25000, 
+    allElevation: 528000, 
+    yearDistance: 500, 
+    yearElevation: 52800
+  }
+
   expect(addBadge(undefined, {})).toEqual(expected);
 })
 
