@@ -8,7 +8,7 @@ import { segmentCall } from '../../api';
 import PropTypes from 'prop-types';
 import './TargetContainer.css';
 
-class TargetContainer extends Component {
+export class TargetContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -26,10 +26,8 @@ class TargetContainer extends Component {
     //15990214
     e.preventDefault();
     const response = await segmentCall(this.state.segmentId)
-    console.log(response);
     if (response.message) {
       this.setState({ segmentError: true, segmentId: '' })
-      console.log("im a type error")
     } else {
       this.setState({ segmentError: false, segmentId: '' })
       this.props.setUserTarget(response);
@@ -81,11 +79,11 @@ class TargetContainer extends Component {
   
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   userTarget: state.userTarget
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   setUserTarget: (data) => dispatch(addUserTarget(data))
 })
 

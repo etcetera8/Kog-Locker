@@ -1,0 +1,2067 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge Component should exist and match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Badge
+    allStats={
+        Object {
+            "distance": 20,
+            "elevation_gain": 10,
+          }
+    }
+    goals={
+        Object {
+            "yearElevation": 20,
+          }
+    }
+    yearStats={
+        Object {
+            "distance": 20,
+            "elevation_gain": 10,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="full-badge-wrapper"
+>
+          <div
+                    className="badge"
+          >
+                    <img
+                              alt="badge icon"
+                              className="badge-icon"
+                              src="mtn.png"
+                    />
+                    <div
+                              className="badge-inner"
+                              style={
+                                        Object {
+                                                  "height": "50%",
+                                                }
+                              }
+                    />
+          </div>
+          <div
+                    className="info"
+          >
+                    <span
+                              className="type"
+                    >
+                              Elevation Hero
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              50.00
+                               %
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              10
+                               
+                              feet
+                               of 
+                              20
+                               
+                              feet
+                    </span>
+          </div>
+</div>,
+        <div
+          className="full-badge-wrapper"
+>
+          <div
+                    className="badge"
+          >
+                    <img
+                              alt="badge icon"
+                              className="badge-icon"
+                              src="yearDistance.png"
+                    />
+                    <div
+                              className="badge-inner"
+                              style={
+                                        Object {
+                                                  "height": "NaN%",
+                                                }
+                              }
+                    />
+          </div>
+          <div
+                    className="info"
+          >
+                    <span
+                              className="type"
+                    >
+                              Distance Trasher
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              NaN
+                               %
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              20
+                               
+                              miles
+                               of 
+                               
+                              miles
+                    </span>
+          </div>
+</div>,
+        <div
+          className="full-badge-wrapper"
+>
+          <div
+                    className="badge"
+          >
+                    <img
+                              alt="badge icon"
+                              className="badge-icon"
+                              src="allDistance.png"
+                    />
+                    <div
+                              className="badge-inner"
+                              style={
+                                        Object {
+                                                  "height": "NaN%",
+                                                }
+                              }
+                    />
+          </div>
+          <div
+                    className="info"
+          >
+                    <span
+                              className="type"
+                    >
+                              All Time Distance
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              NaN
+                               %
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              20
+                               
+                              miles
+                               of 
+                               
+                              miles
+                    </span>
+          </div>
+</div>,
+        <div
+          className="full-badge-wrapper"
+>
+          <div
+                    className="badge"
+          >
+                    <img
+                              alt="badge icon"
+                              className="badge-icon"
+                              src="mtns.png"
+                    />
+                    <div
+                              className="badge-inner"
+                              style={
+                                        Object {
+                                                  "height": "NaN%",
+                                                }
+                              }
+                    />
+          </div>
+          <div
+                    className="info"
+          >
+                    <span
+                              className="type"
+                    >
+                              All Time Elevation
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              NaN
+                               %
+                    </span>
+                    <span
+                              className="details"
+                    >
+                              10
+                               
+                              feet
+                               of 
+                               
+                              feet
+                    </span>
+          </div>
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="badge"
+>
+              <img
+                            alt="badge icon"
+                            className="badge-icon"
+                            src="mtn.png"
+              />
+              <div
+                            className="badge-inner"
+                            style={
+                                          Object {
+                                                        "height": "50%",
+                                                      }
+                            }
+              />
+</div>,
+            <div
+              className="info"
+>
+              <span
+                            className="type"
+              >
+                            Elevation Hero
+              </span>
+              <span
+                            className="details"
+              >
+                            50.00
+                             %
+              </span>
+              <span
+                            className="details"
+              >
+                            10
+                             
+                            feet
+                             of 
+                            20
+                             
+                            feet
+              </span>
+</div>,
+          ],
+          "className": "full-badge-wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="badge icon"
+                  className="badge-icon"
+                  src="mtn.png"
+/>,
+                <div
+                  className="badge-inner"
+                  style={
+                                    Object {
+                                                      "height": "50%",
+                                                    }
+                  }
+/>,
+              ],
+              "className": "badge",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "badge icon",
+                  "className": "badge-icon",
+                  "src": "mtn.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "badge-inner",
+                  "style": Object {
+                    "height": "50%",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="type"
+>
+                  Elevation Hero
+</span>,
+                <span
+                  className="details"
+>
+                  50.00
+                   %
+</span>,
+                <span
+                  className="details"
+>
+                  10
+                   
+                  feet
+                   of 
+                  20
+                   
+                  feet
+</span>,
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Elevation Hero",
+                  "className": "type",
+                },
+                "ref": null,
+                "rendered": "Elevation Hero",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "50.00",
+                    " %",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "50.00",
+                  " %",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    10,
+                    " ",
+                    "feet",
+                    " of ",
+                    20,
+                    " ",
+                    "feet",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  10,
+                  " ",
+                  "feet",
+                  " of ",
+                  20,
+                  " ",
+                  "feet",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="badge"
+>
+              <img
+                            alt="badge icon"
+                            className="badge-icon"
+                            src="yearDistance.png"
+              />
+              <div
+                            className="badge-inner"
+                            style={
+                                          Object {
+                                                        "height": "NaN%",
+                                                      }
+                            }
+              />
+</div>,
+            <div
+              className="info"
+>
+              <span
+                            className="type"
+              >
+                            Distance Trasher
+              </span>
+              <span
+                            className="details"
+              >
+                            NaN
+                             %
+              </span>
+              <span
+                            className="details"
+              >
+                            20
+                             
+                            miles
+                             of 
+                             
+                            miles
+              </span>
+</div>,
+          ],
+          "className": "full-badge-wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="badge icon"
+                  className="badge-icon"
+                  src="yearDistance.png"
+/>,
+                <div
+                  className="badge-inner"
+                  style={
+                                    Object {
+                                                      "height": "NaN%",
+                                                    }
+                  }
+/>,
+              ],
+              "className": "badge",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "badge icon",
+                  "className": "badge-icon",
+                  "src": "yearDistance.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "badge-inner",
+                  "style": Object {
+                    "height": "NaN%",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="type"
+>
+                  Distance Trasher
+</span>,
+                <span
+                  className="details"
+>
+                  NaN
+                   %
+</span>,
+                <span
+                  className="details"
+>
+                  20
+                   
+                  miles
+                   of 
+                   
+                  miles
+</span>,
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Distance Trasher",
+                  "className": "type",
+                },
+                "ref": null,
+                "rendered": "Distance Trasher",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "NaN",
+                  " %",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    20,
+                    " ",
+                    "miles",
+                    " of ",
+                    undefined,
+                    " ",
+                    "miles",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  20,
+                  " ",
+                  "miles",
+                  " of ",
+                  undefined,
+                  " ",
+                  "miles",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="badge"
+>
+              <img
+                            alt="badge icon"
+                            className="badge-icon"
+                            src="allDistance.png"
+              />
+              <div
+                            className="badge-inner"
+                            style={
+                                          Object {
+                                                        "height": "NaN%",
+                                                      }
+                            }
+              />
+</div>,
+            <div
+              className="info"
+>
+              <span
+                            className="type"
+              >
+                            All Time Distance
+              </span>
+              <span
+                            className="details"
+              >
+                            NaN
+                             %
+              </span>
+              <span
+                            className="details"
+              >
+                            20
+                             
+                            miles
+                             of 
+                             
+                            miles
+              </span>
+</div>,
+          ],
+          "className": "full-badge-wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="badge icon"
+                  className="badge-icon"
+                  src="allDistance.png"
+/>,
+                <div
+                  className="badge-inner"
+                  style={
+                                    Object {
+                                                      "height": "NaN%",
+                                                    }
+                  }
+/>,
+              ],
+              "className": "badge",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "badge icon",
+                  "className": "badge-icon",
+                  "src": "allDistance.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "badge-inner",
+                  "style": Object {
+                    "height": "NaN%",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="type"
+>
+                  All Time Distance
+</span>,
+                <span
+                  className="details"
+>
+                  NaN
+                   %
+</span>,
+                <span
+                  className="details"
+>
+                  20
+                   
+                  miles
+                   of 
+                   
+                  miles
+</span>,
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "All Time Distance",
+                  "className": "type",
+                },
+                "ref": null,
+                "rendered": "All Time Distance",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "NaN",
+                  " %",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    20,
+                    " ",
+                    "miles",
+                    " of ",
+                    undefined,
+                    " ",
+                    "miles",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  20,
+                  " ",
+                  "miles",
+                  " of ",
+                  undefined,
+                  " ",
+                  "miles",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="badge"
+>
+              <img
+                            alt="badge icon"
+                            className="badge-icon"
+                            src="mtns.png"
+              />
+              <div
+                            className="badge-inner"
+                            style={
+                                          Object {
+                                                        "height": "NaN%",
+                                                      }
+                            }
+              />
+</div>,
+            <div
+              className="info"
+>
+              <span
+                            className="type"
+              >
+                            All Time Elevation
+              </span>
+              <span
+                            className="details"
+              >
+                            NaN
+                             %
+              </span>
+              <span
+                            className="details"
+              >
+                            10
+                             
+                            feet
+                             of 
+                             
+                            feet
+              </span>
+</div>,
+          ],
+          "className": "full-badge-wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt="badge icon"
+                  className="badge-icon"
+                  src="mtns.png"
+/>,
+                <div
+                  className="badge-inner"
+                  style={
+                                    Object {
+                                                      "height": "NaN%",
+                                                    }
+                  }
+/>,
+              ],
+              "className": "badge",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "badge icon",
+                  "className": "badge-icon",
+                  "src": "mtns.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "badge-inner",
+                  "style": Object {
+                    "height": "NaN%",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="type"
+>
+                  All Time Elevation
+</span>,
+                <span
+                  className="details"
+>
+                  NaN
+                   %
+</span>,
+                <span
+                  className="details"
+>
+                  10
+                   
+                  feet
+                   of 
+                   
+                  feet
+</span>,
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "All Time Elevation",
+                  "className": "type",
+                },
+                "ref": null,
+                "rendered": "All Time Elevation",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "NaN",
+                  " %",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    10,
+                    " ",
+                    "feet",
+                    " of ",
+                    undefined,
+                    " ",
+                    "feet",
+                  ],
+                  "className": "details",
+                },
+                "ref": null,
+                "rendered": Array [
+                  10,
+                  " ",
+                  "feet",
+                  " of ",
+                  undefined,
+                  " ",
+                  "feet",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="full-badge-wrapper"
+>
+            <div
+                        className="badge"
+            >
+                        <img
+                                    alt="badge icon"
+                                    className="badge-icon"
+                                    src="mtn.png"
+                        />
+                        <div
+                                    className="badge-inner"
+                                    style={
+                                                Object {
+                                                            "height": "50%",
+                                                          }
+                                    }
+                        />
+            </div>
+            <div
+                        className="info"
+            >
+                        <span
+                                    className="type"
+                        >
+                                    Elevation Hero
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    50.00
+                                     %
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    10
+                                     
+                                    feet
+                                     of 
+                                    20
+                                     
+                                    feet
+                        </span>
+            </div>
+</div>,
+          <div
+            className="full-badge-wrapper"
+>
+            <div
+                        className="badge"
+            >
+                        <img
+                                    alt="badge icon"
+                                    className="badge-icon"
+                                    src="yearDistance.png"
+                        />
+                        <div
+                                    className="badge-inner"
+                                    style={
+                                                Object {
+                                                            "height": "NaN%",
+                                                          }
+                                    }
+                        />
+            </div>
+            <div
+                        className="info"
+            >
+                        <span
+                                    className="type"
+                        >
+                                    Distance Trasher
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    NaN
+                                     %
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    20
+                                     
+                                    miles
+                                     of 
+                                     
+                                    miles
+                        </span>
+            </div>
+</div>,
+          <div
+            className="full-badge-wrapper"
+>
+            <div
+                        className="badge"
+            >
+                        <img
+                                    alt="badge icon"
+                                    className="badge-icon"
+                                    src="allDistance.png"
+                        />
+                        <div
+                                    className="badge-inner"
+                                    style={
+                                                Object {
+                                                            "height": "NaN%",
+                                                          }
+                                    }
+                        />
+            </div>
+            <div
+                        className="info"
+            >
+                        <span
+                                    className="type"
+                        >
+                                    All Time Distance
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    NaN
+                                     %
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    20
+                                     
+                                    miles
+                                     of 
+                                     
+                                    miles
+                        </span>
+            </div>
+</div>,
+          <div
+            className="full-badge-wrapper"
+>
+            <div
+                        className="badge"
+            >
+                        <img
+                                    alt="badge icon"
+                                    className="badge-icon"
+                                    src="mtns.png"
+                        />
+                        <div
+                                    className="badge-inner"
+                                    style={
+                                                Object {
+                                                            "height": "NaN%",
+                                                          }
+                                    }
+                        />
+            </div>
+            <div
+                        className="info"
+            >
+                        <span
+                                    className="type"
+                        >
+                                    All Time Elevation
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    NaN
+                                     %
+                        </span>
+                        <span
+                                    className="details"
+                        >
+                                    10
+                                     
+                                    feet
+                                     of 
+                                     
+                                    feet
+                        </span>
+            </div>
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="badge"
+>
+                <img
+                                alt="badge icon"
+                                className="badge-icon"
+                                src="mtn.png"
+                />
+                <div
+                                className="badge-inner"
+                                style={
+                                                Object {
+                                                                "height": "50%",
+                                                              }
+                                }
+                />
+</div>,
+              <div
+                className="info"
+>
+                <span
+                                className="type"
+                >
+                                Elevation Hero
+                </span>
+                <span
+                                className="details"
+                >
+                                50.00
+                                 %
+                </span>
+                <span
+                                className="details"
+                >
+                                10
+                                 
+                                feet
+                                 of 
+                                20
+                                 
+                                feet
+                </span>
+</div>,
+            ],
+            "className": "full-badge-wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="badge icon"
+                    className="badge-icon"
+                    src="mtn.png"
+/>,
+                  <div
+                    className="badge-inner"
+                    style={
+                                        Object {
+                                                            "height": "50%",
+                                                          }
+                    }
+/>,
+                ],
+                "className": "badge",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "badge icon",
+                    "className": "badge-icon",
+                    "src": "mtn.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "badge-inner",
+                    "style": Object {
+                      "height": "50%",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="type"
+>
+                    Elevation Hero
+</span>,
+                  <span
+                    className="details"
+>
+                    50.00
+                     %
+</span>,
+                  <span
+                    className="details"
+>
+                    10
+                     
+                    feet
+                     of 
+                    20
+                     
+                    feet
+</span>,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Elevation Hero",
+                    "className": "type",
+                  },
+                  "ref": null,
+                  "rendered": "Elevation Hero",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "50.00",
+                      " %",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "50.00",
+                    " %",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      10,
+                      " ",
+                      "feet",
+                      " of ",
+                      20,
+                      " ",
+                      "feet",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    10,
+                    " ",
+                    "feet",
+                    " of ",
+                    20,
+                    " ",
+                    "feet",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="badge"
+>
+                <img
+                                alt="badge icon"
+                                className="badge-icon"
+                                src="yearDistance.png"
+                />
+                <div
+                                className="badge-inner"
+                                style={
+                                                Object {
+                                                                "height": "NaN%",
+                                                              }
+                                }
+                />
+</div>,
+              <div
+                className="info"
+>
+                <span
+                                className="type"
+                >
+                                Distance Trasher
+                </span>
+                <span
+                                className="details"
+                >
+                                NaN
+                                 %
+                </span>
+                <span
+                                className="details"
+                >
+                                20
+                                 
+                                miles
+                                 of 
+                                 
+                                miles
+                </span>
+</div>,
+            ],
+            "className": "full-badge-wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="badge icon"
+                    className="badge-icon"
+                    src="yearDistance.png"
+/>,
+                  <div
+                    className="badge-inner"
+                    style={
+                                        Object {
+                                                            "height": "NaN%",
+                                                          }
+                    }
+/>,
+                ],
+                "className": "badge",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "badge icon",
+                    "className": "badge-icon",
+                    "src": "yearDistance.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "badge-inner",
+                    "style": Object {
+                      "height": "NaN%",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="type"
+>
+                    Distance Trasher
+</span>,
+                  <span
+                    className="details"
+>
+                    NaN
+                     %
+</span>,
+                  <span
+                    className="details"
+>
+                    20
+                     
+                    miles
+                     of 
+                     
+                    miles
+</span>,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Distance Trasher",
+                    "className": "type",
+                  },
+                  "ref": null,
+                  "rendered": "Distance Trasher",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "NaN",
+                      " %",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      20,
+                      " ",
+                      "miles",
+                      " of ",
+                      undefined,
+                      " ",
+                      "miles",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    20,
+                    " ",
+                    "miles",
+                    " of ",
+                    undefined,
+                    " ",
+                    "miles",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="badge"
+>
+                <img
+                                alt="badge icon"
+                                className="badge-icon"
+                                src="allDistance.png"
+                />
+                <div
+                                className="badge-inner"
+                                style={
+                                                Object {
+                                                                "height": "NaN%",
+                                                              }
+                                }
+                />
+</div>,
+              <div
+                className="info"
+>
+                <span
+                                className="type"
+                >
+                                All Time Distance
+                </span>
+                <span
+                                className="details"
+                >
+                                NaN
+                                 %
+                </span>
+                <span
+                                className="details"
+                >
+                                20
+                                 
+                                miles
+                                 of 
+                                 
+                                miles
+                </span>
+</div>,
+            ],
+            "className": "full-badge-wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="badge icon"
+                    className="badge-icon"
+                    src="allDistance.png"
+/>,
+                  <div
+                    className="badge-inner"
+                    style={
+                                        Object {
+                                                            "height": "NaN%",
+                                                          }
+                    }
+/>,
+                ],
+                "className": "badge",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "badge icon",
+                    "className": "badge-icon",
+                    "src": "allDistance.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "badge-inner",
+                    "style": Object {
+                      "height": "NaN%",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="type"
+>
+                    All Time Distance
+</span>,
+                  <span
+                    className="details"
+>
+                    NaN
+                     %
+</span>,
+                  <span
+                    className="details"
+>
+                    20
+                     
+                    miles
+                     of 
+                     
+                    miles
+</span>,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "All Time Distance",
+                    "className": "type",
+                  },
+                  "ref": null,
+                  "rendered": "All Time Distance",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "NaN",
+                      " %",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      20,
+                      " ",
+                      "miles",
+                      " of ",
+                      undefined,
+                      " ",
+                      "miles",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    20,
+                    " ",
+                    "miles",
+                    " of ",
+                    undefined,
+                    " ",
+                    "miles",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="badge"
+>
+                <img
+                                alt="badge icon"
+                                className="badge-icon"
+                                src="mtns.png"
+                />
+                <div
+                                className="badge-inner"
+                                style={
+                                                Object {
+                                                                "height": "NaN%",
+                                                              }
+                                }
+                />
+</div>,
+              <div
+                className="info"
+>
+                <span
+                                className="type"
+                >
+                                All Time Elevation
+                </span>
+                <span
+                                className="details"
+                >
+                                NaN
+                                 %
+                </span>
+                <span
+                                className="details"
+                >
+                                10
+                                 
+                                feet
+                                 of 
+                                 
+                                feet
+                </span>
+</div>,
+            ],
+            "className": "full-badge-wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="badge icon"
+                    className="badge-icon"
+                    src="mtns.png"
+/>,
+                  <div
+                    className="badge-inner"
+                    style={
+                                        Object {
+                                                            "height": "NaN%",
+                                                          }
+                    }
+/>,
+                ],
+                "className": "badge",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "badge icon",
+                    "className": "badge-icon",
+                    "src": "mtns.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "badge-inner",
+                    "style": Object {
+                      "height": "NaN%",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="type"
+>
+                    All Time Elevation
+</span>,
+                  <span
+                    className="details"
+>
+                    NaN
+                     %
+</span>,
+                  <span
+                    className="details"
+>
+                    10
+                     
+                    feet
+                     of 
+                     
+                    feet
+</span>,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "All Time Elevation",
+                    "className": "type",
+                  },
+                  "ref": null,
+                  "rendered": "All Time Elevation",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "NaN",
+                      " %",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "NaN",
+                    " %",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      10,
+                      " ",
+                      "feet",
+                      " of ",
+                      undefined,
+                      " ",
+                      "feet",
+                    ],
+                    "className": "details",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    10,
+                    " ",
+                    "feet",
+                    " of ",
+                    undefined,
+                    " ",
+                    "feet",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
