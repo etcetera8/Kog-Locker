@@ -25,7 +25,8 @@
   width: 80px;
   overflow: hidden;
   border-radius: 100%;
-  border: 2px solid #fff; }
+  border: 2px solid #fff;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.4); }
   .badge .badge-icon {
     position: absolute;
     z-index: 10;
