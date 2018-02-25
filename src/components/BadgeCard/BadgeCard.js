@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../Badge/Badge';
+import Badge from '../../containers/Badge/Badge';
 import './Badge.css';
 
 const BadgeCard = () => {

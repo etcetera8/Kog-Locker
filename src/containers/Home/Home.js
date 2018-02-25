@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { GoogleApiWrapper } from 'google-maps-react';
-import {gKey} from '../../apiKey.js';
+import { gKey } from '../../apiKey.js';
 import PropTypes from 'prop-types';
 
-import StatsCard from '../StatsCard/StatsCard';
-import BadgeCard from '../BadgeCard/BadgeCard';
+import StatsCard from '../../components/StatsCard/StatsCard';
+import BadgeCard from '../../components/BadgeCard/BadgeCard';
 import MapCard from '../MapCard/MapCard';
 import './Home.css';
 

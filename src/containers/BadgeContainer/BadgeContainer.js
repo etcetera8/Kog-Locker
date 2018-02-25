@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Badge from '../../components/Badge/Badge';
+import Badge from '../Badge/Badge';
 import PropTypes from 'prop-types';
 
 export class BadgeContainer extends Component {

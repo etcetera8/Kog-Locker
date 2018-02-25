@@ -8,7 +8,7 @@ import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.j
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Home from '../../components/Home/Home';
+import Home from '../Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';
 import TargetContainer from '../TargetContainer/TargetContainer';
