@@ -59,8 +59,8 @@ ShallowWrapper {
                     id="map"
                     style={
                               Object {
-                                        "height": "200px",
-                                        "width": "230px",
+                                        "height": "199px",
+                                        "width": "199px",
                                       }
                     }
           />
@@ -162,8 +162,8 @@ ShallowWrapper {
               id="map"
               style={
                             Object {
-                                          "height": "200px",
-                                          "width": "230px",
+                                          "height": "199px",
+                                          "width": "199px",
                                         }
               }
 />,
@@ -232,8 +232,8 @@ ShallowWrapper {
               "className": "map",
               "id": "map",
               "style": Object {
-                "height": "200px",
-                "width": "230px",
+                "height": "199px",
+                "width": "199px",
               },
             },
             "ref": "map",
@@ -423,8 +423,8 @@ ShallowWrapper {
                         id="map"
                         style={
                                     Object {
-                                                "height": "200px",
-                                                "width": "230px",
+                                                "height": "199px",
+                                                "width": "199px",
                                               }
                         }
             />
@@ -526,8 +526,8 @@ ShallowWrapper {
                 id="map"
                 style={
                                 Object {
-                                                "height": "200px",
-                                                "width": "230px",
+                                                "height": "199px",
+                                                "width": "199px",
                                               }
                 }
 />,
@@ -596,8 +596,8 @@ ShallowWrapper {
                 "className": "map",
                 "id": "map",
                 "style": Object {
-                  "height": "200px",
-                  "width": "230px",
+                  "height": "199px",
+                  "width": "199px",
                 },
               },
               "ref": "map",
