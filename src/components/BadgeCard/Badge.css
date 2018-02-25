@@ -6,11 +6,11 @@
   max-width: 260px; }
 
 .full-badge-wrapper {
-  margin: 25px;
   display: inline-block;
-  text-align: center;
   position: relative;
-  width: 80px; }
+  margin: 25px;
+  width: 80px;
+  text-align: center; }
 
 .badge-card-inner {
   display: flex;
@@ -19,25 +19,26 @@
   justify-content: space-around; }
 
 .badge {
+  position: relative;
   margin: 0 auto;
   height: 80px;
   width: 80px;
-  position: relative;
+  overflow: hidden;
   border-radius: 100%;
-  border: 1px solid #fff;
-  overflow: hidden; }
+  border: 2px solid #fff;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.4); }
   .badge .badge-icon {
-    color: #fff;
     position: absolute;
+    z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-    text-align: center;
-    z-index: 10;
     width: 65%;
-    height: auto; }
+    height: auto;
+    text-align: center;
+    color: #fff; }
   .badge .badge-inner {
     position: absolute;
     right: 0;
@@ -50,33 +51,33 @@
     height: auto; }
 
 .type {
-  color: #fff;
-  margin: 0; }
+  margin: 0;
+  color: #fff; }
 
 .info {
   display: none;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  color: white; }
+  color: #fff; }
 
 .badge:hover ~ .info {
-  z-index: 2;
-  background: #ff6400;
-  padding: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid white;
-  display: block; }
+  display: block;
+  padding: 10px;
+  z-index: 2;
+  border: 2px solid #fff;
+  background: #ff6400; }
 
 .badge:hover :nth-child(1) {
-  opacity: 0.3;
-  width: 90%; }
+  width: 90%;
+  opacity: 0; }
 
 .details {
-  text-align: left;
   display: block;
   margin: 5px;
+  text-align: left;
   font-size: .8em; }

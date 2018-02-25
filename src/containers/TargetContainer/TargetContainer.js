@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import MapCard from '../../components/MapCard/MapCard';
 import { GoogleApiWrapper } from 'google-maps-react';

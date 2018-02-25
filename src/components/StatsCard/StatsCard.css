@@ -9,7 +9,8 @@
   max-height: 350px;
   margin-top: 10px;
   margin-bottom: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.4); }
 
 .card-data {
   display: block;

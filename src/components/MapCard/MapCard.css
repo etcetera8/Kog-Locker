@@ -5,8 +5,8 @@
   text-align: center; }
 
 #map {
-  margin-top: 5px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 5px; }
 
 .target-name {
   color: #fff;
@@ -17,17 +17,17 @@
   margin: 0; }
 
 .goal {
-  margin: 0px;
-  display: inline; }
+  display: inline;
+  margin: 0px; }
 
 .form {
-  margin: 0;
   display: block;
+  margin: 0;
   text-align: center; }
 
 .new-goal {
+  margin: 0 0 0 12px;
+  width: 35px;
   background: none;
   border: 1px solid #ff6400;
-  color: #fff;
-  margin: 0 0 0 12px;
-  width: 35px; }
+  color: #fff; }
