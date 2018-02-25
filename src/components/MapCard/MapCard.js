@@ -24,12 +24,16 @@ export class MapCard extends Component {
 
   componentDidMount() {
     if (this.props.targetMap && this.props.userTarget) {
-      const { polyline } = this.props.userTarget;
-      const mapConfig = this.initialMap();
-      const decodedPolyline = this.decodePolyline(polyline);
-      decodedPolyline.setMap(mapConfig);
-      this.setState({ loading: false});
+      this.setMap();
     }
+  }
+
+  setMap() {
+    const { polyline } = this.props.userTarget;
+    const mapConfig = this.initialMap();
+    const decodedPolyline = this.decodePolyline(polyline);
+    decodedPolyline.setMap(mapConfig);
+    this.setState({ loading: false});
   }
 
   initialMap() {
@@ -89,8 +93,8 @@ export class MapCard extends Component {
   render() {
     const {name, athlete_segment_stats } = this.props.userTarget;
     const style = {
-      width: '230px',
-      height: '200px'
+      width: '199px',
+      height: '199px'
     };
 
     return (
