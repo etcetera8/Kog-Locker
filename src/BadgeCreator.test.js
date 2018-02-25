@@ -9,6 +9,7 @@ describe("BadgeCreator", () => {
 
   it("the badgeCreator should create jsx badges", () => {
     const results = badgeCreator(5, 10, "ride", "miles", "mtn")
+    expect(results.props.className).toEqual("full-badge-wrapper")
     expect(typeof results).toEqual("object")
   })
 })

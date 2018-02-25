@@ -7,8 +7,8 @@ describe('AddUserStatsReducer', () => {
     expect(addUserStats(undefined, {})).toEqual({})
   })
 
-  it('should return an object of stats when passed an action', () => {
-    const stats = { max_power: 1000 };
-    expect(addUserStats(undefined, actions.addUserStats(stats))).toEqual(stats);
+  it('should return the payload of stats when passed an action', () => {
+    const results = addUserStats(undefined, actions.addUserStats(100))
+    expect(results).toEqual(100);
   })
 })

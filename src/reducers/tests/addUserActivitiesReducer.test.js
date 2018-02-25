@@ -7,8 +7,9 @@ describe('User Activities reducer', () => {
     expect(addUserActivities(undefined, {})).toEqual([]);
   })
 
-  it('should return a an array of activites if called', () => {
-    const expected = [{activity: 1234}]
-    expect(addUserActivities(undefined, {type: 'ADD_USER_ACTIVITIES', payload:expected})).toEqual(expected)
+  it('should return the payload of the action creator', () => {
+    const payload = {type: 'ADD_USER_ACTIVITIES', payload: ["an activity"]}
+    const results = addUserActivities(undefined, payload)
+    expect(results).toEqual(["an activity"])
   })
 })

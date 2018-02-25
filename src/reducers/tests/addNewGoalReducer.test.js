@@ -1,5 +1,5 @@
 /* eslint-disable */
-import {addNewGoal} from '../addNewGoal';
+import { addNewGoal } from '../addNewGoal';
 import * as actions from '../../actions/actionIndex';
 
 describe("add new goal reducer", () => {

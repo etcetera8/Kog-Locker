@@ -27,6 +27,7 @@ export class TargetContainer extends Component {
     //2628520
     event.preventDefault();
     const response = await segmentCall(this.state.input);
+    debugger;
     if (response.message) {
       this.setState({ segmentError: true, input: '' });
     } else {

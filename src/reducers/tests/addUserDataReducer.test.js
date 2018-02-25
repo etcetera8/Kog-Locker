@@ -7,8 +7,9 @@ describe('user data reducer', () => {
     expect(addUserData(undefined, {})).toEqual({});
   })
 
-  it('should return a default state of an empty object', () => {
-    const expected = {name: 'parker'}
-    expect(addUserData({}, actions.addUserData({name: 'parker'}))).toEqual(expected);
+  it('should return the payload of the action creator', () => {
+    const expected = {userData: "user data"};
+    const results = addUserData({}, actions.addUserData({userData: "user data"}))
+    expect(results).toEqual(expected);
   })
 })

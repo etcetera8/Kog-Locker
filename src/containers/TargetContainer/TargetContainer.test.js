@@ -7,8 +7,11 @@ import { cleanSegment } from '../../mock-data.js'
 describe("targetContainer", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<TargetContainer userTarget={cleanSegment}
-                                       google={{maps: "Google Maps API"}}/>)
+    wrapper = shallow(<TargetContainer 
+                        userTarget={cleanSegment}
+                        google={{maps: "Google Maps API"}}
+                        setUserTarget={jest.fn()}
+                      />)
   })
 
   it('should start out with a default state', () => {
@@ -21,6 +24,14 @@ describe("targetContainer", () => {
     expect(wrapper.state().input).toEqual('')
     wrapper.find('input').first().simulate('change', mockEvent)
     expect(wrapper.state().input).toEqual('123')
+  })
+
+  it("the helper function should reset the state to empty", async () => {
+    const inst = wrapper.instance();
+    wrapper.setState({input: 12345})
+    const mockEvent = {preventDefault: jest.fn()}
+    const results = await inst.helper(mockEvent);
+    expect(wrapper.state().input).toEqual('')
   })
 
   it("mapDispatchToProps should return an object with the right keys", () => {
