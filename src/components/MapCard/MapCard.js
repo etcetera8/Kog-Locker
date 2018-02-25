@@ -93,8 +93,8 @@ export class MapCard extends Component {
   render() {
     const {name, athlete_segment_stats } = this.props.userTarget;
     const style = {
-      width: '230px',
-      height: '200px'
+      width: '199px',
+      height: '199px'
     };
 
     return (

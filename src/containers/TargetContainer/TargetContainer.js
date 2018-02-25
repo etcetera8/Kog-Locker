@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import MapCard from '../../components/MapCard/MapCard';
 import { GoogleApiWrapper } from 'google-maps-react';
@@ -33,9 +34,10 @@ export class TargetContainer extends Component {
       this.setState({ segmentError: false, input: '' });
       this.props.setUserTarget(response);
       localStorage.setItem('target', JSON.stringify(response));
+      window.location.reload();
     }
   }
-  
+
   render() {
     const {average_grade, distance, elevation_high, elevation_low, athlete_segment_stats} = this.props.userTarget;
     
