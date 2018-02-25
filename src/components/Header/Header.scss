@@ -4,8 +4,7 @@ $orange: rgba(255,100,0,1);
   text-align: center;
   border-bottom: 2px solid #fff;
   height: 100px;
-/*  background-image: url('../../assets/topo.png');
-*/
+
   .welcome {
     color: #fff;
     margin-top:40px;
@@ -37,5 +36,44 @@ $orange: rgba(255,100,0,1);
   .cog {
     color: $orange;
   }
+}
 
+@media only screen and (max-width: 424px) {
+  .header-container {
+    height: 150px;
+    position: relative;
+  }
+
+  .header-container .page-title {
+    height: 84%;
+    width: 98%;
+    margin: 0;
+  }
+
+  .welcome {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .profile-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0 !important;
+  }
+
+  a {
+    margin: 5px 0 !important;
+    text-align: center;
+    min-width: 130px;
+  }
 }
