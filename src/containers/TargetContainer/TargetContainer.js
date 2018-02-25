@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MapCard from '../../components/MapCard/MapCard';
 import { GoogleApiWrapper } from 'google-maps-react';
-import {gKey} from '../../apiKey.js';
+import { gKey } from '../../apiKey.js';
 import { addUserTarget } from '../../actions/actionIndex';
 import { segmentCall } from '../../api';
 import PropTypes from 'prop-types';

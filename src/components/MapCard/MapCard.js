@@ -24,12 +24,16 @@ export class MapCard extends Component {
 
   componentDidMount() {
     if (this.props.targetMap && this.props.userTarget) {
-      const { polyline } = this.props.userTarget;
-      const mapConfig = this.initialMap();
-      const decodedPolyline = this.decodePolyline(polyline);
-      decodedPolyline.setMap(mapConfig);
-      this.setState({ loading: false});
+      this.setMap();
     }
+  }
+
+  setMap() {
+    const { polyline } = this.props.userTarget;
+    const mapConfig = this.initialMap();
+    const decodedPolyline = this.decodePolyline(polyline);
+    decodedPolyline.setMap(mapConfig);
+    this.setState({ loading: false});
   }
 
   initialMap() {
