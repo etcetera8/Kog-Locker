@@ -18,8 +18,8 @@ export class Home extends Component {
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
-        {yearStats &&
-        <BadgeCard />
+        { yearStats &&
+          <BadgeCard />
         }
         <MapCard 
           google={this.props.google}

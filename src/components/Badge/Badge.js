@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import mtn from '../../assets/mtn.png';
 import mtns from '../../assets/mtns.png';
-import yearDistance from '../../assets/yearDistance.png';
-import allDistance from '../../assets/allDistance.png';
+import yearDistanceImg from '../../assets/yearDistanceImg.png';
+import allDistanceImg from '../../assets/allDistanceImg.png';
 
-import './Badge.css';
 import PropTypes from 'prop-types';
 import { badgeCreator } from '../../BadgeCreator';
 
 export class Badge extends Component {
 
   badgeArray = () => {
-    const {allStats, yearStats, goals} = this.props;
+    const { allStats, yearStats} = this.props;
+    //Add new Badges here
+    const { yearElevation, yearDistance, allDistance, allElevation } = this.props.goals;
     const badgeArray = [];
-    badgeArray.push(badgeCreator(yearStats.elevation_gain, goals.yearElevation, 'Elevation Hero', 'feet', mtn));
-    badgeArray.push(badgeCreator(yearStats.distance, goals.yearDistance, 'Distance Trasher', 'miles', yearDistance));
-    badgeArray.push(badgeCreator(allStats.distance, goals.allDistance, 'All Time Distance', 'miles', allDistance));
-    badgeArray.push(badgeCreator(allStats.elevation_gain, goals.allElevation, 'All Time Elevation', 'feet', mtns));
+    badgeArray.push(badgeCreator(yearStats.elevation_gain, yearElevation, 'Elevation Hero', 'ft', mtn));
+    badgeArray.push(badgeCreator(yearStats.distance, yearDistance, 'Distance Trasher', 'miles', yearDistanceImg));
+    badgeArray.push(badgeCreator(allStats.distance, allDistance, 'All Time Distance', 'miles', allDistanceImg));
+    badgeArray.push(badgeCreator(allStats.elevation_gain, allElevation, 'All Time Elevation', 'ft', mtns));
     return badgeArray
   }
 
@@ -29,7 +30,6 @@ export class Badge extends Component {
     );
   }
 };
-
 
 export const mapStateToProps = (state) => ({
   allStats: state.userStats.all_ride_totals,

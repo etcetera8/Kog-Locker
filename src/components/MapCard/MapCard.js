@@ -16,14 +16,15 @@ export class MapCard extends Component {
   }
 
   async componentDidUpdate() {
+    const {polyline, end_latlng} = this.props.userTarget
     if (!this.props.targetMap) {
-      await this.loadMap(this.props.userTarget.polyline, this.props.userTarget.end_latlng);
+      await this.loadMap(polyline, end_latlng);
     }
   }
 
   componentDidMount() {
     if (this.props.targetMap && this.props.userTarget) {
-      const {polyline, athlete_segment_stats} = this.props.userTarget;
+      const { polyline } = this.props.userTarget;
       const node = ReactDOM.findDOMNode(this.refs.map);
       const mapConfig = this.initialMap();
       const decodedPolyline = this.decodePolyline(polyline);
@@ -33,8 +34,9 @@ export class MapCard extends Component {
   }
 
   initialMap() {
-    const lat = this.props.userTarget.end_latlng[0];
-    const lng = this.props.userTarget.end_latlng[1];
+    const { end_latlng } = this.props.userTarget
+    const lat = end_latlng[0];
+    const lng = end_latlng[1];
     const node = ReactDOM.findDOMNode(this.refs.map);
     const mapConfig = new this.props.google.maps.Map(node, {
       zoom: 12,
@@ -63,21 +65,15 @@ export class MapCard extends Component {
 
   loadMap = (targetPolyline, latLong) => {
     if (this.props.userTarget && this.props.google.maps.geometry.encoding) {
-      const { athlete_segment_stats } = this.props.userTarget;
-      const { google } = this.props;
-      const mapRef = this.refs.map;
-      const node = ReactDOM.findDOMNode(mapRef);
-
+      const { pr_elapsed_time } = this.props.userTarget.athlete_segment_stats;
+      const node = ReactDOM.findDOMNode(this.refs.map);
       const mapConfig = this.initialMap();
       const polyline = this.decodePolyline(targetPolyline);
 
       polyline.setMap(mapConfig);
-      this.map = new google.maps.Map(node, mapConfig);
-
-      const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
-      this.setState({goalTime, loading: false});
+      this.map = new this.props.google.maps.Map(node, mapConfig);
+      this.setState({ loading: false});
     }
-
   }
 
   handleChange = (e) => {
@@ -87,15 +83,16 @@ export class MapCard extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newGoal = this.state.newTime
-    this.props.userTarget.athlete_segment_stats.goalTime = parseInt(this.state.newTime)
-    this.props.addNewGoal(this.props.userTarget);
-    this.setState({newTime: 0})
+    const { athlete_segment_stats, userTarget, addNewGoal } = this.props
+    userTarget.athlete_segment_stats.goalTime = parseInt(this.state.newTime)
+    addNewGoal(userTarget);
+    this.setState({ newTime: 0 })
   }
 
   render() {
-    const {name, athlete_segment_stats, goalTime} = this.props.userTarget
+    const {name, athlete_segment_stats } = this.props.userTarget;
     const style = {
-      width: '200px',
+      width: '230px',
       height: '200px',
     }
 
@@ -103,13 +100,15 @@ export class MapCard extends Component {
       <section className='card map-card'>
         <h2 className='title'>Target</h2>
         {this.state.loading && 
-          <div><img src={loadingGif}/></div>
+          <div>
+            <img src={loadingGif}/>
+          </div>
         }
         { athlete_segment_stats &&
           <div>
             <h3 className="target-name">{name}</h3>
             <div id="map" className='map' ref='map' style={style}>
-            </div>
+          </div>
             <span className='card-data goal'>Goal Time: <span className='nums'>{athlete_segment_stats.goalTime.toFixed(2)} mins</span></span>
             <form className="form card-data"> Update Goal:
               <input
