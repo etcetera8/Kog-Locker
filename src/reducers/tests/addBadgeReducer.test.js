@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { addBadge } from '../addBadgeReducer';
 import * as actions from '../../actions/actionIndex';
 

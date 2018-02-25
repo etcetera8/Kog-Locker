@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {addNewGoal} from '../addNewGoal';
 import * as actions from '../../actions/actionIndex';
 

@@ -13,13 +13,12 @@ import './Home.css';
 export class Home extends Component {
   
   render() {
-    const {yearStats, all_ride_totals} = this.props.userStats
-    const { yearElevation, yearDistance, allDistance, allElevation } = this.props.badges;
+    const { yearStats } = this.props.userStats;
     return (
       <main>
         <StatsCard yearStats={yearStats}/>
-        {yearStats &&
-        <BadgeCard />
+        { yearStats &&
+          <BadgeCard />
         }
         <MapCard 
           google={this.props.google}
@@ -36,12 +35,13 @@ export const mapStateToProps = (state) => ({
   userTarget: state.userTarget
 });
 
-const wrapper = GoogleApiWrapper({apiKey:gKey})(Home)
+const wrapper = GoogleApiWrapper({apiKey:gKey})(Home);
 
 Home.propTypes = {
   userTarget: PropTypes.object.isRequired,
   userStats: PropTypes.object.isRequired,
-  badges: PropTypes.object.isRequired
+  badges: PropTypes.object.isRequired,
+  google: PropTypes.object.isRequired
 };
 
 export default withRouter(connect(mapStateToProps)(wrapper));

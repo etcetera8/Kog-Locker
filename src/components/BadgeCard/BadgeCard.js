@@ -1,7 +1,6 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
 import './Badge.css';
-import PropTypes from 'prop-types';
 
 const BadgeCard = () => {
   return (

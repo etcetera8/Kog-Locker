@@ -4,45 +4,32 @@ import StatsCard from '../../components/StatsCard/StatsCard';
 import PropTypes from 'prop-types';
 
 export class StatsContainer extends Component {
-  
-  recentCard = () => {
-    const { recent_ride_totals } = this.props.userStats;
-    return (
-      <StatsCard recentStats={recent_ride_totals} />
-    )
-  }
 
-  ytdCard = () => {
-    const { yearStats } = this.props.userStats;
+  cardCreator = (propName, propValue) => {
+    const variableAttribute = { [propName]: propValue };
     return (
-      <StatsCard yearStats={yearStats} />
-    )
-  }
-
-  allCard = () => {
-    const { all_ride_totals } = this.props.userStats;
-    return (
-      <StatsCard allStats={all_ride_totals} />
-    )
+      <StatsCard {...variableAttribute} /> 
+    );
   }
 
   render() {
+    const { yearStats, all_ride_totals, recent_ride_totals } = this.props.userStats;
     return (
       <main>
-        {this.ytdCard()}
-        {this.allCard()}
-        {this.recentCard()}
+        {this.cardCreator('yearStats', yearStats)}
+        {this.cardCreator('allStats', all_ride_totals)}
+        {this.cardCreator('recentStats', recent_ride_totals)}
       </main>
-    )
+    );
   }
 }
 
 export const mapStateToProps = (state) => ({
   userStats: state.userStats
-})
+});
 
 StatsContainer.propTypes = {
-  userStats: PropTypes.object.isRequired,
+  userStats: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps)(StatsContainer)
+export default connect(mapStateToProps)(StatsContainer);

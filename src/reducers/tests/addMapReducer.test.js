@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { addMap } from '../addMapReducer';
 import * as actions from '../../actions/actionIndex';
 
