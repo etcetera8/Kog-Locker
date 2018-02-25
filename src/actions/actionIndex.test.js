@@ -37,4 +37,9 @@ describe('all actions', () => {
     expect(actions.addMap(mockData)).toEqual(expected)  
   })
 
+  it('addNewGoal function should return a new object with the right payload', () => {
+    const expected = { type: 'ADD_NEW_GOAL', payload: { newGoal: 'stuff' } }
+    expect(actions.addNewGoal({ newGoal: "stuff"})).toEqual(expected);
+  })
+
 })
