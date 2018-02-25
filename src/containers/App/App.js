@@ -15,20 +15,40 @@ import TargetContainer from '../TargetContainer/TargetContainer';
 import './App.css';
 
 export class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      error: false
+    }
+  }
   
   async componentDidMount() {
-    const userData = await initialCall();
-    await this.props.setUserData(userData);
-    
-    const userStats = await statsCall(9560317);
-    await this.props.setUserStats(userStats);
-    
-    const userActivities = await activitiesCall(9560317);
-    await this.props.setUserActivities(userActivities);
+    try {
+      const userData = await initialCall();
+      await this.props.setUserData(userData);
+    } catch (error) {
+      this.setState({error: true})
+    }
+    try { 
+      const userStats = await statsCall(9560317);
+      await this.props.setUserStats(userStats);
+    } catch (error) {
+      this.setState({error: true})
+    }
+    try {
+      const userActivities = await activitiesCall(9560317);
+      await this.props.setUserActivities(userActivities);
+    } catch (error) {
+      this.setState({error: true})
+    }
     
     if (!localStorage.getItem('target')) {
-      const userTarget = await segmentCall(609371);
-      await this.props.setUserTarget(userTarget);
+      try {  
+        const userTarget = await segmentCall(609371);
+        await this.props.setUserTarget(userTarget);
+      } catch (error) {
+        this.setState({error: true})
+      }
     } else {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
@@ -39,28 +59,33 @@ export class App extends Component {
     const { firstname, profile_medium } = this.props.userData;
 
     return (
+
       <div className="App">
-        <Header 
-          userName={firstname}
-          userPicture={profile_medium}
-        />
-
-        <nav>
-          <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
-          <NavLink to='/stats' activeClassName='selected'>Your Stats</NavLink>
-          <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
-          <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
-        </nav>
-        
+      {!this.state.error && 
         <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/stats" component={StatsContainer} />
-          <Route path="/achievments" component={BadgeContainer} />
-          <Route path="/target" component={TargetContainer} />
+          <Header 
+            userName={firstname}
+            userPicture={profile_medium}
+          />
+          <nav>
+            <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
+            <NavLink to='/stats' activeClassName='selected'>Your Stats</NavLink>
+            <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
+            <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
+          </nav>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/stats" component={StatsContainer} />
+            <Route path="/achievments" component={BadgeContainer} />
+            <Route path="/target" component={TargetContainer} />
+          </div>
+          <Footer />
         </div>
-
-        <Footer />
-
+      }
+      
+      {this.state.error && 
+        <p>Oh no there's been a terrible mistake getting the data, please try again</p>
+      }
       </div>
     );
   }

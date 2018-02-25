@@ -19,6 +19,10 @@ describe("targetContainer", () => {
     expect(wrapper.state()).toEqual(state)
   })
 
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it('the changeHelper function should set the state', () => {
     const mockEvent = {target: {value:'123'}}
     expect(wrapper.state().input).toEqual('')
