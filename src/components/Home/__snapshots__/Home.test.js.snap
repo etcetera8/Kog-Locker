@@ -44,6 +44,7 @@ ShallowWrapper {
         Object {
             "athlete_segment_stats": Object {
               "effort_count": 8,
+              "goalTime": 22.3585,
               "pr_date": "2017-09-17",
               "pr_elapsed_time": 1383,
             },
@@ -92,6 +93,7 @@ ShallowWrapper {
                     Object {
                               "athlete_segment_stats": Object {
                                 "effort_count": 8,
+                                "goalTime": 22.3585,
                                 "pr_date": "2017-09-17",
                                 "pr_elapsed_time": 1383,
                               },
@@ -148,6 +150,7 @@ ShallowWrapper {
           "userTarget": Object {
             "athlete_segment_stats": Object {
               "effort_count": 8,
+              "goalTime": 22.3585,
               "pr_date": "2017-09-17",
               "pr_elapsed_time": 1383,
             },
@@ -196,6 +199,7 @@ ShallowWrapper {
                         Object {
                                     "athlete_segment_stats": Object {
                                       "effort_count": 8,
+                                      "goalTime": 22.3585,
                                       "pr_date": "2017-09-17",
                                       "pr_elapsed_time": 1383,
                                     },
@@ -252,6 +256,7 @@ ShallowWrapper {
             "userTarget": Object {
               "athlete_segment_stats": Object {
                 "effort_count": 8,
+                "goalTime": 22.3585,
                 "pr_date": "2017-09-17",
                 "pr_elapsed_time": 1383,
               },

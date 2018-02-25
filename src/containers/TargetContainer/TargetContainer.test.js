@@ -11,15 +11,15 @@ describe("targetContainer", () => {
   })
 
   it('should start out with a default state', () => {
-    const state = {segmentId: '', segmentError: false, loading: false}
+    const state = {input: '', segmentError: false, loading: false}
     expect(wrapper.state()).toEqual(state)
   })
 
   it('the changeHelper function should set the state', () => {
     const mockEvent = {target: {value:'123'}}
-    expect(wrapper.state().segmentId).toEqual('')
+    expect(wrapper.state().input).toEqual('')
     wrapper.find('input').first().simulate('change', mockEvent)
-    expect(wrapper.state().segmentId).toEqual('123')
+    expect(wrapper.state().input).toEqual('123')
   })
 
   it("mapDispatchToProps should return an object with the right keys", () => {
@@ -32,6 +32,4 @@ describe("targetContainer", () => {
     const results = mapStateToProps(mockState);
     expect(results).toEqual({userTarget: "Target segment"})
   })
-
-
 })

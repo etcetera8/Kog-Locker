@@ -125,7 +125,7 @@ export const mockSegment = {
   }
 }
 export const defaultBadges = {yearElevation: 5280, yearDistance: 500000, allElevation: 100000, allDistance: 120000}
-export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 4, "elevation_high": 7155, "elevation_low": 5912, "end_latlng": [39.731674, -105.239256], "name": "Lookout Mountain (Gate-BB Grave)", "polyline": "_xpqF", "total_elevation_gain": 0}
+export const cleanSegment = {"athlete_segment_stats": {"effort_count": 8, "goalTime": 22.3585, "pr_date": "2017-09-17", "pr_elapsed_time": 1383}, "average_grade": 5.4, "city": "Golden", "distance": 4, "elevation_high": 7155, "elevation_low": 5912, "end_latlng": [39.731674, -105.239256], "name": "Lookout Mountain (Gate-BB Grave)", "polyline": "_xpqF", "total_elevation_gain": 0};
 
 export const mockUserStats = {
   biggest_ride_distance: 174857,

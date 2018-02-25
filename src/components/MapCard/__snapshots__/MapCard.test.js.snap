@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MapCard
+    addNewGoal={[Function]}
     google={
         Object {
             "maps": Object {},
@@ -13,6 +14,7 @@ ShallowWrapper {
     userTarget={
         Object {
             "athlete_segment_stats": Object {
+              "goalTime": 5,
               "stats": "hi",
             },
             "end_latlng": Array [
@@ -69,17 +71,17 @@ ShallowWrapper {
                     <span
                               className="nums"
                     >
-                              0
+                              5.00
                                mins
                     </span>
           </span>
           <form
-                    className="form"
+                    className="form card-data"
           >
+                     Update Goal:
                     <input
                               className="new-goal"
                               onChange={[Function]}
-                              placeholder="Update goal time"
                               type="number"
                               value={0}
                     />
@@ -172,17 +174,17 @@ ShallowWrapper {
               <span
                             className="nums"
               >
-                            0
+                            5.00
                              mins
               </span>
 </span>,
             <form
-              className="form"
+              className="form card-data"
 >
+               Update Goal:
               <input
                             className="new-goal"
                             onChange={[Function]}
-                            placeholder="Update goal time"
                             type="number"
                             value={0}
               />
@@ -248,7 +250,7 @@ ShallowWrapper {
                 <span
                   className="nums"
 >
-                  0
+                  5.00
                    mins
 </span>,
               ],
@@ -263,14 +265,14 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    0,
+                    "5.00",
                     " mins",
                   ],
                   "className": "nums",
                 },
                 "ref": null,
                 "rendered": Array [
-                  0,
+                  "5.00",
                   " mins",
                 ],
                 "type": "span",
@@ -284,10 +286,10 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                " Update Goal:",
                 <input
                   className="new-goal"
                   onChange={[Function]}
-                  placeholder="Update goal time"
                   type="number"
                   value={0}
 />,
@@ -300,10 +302,11 @@ ShallowWrapper {
                   />
 </button>,
               ],
-              "className": "form",
+              "className": "form card-data",
             },
             "ref": null,
             "rendered": Array [
+              " Update Goal:",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -311,7 +314,6 @@ ShallowWrapper {
                 "props": Object {
                   "className": "new-goal",
                   "onChange": [Function],
-                  "placeholder": "Update goal time",
                   "type": "number",
                   "value": 0,
                 },
@@ -433,17 +435,17 @@ ShallowWrapper {
                         <span
                                     className="nums"
                         >
-                                    0
+                                    5.00
                                      mins
                         </span>
             </span>
             <form
-                        className="form"
+                        className="form card-data"
             >
+                         Update Goal:
                         <input
                                     className="new-goal"
                                     onChange={[Function]}
-                                    placeholder="Update goal time"
                                     type="number"
                                     value={0}
                         />
@@ -536,17 +538,17 @@ ShallowWrapper {
                 <span
                                 className="nums"
                 >
-                                0
+                                5.00
                                  mins
                 </span>
 </span>,
               <form
-                className="form"
+                className="form card-data"
 >
+                 Update Goal:
                 <input
                                 className="new-goal"
                                 onChange={[Function]}
-                                placeholder="Update goal time"
                                 type="number"
                                 value={0}
                 />
@@ -612,7 +614,7 @@ ShallowWrapper {
                   <span
                     className="nums"
 >
-                    0
+                    5.00
                      mins
 </span>,
                 ],
@@ -627,14 +629,14 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      0,
+                      "5.00",
                       " mins",
                     ],
                     "className": "nums",
                   },
                   "ref": null,
                   "rendered": Array [
-                    0,
+                    "5.00",
                     " mins",
                   ],
                   "type": "span",
@@ -648,10 +650,10 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  " Update Goal:",
                   <input
                     className="new-goal"
                     onChange={[Function]}
-                    placeholder="Update goal time"
                     type="number"
                     value={0}
 />,
@@ -664,10 +666,11 @@ ShallowWrapper {
                     />
 </button>,
                 ],
-                "className": "form",
+                "className": "form card-data",
               },
               "ref": null,
               "rendered": Array [
+                " Update Goal:",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -675,7 +678,6 @@ ShallowWrapper {
                   "props": Object {
                     "className": "new-goal",
                     "onChange": [Function],
-                    "placeholder": "Update goal time",
                     "type": "number",
                     "value": 0,
                   },
