@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export class StatsContainer extends Component {
 
   cardCreator = (propName, propValue) => {
-    const variableAttribute = { [propName]: propValue}
+    const variableAttribute = { [propName]: propValue }
     return (
      <StatsCard {...variableAttribute} /> 
     )

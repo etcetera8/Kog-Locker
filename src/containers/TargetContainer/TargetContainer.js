@@ -19,7 +19,7 @@ export class TargetContainer extends Component {
   }
 
   changeHelper = (e) => {
-    this.setState({input: e.target.value })
+    this.setState({ input: e.target.value })
   }
 
   helper = async (e) => {
@@ -37,7 +37,7 @@ export class TargetContainer extends Component {
   }
   
   render() {
-    const {average_grade, distance, elevation_high, elevation_low, athlete_segment_stats} = this.props.userTarget
+    const {average_grade, distance, elevation_high, elevation_low, athlete_segment_stats} = this.props.userTarget;
     
     return (
       <main>

@@ -60,7 +60,7 @@ ShallowWrapper {
                     style={
                               Object {
                                         "height": "200px",
-                                        "width": "200px",
+                                        "width": "230px",
                                       }
                     }
           />
@@ -163,7 +163,7 @@ ShallowWrapper {
               style={
                             Object {
                                           "height": "200px",
-                                          "width": "200px",
+                                          "width": "230px",
                                         }
               }
 />,
@@ -233,7 +233,7 @@ ShallowWrapper {
               "id": "map",
               "style": Object {
                 "height": "200px",
-                "width": "200px",
+                "width": "230px",
               },
             },
             "ref": "map",
@@ -424,7 +424,7 @@ ShallowWrapper {
                         style={
                                     Object {
                                                 "height": "200px",
-                                                "width": "200px",
+                                                "width": "230px",
                                               }
                         }
             />
@@ -527,7 +527,7 @@ ShallowWrapper {
                 style={
                                 Object {
                                                 "height": "200px",
-                                                "width": "200px",
+                                                "width": "230px",
                                               }
                 }
 />,
@@ -597,7 +597,7 @@ ShallowWrapper {
                 "id": "map",
                 "style": Object {
                   "height": "200px",
-                  "width": "200px",
+                  "width": "230px",
                 },
               },
               "ref": "map",

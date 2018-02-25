@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as actions from '../../actions/actionIndex';
 import { addUserActivities } from '../addUserActivitiesReducer';
 
