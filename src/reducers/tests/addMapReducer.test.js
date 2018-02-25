@@ -7,8 +7,8 @@ describe('map reducer', () => {
     expect(addMap(undefined, {})).toEqual(null)
   })
 
-  it('should return an action object', () => {
-    const expected = {map: 'a map'}
-    expect(addMap(undefined, actions.addMap({map: 'a map'}))).toEqual(expected)
+  it('should return the action payload', () => {
+    const results = addMap({}, {type:"ADD_MAP", payload: "new map"})
+    expect(results).toEqual("new map")
   })
 })

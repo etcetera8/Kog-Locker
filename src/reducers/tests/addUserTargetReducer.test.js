@@ -7,9 +7,8 @@ describe('addUserTargetReducer', () => {
     expect(addUserTarget(undefined, {})).toEqual({})
   })
 
-  it('should return an object of a target segment', () => {
-    const expected = {"payload": {"name": "Lookout Mountain"}, "type": "ADD_USER_TARGET"}
-    const data = {type: 'ADD_USER_TARGET', payload: {name:'Lookout Mountain'}}
-    expect(addUserTarget(undefined, actions.addUserTarget(data))).toEqual(expected);
+  it('should return the payload of the action creator', () => {
+    const results = addUserTarget(undefined, actions.addUserTarget("segment"));
+    expect(results).toEqual("segment");
   })
 })

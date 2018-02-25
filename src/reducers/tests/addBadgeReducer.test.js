@@ -13,7 +13,8 @@ it('should return the default state', () => {
   expect(addBadge(undefined, {})).toEqual(expected);
 })
 
-it('should return the state with a new user', () => {
+it('should return the payload passed into the action', () => {
   const expected = {speed: 100}
-  expect(addBadge(undefined, actions.addBadge({speed: 100}))).toEqual(expected);
+  const results = addBadge({}, actions.addBadge(100)) 
+  expect(results).toEqual(100);
 })
