@@ -11,7 +11,7 @@ export class BadgeContainer extends Component {
     
     return (
       <main className='badge-main-container'>
-        {yearStats && 
+        { yearStats && 
           <Badge />
         }
       </main>
