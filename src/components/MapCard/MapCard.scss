@@ -8,8 +8,8 @@ $orange: rgba(255,100,0,1);
 }
 
 #map {
-  margin-top: 5px;
   margin: 0 auto;
+  margin-top: 5px;
 }
 
 .target-name {
@@ -23,20 +23,20 @@ $orange: rgba(255,100,0,1);
 }
 
 .goal {
-  margin: 0px;
   display: inline;
+  margin: 0px;
 }
 
 .form {
-  margin: 0;
   display: block;
+  margin: 0;
   text-align: center;
 }
 
 .new-goal {
+  margin: 0 0 0 12px;
+  width: 35px;
   background: none;
   border: 1px solid $orange;
   color: #fff;
-  margin: 0 0 0 12px;
-  width: 35px;
 }

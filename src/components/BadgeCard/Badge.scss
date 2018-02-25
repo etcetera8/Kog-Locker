@@ -9,11 +9,11 @@ $orange: rgba(255,100,0,1);
 }
 
 .full-badge-wrapper {
-  margin: 25px;
   display: inline-block;
-  text-align: center;
   position: relative;
+  margin: 25px;
   width: 80px;
+  text-align: center;
 }
 
 .badge-card-inner {
@@ -24,26 +24,26 @@ $orange: rgba(255,100,0,1);
 }
 
 .badge {
+  position: relative;
   margin: 0 auto;
   height: 80px;
   width:  80px;
-  position: relative;
-  border-radius: 100%;
-  border: 1px solid #fff;
   overflow: hidden;
+  border-radius: 100%;
+  border: 2px solid #fff;
 
   .badge-icon {
-    color: #fff;
     position: absolute;
+    z-index: 10;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-    text-align: center;
-    z-index: 10;
     width:65%;
     height: auto;
+    text-align: center;
+    color: #fff;
   }
   
   .badge-inner {
@@ -62,38 +62,38 @@ $orange: rgba(255,100,0,1);
 }
 
 .type {
+  margin: 0;
   color: #fff ;
-  margin:0;
 }
 
 .info {
   display: none;
-  width:100px;
+  width: 100px;
   height: 100px;
   border-radius: 50%;
-  color: white;
+  color: #fff;
 }
 
 .badge:hover~.info {
-  z-index: 2;
-  background: $orange;
-  padding: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid white;
   display: block;
+  padding: 10px;
+  z-index: 2;
+  border: 2px solid #fff;
+  background: $orange;
 }
 
 .badge:hover :nth-child(1) {
-  opacity: 0.3;
   width: 90%;
+  opacity: 0;
 }
 
 .details {
-  text-align: left;
   display: block;
   margin: 5px;
+  text-align: left;
   font-size: .8em;
 }

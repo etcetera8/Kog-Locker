@@ -2,35 +2,35 @@ $orange: rgba(255,100,0,1);
 
 .header-container {
   text-align: center;
-  border-bottom: 2px solid #fff;
   height: 100px;
+  border-bottom: 2px solid #fff;
 
   .welcome {
-    color: #fff;
+    float: right;
     margin-top:40px;
     margin-right: 5px;
-    float: right;
+    color: #fff;
   }
 
   .profile-img {
-    border: 2px solid #fff;
-    margin-right: 20px;
-    border-radius: 50%;
     float: right;
     clear: both;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
   }
 
   .page-title {
-    color: #fff;
-    font-size: 2.2em;
+    margin: 35px auto 0 auto;
+    padding: 11.5px;
+    width: 90%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     letter-spacing: 2px;
     background: $orange;  /*For browsers that don't support gradients*/
     background: linear-gradient(to right, rgba(0,0,0,0), $orange);
-    width: 90%;
-    margin: 35px auto 0 auto;
-    padding: 11.5px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    color: #fff;
+    font-size: 2.2em;
   }
 
   .cog {
@@ -40,8 +40,8 @@ $orange: rgba(255,100,0,1);
 
 @media only screen and (max-width: 424px) {
   .header-container {
-    height: 150px;
     position: relative;
+    height: 150px;
   }
 
   .header-container .page-title {

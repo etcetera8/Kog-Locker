@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo|Rosario');
 $orange: rgba(255,100,0,1);
+
 body, html {
   font-family: 'Archivo', sans-serif;
 }
@@ -12,12 +13,12 @@ nav {
 }
 
 a {
-  text-align: center;
-  padding: 7px 5px 5px 5px;
   margin:10px;
-  color: #fff;
+  padding: 7px 5px 5px 5px;
   border: 1px solid $orange;
   border-radius: 5px;
+  text-align: center;
+  color: #fff;
   text-decoration: none;
 }
 
