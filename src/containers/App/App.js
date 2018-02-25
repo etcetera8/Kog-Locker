@@ -8,9 +8,6 @@ import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.j
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import StatsCard from '../../components/StatsCard/StatsCard';
-import BadgeCard from '../../components/BadgeCard/BadgeCard';
-import MapCard from '../../components/MapCard/MapCard';
 import Home from '../../components/Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';
@@ -34,7 +31,7 @@ export class App extends Component {
       await this.props.setUserTarget(userTarget);
     } else {
       const segment = JSON.parse(localStorage.getItem('target'));
-      await this.props.setUserTarget(segment)
+      await this.props.setUserTarget(segment);
     }
   }
 
@@ -72,14 +69,14 @@ export class App extends Component {
 export const mapStateToProps = (state) => ({
   userData: state.userData,
   userStats: state.userStats
-})
+});
 
 export const mapDispatchToProps = (dispatch) => ({
-  setUserData: (data) => dispatch(addUserData(data)),
-  setUserStats: (data) => dispatch(addUserStats(data)),
-  setUserActivities: (data) => dispatch(addUserActivities(data)),
-  setUserTarget: (data) => dispatch(addUserTarget(data))
-})
+  setUserData: (uData) => dispatch(addUserData(uData)),
+  setUserStats: (uData) => dispatch(addUserStats(uData)),
+  setUserActivities: (uData) => dispatch(addUserActivities(uData)),
+  setUserTarget: (uData) => dispatch(addUserTarget(uData))
+});
 
 App.propTypes = {
   userStats: PropTypes.object.isRequired,
@@ -87,7 +84,7 @@ App.propTypes = {
   setUserData: PropTypes.func.isRequired,
   setUserStats: PropTypes.func.isRequired,
   setUserActivities: PropTypes.func.isRequired,
-  setUserTarget: PropTypes.func.isRequired,
+  setUserTarget: PropTypes.func.isRequired
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

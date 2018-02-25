@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import mtn from '../../assets/mtn.png';
 import mtns from '../../assets/mtns.png';
 import yearDistanceImg from '../../assets/yearDistanceImg.png';
@@ -19,7 +19,7 @@ export class Badge extends Component {
     badgeArray.push(badgeCreator(yearStats.distance, yearDistance, 'Distance Trasher', 'miles', yearDistanceImg));
     badgeArray.push(badgeCreator(allStats.distance, allDistance, 'All Time Distance', 'miles', allDistanceImg));
     badgeArray.push(badgeCreator(allStats.elevation_gain, allElevation, 'All Time Elevation', 'ft', mtns));
-    return badgeArray
+    return badgeArray;
   }
 
   render() {
@@ -29,13 +29,13 @@ export class Badge extends Component {
       </div>
     );
   }
-};
+}
 
 export const mapStateToProps = (state) => ({
   allStats: state.userStats.all_ride_totals,
   yearStats: state.userStats.yearStats,
   goals: state.defaultBadges
-})
+});
 
 Badge.propTypes = {
   goals: PropTypes.object.isRequired,

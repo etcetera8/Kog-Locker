@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MapCard from '../../components/MapCard/MapCard';
 import { GoogleApiWrapper } from 'google-maps-react';
-import {gKey} from '../../apiKey.js'
-import { addUserTarget } from '../../actions/actionIndex'
+import {gKey} from '../../apiKey.js';
+import { addUserTarget } from '../../actions/actionIndex';
 import { segmentCall } from '../../api';
 import PropTypes from 'prop-types';
 import './TargetContainer.css';
 
 export class TargetContainer extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       input: '',
       segmentError: false,
       loading: false
-    }
+    };
   }
 
-  changeHelper = (e) => {
-    this.setState({ input: e.target.value })
+  changeHelper = (event) => {
+    this.setState({ input: event.target.value });
   }
 
-  helper = async (e) => {
+  helper = async (event) => {
     //15990214
     //2628520
-    e.preventDefault();
-    const response = await segmentCall(this.state.input)
+    event.preventDefault();
+    const response = await segmentCall(this.state.input);
     if (response.message) {
-      this.setState({ segmentError: true, input: '' })
+      this.setState({ segmentError: true, input: '' });
     } else {
-      this.setState({ segmentError: false, input: '' })
+      this.setState({ segmentError: false, input: '' });
       this.props.setUserTarget(response);
       localStorage.setItem('target', JSON.stringify(response));
     }
@@ -66,8 +66,8 @@ export class TargetContainer extends Component {
             <button 
               onClick={this.helper}
               className="new-segment-button"
-              >
-                <i className="fas fa-plus"></i>
+            >
+              <i className="fas fa-plus"></i>
             </button>
             {this.state.segmentError && 
               <p className="error-message">You must put in a valid segment ID</p>
@@ -75,24 +75,25 @@ export class TargetContainer extends Component {
           </form>
         </div>
       </main>
-    )
+    );
   }
   
 }
 
 export const mapStateToProps = (state) => ({
   userTarget: state.userTarget
-})
+});
 
 export const mapDispatchToProps = (dispatch) => ({
-  setUserTarget: (data) => dispatch(addUserTarget(data))
-})
+  setUserTarget: (targetData) => dispatch(addUserTarget(targetData))
+});
 
-const wrapper = GoogleApiWrapper({apiKey:gKey})(TargetContainer)
+const wrapper = GoogleApiWrapper({apiKey:gKey})(TargetContainer);
 
 TargetContainer.propTypes = {
   userTarget: PropTypes.object.isRequired,
-  google: PropTypes.object.isRequired
+  google: PropTypes.object.isRequired,
+  setUserTarget: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(wrapper)
+export default connect(mapStateToProps, mapDispatchToProps)(wrapper);
