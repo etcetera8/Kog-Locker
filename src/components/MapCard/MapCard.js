@@ -10,7 +10,6 @@ export class MapCard extends Component {
   constructor() {
     super()
     this.state = {
-      goalTime: 0,
       newTime:0,
       loading: true
     }
@@ -26,11 +25,10 @@ export class MapCard extends Component {
     if (this.props.targetMap && this.props.userTarget) {
       const {polyline, athlete_segment_stats} = this.props.userTarget;
       const node = ReactDOM.findDOMNode(this.refs.map);
-      const mapConfig = this.initialMap()
+      const mapConfig = this.initialMap();
       const decodedPolyline = this.decodePolyline(polyline);
       decodedPolyline.setMap(mapConfig)
-      const goalTime = athlete_segment_stats ? ((athlete_segment_stats.pr_elapsed_time / 60)-((athlete_segment_stats.pr_elapsed_time / 60) * 0.03)).toFixed(2) : 0;
-      this.setState({goalTime, loading: false})
+      this.setState({ loading: false})
     }
   }
 

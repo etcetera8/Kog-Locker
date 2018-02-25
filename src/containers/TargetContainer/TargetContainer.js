@@ -12,24 +12,25 @@ export class TargetContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      segmentId: '',
+      input: '',
       segmentError: false,
       loading: false
     }
   }
 
   changeHelper = (e) => {
-    this.setState({segmentId: e.target.value })
+    this.setState({input: e.target.value })
   }
 
   helper = async (e) => {
     //15990214
+    //2628520
     e.preventDefault();
-    const response = await segmentCall(this.state.segmentId)
+    const response = await segmentCall(this.state.input)
     if (response.message) {
-      this.setState({ segmentError: true, segmentId: '' })
+      this.setState({ segmentError: true, input: '' })
     } else {
-      this.setState({ segmentError: false, segmentId: '' })
+      this.setState({ segmentError: false, input: '' })
       this.props.setUserTarget(response);
       localStorage.setItem('target', JSON.stringify(response));
     }
@@ -58,7 +59,7 @@ export class TargetContainer extends Component {
               className="new-segment-input"
               type='text' 
               placeholder="Add new segment ID#" 
-              value={this.state.segmentId}
+              value={this.state.input}
               onChange={this.changeHelper}
             />
 
