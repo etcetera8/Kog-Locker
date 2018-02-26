@@ -1,6 +1,7 @@
+//15990214 white ranch -- 2628520 moab -- 15160084 short loop -- 14895317 long race
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MapCard from '../../components/MapCard/MapCard';
+import MapCard from '../MapCard/MapCard';
 import { GoogleApiWrapper } from 'google-maps-react';
 import { gKey } from '../../apiKey.js';
 import { addUserTarget } from '../../actions/actionIndex';
@@ -23,11 +24,8 @@ export class TargetContainer extends Component {
   }
 
   helper = async (event) => {
-    //15990214
-    //2628520
     event.preventDefault();
     const response = await segmentCall(this.state.input);
-    debugger;
     if (response.message) {
       this.setState({ segmentError: true, input: '' });
     } else {

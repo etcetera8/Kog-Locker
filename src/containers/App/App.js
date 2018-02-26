@@ -8,7 +8,7 @@ import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.j
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Home from '../../components/Home/Home';
+import Home from '../Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';
 import TargetContainer from '../TargetContainer/TargetContainer';
@@ -16,10 +16,10 @@ import './App.css';
 
 export class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       error: false
-    }
+    };
   }
   
   async componentDidMount() {
@@ -27,19 +27,19 @@ export class App extends Component {
       const userData = await initialCall();
       await this.props.setUserData(userData);
     } catch (error) {
-      this.setState({error: true})
+      this.setState({error: true});
     }
     try { 
       const userStats = await statsCall(9560317);
       await this.props.setUserStats(userStats);
     } catch (error) {
-      this.setState({error: true})
+      this.setState({error: true});
     }
     try {
       const userActivities = await activitiesCall(9560317);
       await this.props.setUserActivities(userActivities);
     } catch (error) {
-      this.setState({error: true})
+      this.setState({error: true});
     }
     
     if (!localStorage.getItem('target')) {
@@ -47,7 +47,7 @@ export class App extends Component {
         const userTarget = await segmentCall(609371);
         await this.props.setUserTarget(userTarget);
       } catch (error) {
-        this.setState({error: true})
+        this.setState({error: true});
       }
     } else {
       const segment = JSON.parse(localStorage.getItem('target'));
@@ -61,7 +61,7 @@ export class App extends Component {
     return (
 
       <div className="App">
-      {!this.state.error && 
+        {!this.state.error && 
         <div>
           <Header 
             userName={firstname}
@@ -81,11 +81,11 @@ export class App extends Component {
           </div>
           <Footer />
         </div>
-      }
+        }
       
-      {this.state.error && 
-        <p>Oh no there's been a terrible mistake getting the data, please try again</p>
-      }
+        {this.state.error && 
+        <p>Oh no there has been a terrible mistake getting the data, please try again</p>
+        }
       </div>
     );
   }
