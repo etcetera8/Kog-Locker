@@ -4,21 +4,25 @@ import { Route, NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
-import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
+import { initialCall, segmentCall, statsCall, activitiesCall, photosCall } from '../../api.js';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import PhotoGallery from '../../components/PhotoGallery';
 import Home from '../Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';
 import TargetContainer from '../TargetContainer/TargetContainer';
+
 import './App.css';
 
 export class App extends Component {
   constructor() {
     super();
     this.state = {
-      error: false
+      error: false,
+      photoArray: [],
+      pageCount: 1
     };
   }
   
@@ -53,6 +57,16 @@ export class App extends Component {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
     }
+    const photoArray = await photosCall(9560317, 1);
+    this.setState({photoArray});
+  }
+
+  lazyLoad = async () => {
+    const number = this.state.pageCount += 1
+    this.setState({pageCount: number});
+    const morePhotos = await photosCall(9560317, number);
+    const fullArray = [...this.state.photoArray, ...morePhotos];
+    this.setState({photoArray: fullArray});
   }
 
   render() {
@@ -79,6 +93,9 @@ export class App extends Component {
             <Route path="/achievments" component={BadgeContainer} />
             <Route path="/target" component={TargetContainer} />
           </div>
+          <PhotoGallery 
+            photoArray={this.state.photoArray}
+            lazyLoad={this.lazyLoad}/>
           <Footer />
         </div>
         }

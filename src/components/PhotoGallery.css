@@ -1,0 +1,12 @@
+.gallery {
+    display: flex;
+    overflow-x: scroll;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.photo {
+    height: 350px;
+    width: auto;
+    margin: 15px;
+}
