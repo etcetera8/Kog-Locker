@@ -1,3 +1,4 @@
+//15990214 white ranch -- 2628520 moab -- 15160084 short loop -- 14895317 long race
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MapCard from '../MapCard/MapCard';
@@ -23,8 +24,6 @@ export class TargetContainer extends Component {
   }
 
   helper = async (event) => {
-    //15990214
-    //2628520
     event.preventDefault();
     const response = await segmentCall(this.state.input);
     if (response.message) {
