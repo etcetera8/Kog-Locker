@@ -27,36 +27,36 @@ export class App extends Component {
   }
   
   async componentDidMount() {
-    try {
-      const userData = await initialCall();
-      await this.props.setUserData(userData);
-    } catch (error) {
-      this.setState({error: true});
-    }
-    try { 
-      const userStats = await statsCall(9560317);
-      await this.props.setUserStats(userStats);
-    } catch (error) {
-      this.setState({error: true});
-    }
-    try {
-      const userActivities = await activitiesCall(9560317);
-      await this.props.setUserActivities(userActivities);
-    } catch (error) {
-      this.setState({error: true});
-    }
+    // try {
+    //   const userData = await initialCall();
+    //   await this.props.setUserData(userData);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
+    // try { 
+    //   const userStats = await statsCall(9560317);
+    //   await this.props.setUserStats(userStats);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
+    // try {
+    //   const userActivities = await activitiesCall(9560317);
+    //   await this.props.setUserActivities(userActivities);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
     
-    if (!localStorage.getItem('target')) {
-      try {  
-        const userTarget = await segmentCall(609371);
-        await this.props.setUserTarget(userTarget);
-      } catch (error) {
-        this.setState({error: true});
-      }
-    } else {
-      const segment = JSON.parse(localStorage.getItem('target'));
-      await this.props.setUserTarget(segment);
-    }
+    // if (!localStorage.getItem('target')) {
+    //   try {  
+    //     const userTarget = await segmentCall(609371);
+    //     await this.props.setUserTarget(userTarget);
+    //   } catch (error) {
+    //     this.setState({error: true});
+    //   }
+    // } else {
+    //   const segment = JSON.parse(localStorage.getItem('target'));
+    //   await this.props.setUserTarget(segment);
+    // }
     const photoArray = await photosCall(9560317, 1);
     this.setState({photoArray});
   }

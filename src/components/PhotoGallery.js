@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './PhotoGallery.css';
 
-const PhotoGallery = ({photoArray, lazyLoad}) => {
-  const photos = photoArray.map( (url, i) => {
+export class PhotoGallery extends Component {
+  constructor() {
+    super();
+  }
+
+  // componentDidMount = () => {
+  //   this.addEventListener('scroll', this.onScroll, false)
+  // }
+
+  // componentWillUnmount = () => {
+  //   this.removeEventListener('scroll', this.onScroll, false)
+  // }
+
+  onScroll = (event) => {
+    console.log(this.scrollWidth, this.clientWidth)
+  }
+
+  photos = () => this.props.photoArray.map( (url, i) => {
     return <img className="photo" key={i} src={url} />;
   });
   
-  return (
-    <div>
-      <button onClick={lazyLoad}>Load more</button>
-      <div className='gallery'>
-        { photos }
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.lazyLoad}>Load more</button>
+        <div onScroll={this.onScroll} className='gallery'>
+          { this.photos() }
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default PhotoGallery;
