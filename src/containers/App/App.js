@@ -8,7 +8,7 @@ import { initialCall, segmentCall, statsCall, activitiesCall, photosCall } from 
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import PhotoGallery from '../../components/PhotoGallery';
+import PhotoGallery from '../../components/PhotoGallery/PhotoGallery';
 import Home from '../Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';

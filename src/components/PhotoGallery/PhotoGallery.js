@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './PhotoGallery.css';
+import { LazyBackgroundImage, LazyImage, LazyFrame } from "lazy-react";
 
 export class PhotoGallery extends Component {
   constructor() {
@@ -15,19 +16,19 @@ export class PhotoGallery extends Component {
   // }
 
   onScroll = (event) => {
-    console.log(this.scrollWidth, this.clientWidth)
+    console.log(this)
   }
 
   photos = () => this.props.photoArray.map( (url, i) => {
-    return <img className="photo" key={i} src={url} />;
+    return <LazyImage onScroll = {this.onScroll} offset={1} className="photo" key={i} link={url} offset={100} />;
   });
   
   render() {
     return (
       <div>
-        <button onClick={this.props.lazyLoad}>Load more</button>
         <div onScroll={this.onScroll} className='gallery'>
           { this.photos() }
+          <button className="more-photos" onClick={this.props.lazyLoad}>Load more</button>
         </div>
       </div>
     );
