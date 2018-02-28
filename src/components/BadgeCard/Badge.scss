@@ -70,6 +70,7 @@ $orange: rgba(255,100,0,1);
 
 .info {
   display: none;
+  text-align: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -96,6 +97,7 @@ $orange: rgba(255,100,0,1);
 .details {
   display: block;
   margin: 5px;
-  text-align: left;
+  text-align: center;
   font-size: .8em;
+
 }
