@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
-
+import {Login} from '../Login/Login'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Home from '../Home/Home';
@@ -18,41 +18,43 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
+      loggedIn: true,
       error: false
     };
   }
   
   async componentDidMount() {
-    try {
-      const userData = await initialCall();
-      await this.props.setUserData(userData);
-    } catch (error) {
-      this.setState({error: true});
-    }
-    try { 
-      const userStats = await statsCall(9560317);
-      await this.props.setUserStats(userStats);
-    } catch (error) {
-      this.setState({error: true});
-    }
-    try {
-      const userActivities = await activitiesCall(9560317);
-      await this.props.setUserActivities(userActivities);
-    } catch (error) {
-      this.setState({error: true});
-    }
+
+    // try {
+    //   const userData = await initialCall();
+    //   await this.props.setUserData(userData);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
+    // try { 
+    //   const userStats = await statsCall(9560317);
+    //   await this.props.setUserStats(userStats);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
+    // try {
+    //   const userActivities = await activitiesCall(9560317);
+    //   await this.props.setUserActivities(userActivities);
+    // } catch (error) {
+    //   this.setState({error: true});
+    // }
     
-    if (!localStorage.getItem('target')) {
-      try {  
-        const userTarget = await segmentCall(609371);
-        await this.props.setUserTarget(userTarget);
-      } catch (error) {
-        this.setState({error: true});
-      }
-    } else {
-      const segment = JSON.parse(localStorage.getItem('target'));
-      await this.props.setUserTarget(segment);
-    }
+    // if (!localStorage.getItem('target')) {
+    //   try {  
+    //     const userTarget = await segmentCall(609371);
+    //     await this.props.setUserTarget(userTarget);
+    //   } catch (error) {
+    //     this.setState({error: true});
+    //   }
+    // } else {
+    //   const segment = JSON.parse(localStorage.getItem('target'));
+    //   await this.props.setUserTarget(segment);
+    // }
   }
 
   render() {
@@ -61,8 +63,8 @@ export class App extends Component {
     return (
 
       <div className="App">
-        {!this.state.error && 
         <div>
+          <Login />
           <Header 
             userName={firstname}
             userPicture={profile_medium}
@@ -73,7 +75,7 @@ export class App extends Component {
             <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
             <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
           </nav>
-          <div>
+          <div> 
             <Route exact path="/" component={Home} />
             <Route path="/stats" component={StatsContainer} />
             <Route path="/achievments" component={BadgeContainer} />
@@ -81,11 +83,7 @@ export class App extends Component {
           </div>
           <Footer />
         </div>
-        }
-      
-        {this.state.error && 
-        <p>Oh no there has been a terrible mistake getting the data, please try again</p>
-        }
+        
       </div>
     );
   }
