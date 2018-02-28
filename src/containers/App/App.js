@@ -62,11 +62,15 @@ export class App extends Component {
   }
 
   lazyLoad = async () => {
-    const number = this.state.pageCount += 1
-    this.setState({pageCount: number});
-    const morePhotos = await photosCall(9560317, number);
-    const fullArray = [...this.state.photoArray, ...morePhotos];
-    this.setState({photoArray: fullArray});
+    try {
+      const number = this.state.pageCount += 1;
+      this.setState({pageCount: number});
+      const morePhotos = await photosCall(9560317, number);
+      const fullArray = [...this.state.photoArray, ...morePhotos];
+      this.setState({photoArray: fullArray});
+    } catch (error) {
+      console.log('no more photos');
+    }
   }
 
   render() {

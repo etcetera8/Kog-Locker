@@ -44,19 +44,22 @@ export const activitiesCall = async(id) => {
 };
 
 export const photosCall = async(id, num) => {
-  const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}&page=${num}&per_page=40`);
-  const photoData = await response.json();
-  const photos = photoData.filter( (activity) => {
-    return activity.total_photo_count > 0;
-  });
-  const photoEndPoints = await photos.map( async (activity) => {
-    const unique = await fetch(`${root}/activities/${activity.id}?access_token=${key}`);
-    return await unique.json();
-  });
-  const returned = await Promise.all(photoEndPoints);
-  const photoArray = returned.map( activity => {
-    return activity.photos.primary.urls['600'];
-  });
-
-  return photoArray;
+  try {
+    const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}&page=${num}&per_page=40`);
+    const photoData = await response.json();
+    const photos = photoData.filter( (activity) => {
+      return activity.total_photo_count > 0;
+    });
+    const photoEndPoints = await photos.map( async (activity) => {
+      const unique = await fetch(`${root}/activities/${activity.id}?access_token=${key}`);
+      return await unique.json();
+    });
+    const returned = await Promise.all(photoEndPoints);
+    const photoArray = returned.map( activity => {
+      return activity.photos.primary.urls['600'];
+    });
+    return photoArray;
+  } catch (error) {
+    console.log("theres been an", error);    
+  }
 };
