@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { loginUserAction } from '../../actions/actionIndex.js';
 import { loginUser } from '../../api';
 
 export class Login extends Component {
   constructor(){
-    super()  
+    super();
     this.state = {
       loggedIn: false
-    }
+    };
   }
 
   componentDidMount() {
@@ -14,7 +15,7 @@ export class Login extends Component {
   }
 
   login = async () => {
-    loginUser()
+    loginUser();
   }
 
   render() {
@@ -23,6 +24,6 @@ export class Login extends Component {
         <button onClick={this.login}>login</button>
         <p>hi</p>
       </div>
-    )
+    );
   }
 }

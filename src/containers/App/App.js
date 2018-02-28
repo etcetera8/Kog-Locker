@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
-import {Login} from '../Login/Login'
+import { Login } from '../../components/Login/Login'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Home from '../Home/Home';
@@ -18,12 +18,18 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: true,
+      loggedIn: false,
       error: false
     };
   }
+
+  componentWillMount = () => {
+    if (!this.props.loginStatus) {
+      this.props.history.push('/login');
+    }
+  }
   
-    async componentDidMount() {
+  async componentDidMount() {
     getUser();
     // try {
     //   const userData = await initialCall();
@@ -64,7 +70,6 @@ export class App extends Component {
 
       <div className="App">
         <div>
-          <Login />
           <Header 
             userName={firstname}
             userPicture={profile_medium}
@@ -77,6 +82,7 @@ export class App extends Component {
           </nav>
           <div> 
             <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
             <Route path="/stats" component={StatsContainer} />
             <Route path="/achievments" component={BadgeContainer} />
             <Route path="/target" component={TargetContainer} />
@@ -91,7 +97,8 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   userData: state.userData,
-  userStats: state.userStats
+  userStats: state.userStats,
+  loginStatus: state.loginStatus
 });
 
 export const mapDispatchToProps = (dispatch) => ({
