@@ -59,5 +59,4 @@ export const photosCall = async(id, num) => {
   });
 
   return photoArray;
-  
 };
