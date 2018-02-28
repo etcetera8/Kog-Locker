@@ -9,9 +9,7 @@ export const loginUser = async () => {
 
 export const getUser = async () => {
   const url = window.location.href;
-  const token = url.substr(url.length - 40);
-  console.log(token);
-  
+  const token = url.substr(url.length - 40);  
   const options = { 
     method: "POST", 
     headers: { 
@@ -27,11 +25,10 @@ export const getUser = async () => {
   };
 
   const response = await fetch("http://localhost:3100/tokenexchange", options)
-    .then(response => response.json())
-    .then(json => {
-      console.log(json.access_token);
-    });  
-    
+  const data = await response.json();
+  const { access_token, athlete } = data;
+  console.log(athlete);
+  console.log(access_token);
 };
 
 export const initialCall = async () => {
@@ -60,7 +57,7 @@ export const statsCall = async(id) => {
     const statsData = await response.json();
     return cleanStats(statsData);
   } catch (error) {
-  return error;
+    return error;
   }
 };
 

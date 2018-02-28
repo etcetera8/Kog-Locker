@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { loginUserAction } from '../../actions/actionIndex.js';
 import { loginUser } from '../../api';
 
@@ -11,10 +12,11 @@ export class Login extends Component {
   }
 
   componentDidMount() {
-      
+
   }
 
   login = async () => {
+    console.log(this.props);
     loginUser();
   }
 
@@ -27,3 +29,9 @@ export class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  loginStatus: state.loginStatus
+});
+
+export default connect(mapStateToProps)(Login);

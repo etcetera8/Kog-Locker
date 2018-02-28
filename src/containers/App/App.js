@@ -25,11 +25,11 @@ export class App extends Component {
 
   componentWillMount = () => {
     if (!this.props.loginStatus) {
-      this.props.history.push('/login');
+      //this.props.history.push('/login');
     }
   }
   
-  async componentDidMount() {
+  async componentDidMount() {    
     getUser();
     // try {
     //   const userData = await initialCall();
