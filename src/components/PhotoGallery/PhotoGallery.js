@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './PhotoGallery.css';
 import { LazyBackgroundImage, LazyImage, LazyFrame } from "lazy-react";
-import { photosCall } from '../../api';
 
 export class PhotoGallery extends Component {
   constructor() {
     super();
+    this.state = {
+      called: false
+    };
   }
 
   // componentDidMount = () => {
@@ -24,7 +26,7 @@ export class PhotoGallery extends Component {
     return <LazyImage onScroll = {this.onScroll} offset={1} className="photo" key={i} link={url} offset={100} />;
   });
 
-  isInViewport() {
+  isInView() {
     var rect = document.querySelector('.more-photos').getBoundingClientRect();
     var html = document.documentElement;
     const inView = (
@@ -35,8 +37,13 @@ export class PhotoGallery extends Component {
     );
     console.log(inView);
     if (inView === true) {
-      console.log('fire fetch');
-      this.props.lazyLoad(); 
+      if  (!this.state.called)
+      this.props.lazyLoad();
+      this.setState({called: true})
+      setTimeout(() => {
+        console.log('...waiting');
+        this.setState({called: false})
+      }, 3000); 
     }
     return inView;
     
@@ -45,7 +52,7 @@ export class PhotoGallery extends Component {
   render() {
     return (
       <div>
-        <div onScroll={() => this.isInViewport()} className='gallery'>
+        <div onScroll={() => this.isInView()} className='gallery'>
           { this.photos() }
           <button className="more-photos" onClick={this.props.lazyLoad}>Load more</button>
         </div>
