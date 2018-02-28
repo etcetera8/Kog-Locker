@@ -4,7 +4,7 @@ import { Route, NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
-import { initialCall, segmentCall, statsCall, activitiesCall } from '../../api.js';
+import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
 import {Login} from '../Login/Login'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -23,8 +23,8 @@ export class App extends Component {
     };
   }
   
-  async componentDidMount() {
-
+    async componentDidMount() {
+    getUser();
     // try {
     //   const userData = await initialCall();
     //   await this.props.setUserData(userData);
