@@ -10,20 +10,8 @@ export class PhotoGallery extends Component {
     };
   }
 
-  // componentDidMount = () => {
-  //   this.addEventListener('scroll', this.onScroll, false)
-  // }
-
-  // componentWillUnmount = () => {
-  //   this.removeEventListener('scroll', this.onScroll, false)
-  // }
-
-  // onScroll = (event) => {
-  //   console.log(this)
-  // }
-
   photos = () => this.props.photoArray.map( (url, i) => {
-    return <LazyImage onScroll = {this.onScroll} offset={1} className="photo" key={i} link={url} offset={100} />;
+    return <img className="photo" key={i} src={url} />;
   });
 
   isInView() {
@@ -38,15 +26,14 @@ export class PhotoGallery extends Component {
     console.log(inView);
     if (inView === true) {
       if  (!this.state.called)
-      this.props.lazyLoad();
-      this.setState({called: true})
+        this.props.lazyLoad();
+      this.setState({called: true});
       setTimeout(() => {
         console.log('...waiting');
-        this.setState({called: false})
+        this.setState({called: false});
       }, 3000); 
     }
     return inView;
-    
   }
   
   render() {
