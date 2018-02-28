@@ -1,0 +1,24 @@
+.gallery {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.photo {
+    height: 350px;
+    width: auto;
+    margin: 15px;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.more-photos {
+    cursor: pointer;
+    color:orange;
+    background: none;
+    border: 1px solid orange;
+    height: 50px;
+    box-shadow: 3px 1px 1px #000;
+    opacity: 0;
+}
