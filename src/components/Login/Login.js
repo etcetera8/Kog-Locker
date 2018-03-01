@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUserAction } from '../../actions/actionIndex.js';
+import {
+  loginUserAction,
+  addMap,
+  addNewGoal
+} from "../../actions/actionIndex.js";
 import { loginUser } from '../../api';
 
-export class Login extends Component {
+class Login extends Component {
   constructor(){
     super();
     this.state = {
@@ -12,12 +16,12 @@ export class Login extends Component {
   }
 
   componentDidMount() {
-
+    console.log(loginUserAction)    
   }
 
   login = async () => {
     console.log(this.props);
-    loginUser();
+    //loginUser();
   }
 
   render() {
@@ -30,8 +34,12 @@ export class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   loginStatus: state.loginStatus
 });
 
-export default connect(mapStateToProps)(Login);
+export const mapDispatchToProps = (dispatch) => ({
+  loginUser: (load) => dispatch(loginUserAction(load))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

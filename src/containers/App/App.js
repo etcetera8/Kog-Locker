@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
-import { Login } from '../../components/Login/Login'
+import  Login  from '../../components/Login/Login'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Home from '../Home/Home';
@@ -65,33 +65,36 @@ export class App extends Component {
 
   render() {
     const { firstname, profile_medium } = this.props.userData;
+    if (!this.props.loginStatus) {
+      return <Route path="/login" component={Login} />;
+    }
 
-    return (
-
-      <div className="App">
-        <div>
-          <Header 
-            userName={firstname}
-            userPicture={profile_medium}
-          />
-          <nav>
-            <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
-            <NavLink to='/stats' activeClassName='selected'>Your Stats</NavLink>
-            <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
-            <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
-          </nav>
-          <div> 
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/stats" component={StatsContainer} />
-            <Route path="/achievments" component={BadgeContainer} />
-            <Route path="/target" component={TargetContainer} />
+    if (this.props.loginStatus) {
+      return (
+        <div className="App">
+          <div>
+            <Header 
+              userName={firstname}
+              userPicture={profile_medium}
+            />
+            <nav>
+              <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
+              <NavLink to='/stats' activeClassName='selected'>Your Stats</NavLink>
+              <NavLink to='/achievments' activeClassName='selected'>Achievments</NavLink>
+              <NavLink to='/target' activeClassName='selected'>Target Segment</NavLink>
+            </nav>
+            <div> 
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/stats" component={StatsContainer} />
+              <Route path="/achievments" component={BadgeContainer} />
+              <Route path="/target" component={TargetContainer} />
+            </div>
+            <Footer />
           </div>
-          <Footer />
         </div>
-        
-      </div>
-    );
+      );
+    }
   }
 }
 
