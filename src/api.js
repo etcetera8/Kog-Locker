@@ -52,9 +52,9 @@ export const segmentCall = async (segmentId) => {
   }
 };
 
-export const statsCall = async(id) => {
+export const statsCall = async(token, id) => {
   try {
-    const response = await fetch(`${root}/athletes/${id}/stats?access_token=${key}`);
+    const response = await fetch(`${root}/athletes/${id}/stats?access_token=${token}`);
     const statsData = await response.json();
     return cleanStats(statsData);
   } catch (error) {
