@@ -32,7 +32,7 @@ export class App extends Component {
       
     } 
     if (!this.props.loginStatus) {
-      //this.props.history.push('/login');
+      this.props.history.push('/login');
     }
   }
   
@@ -40,41 +40,42 @@ export class App extends Component {
      
     const tokenAndAthlete = await getUser();
     this.props.addToken(tokenAndAthlete);
-    console.log("I'm on app", tokenAndAthlete);
     const { access_token, athlete } = tokenAndAthlete;
+
     try {
       const userData = await initialCall(access_token);
       await this.props.setUserData(userData);
     } catch (error) {
       console.log('didnt work', error);
-      
       this.setState({error: true});
     }
+
     try { 
       const userStats = await statsCall(access_token, athlete.id);
       await this.props.setUserStats(userStats);
     } catch (error) {
       this.setState({error: true});
     }
-    // try {
-    //   const userActivities = await activitiesCall(9560317);
-    //   await this.props.setUserActivities(userActivities);
-    // } catch (error) {
-    //   this.setState({error: true});
-    // }
+    try {
+      const userActivities = await activitiesCall(athlete.id, access_token);
+      await this.props.setUserActivities(userActivities);
+    } catch (error) {
+      this.setState({error: true});
+    }
     
-    // if (!localStorage.getItem('target')) {
-    //   try {  
-    //     const userTarget = await segmentCall(609371);
-    //     await this.props.setUserTarget(userTarget);
-    //   } catch (error) {
-    //     this.setState({error: true});
-    //   }
-    // } else {
-    //   const segment = JSON.parse(localStorage.getItem('target'));
-    //   await this.props.setUserTarget(segment);
-    // }
-    this.props.loginUser(true)
+    if (!localStorage.getItem('target')) {
+      try {  
+        const userTarget = await segmentCall(609371, access_token);
+        await this.props.setUserTarget(userTarget);
+      } catch (error) {
+        this.setState({error: true});
+      }
+    } else {
+      const segment = JSON.parse(localStorage.getItem('target'));
+      await this.props.setUserTarget(segment);
+    }
+    //await this.props.loginUser(true);
+    //await this.props.history.push('/');
   }
 
   render() {

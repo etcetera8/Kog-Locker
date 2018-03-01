@@ -3,8 +3,7 @@ import { cleanUser, cleanSegment, cleanStats, cleanActivities } from './cleaner.
 const root = `https://www.strava.com/api/v3`;
 
 export const loginUser = async () => {
-  const originalUrl = await (`https://www.strava.com/oauth/authorize?client_id=22618&response_type=code&redirect_uri=http://localhost:3000/exchange_token&approval_prompt=force`);
-  window.location = `https://www.strava.com/oauth/authorize?client_id=22618&response_type=code&redirect_uri=http://localhost:3000/exchange_token&approval_prompt=force`;
+  window.locations = `https://www.strava.com/oauth/authorize?client_id=22618&response_type=code&redirect_uri=http://localhost:3000/exchange_token&approval_prompt=force`;
 };
 
 export const getUser = async () => {
@@ -24,7 +23,7 @@ export const getUser = async () => {
     )
   };
 
-  const response = await fetch("http://localhost:3100/tokenexchange", options)
+  const response = await fetch("http://localhost:3100/tokenexchange", options);
   const data = await response.json();
   const { access_token, athlete } = data;
   console.log(athlete);
@@ -42,9 +41,9 @@ export const initialCall = async (token) => {
   }
 };
 
-export const segmentCall = async (segmentId) => {
+export const segmentCall = async (segmentId, token) => {
   try { 
-    const response = await fetch(`${root}/segments/${segmentId}?access_token=${key}`);
+    const response = await fetch(`${root}/segments/${segmentId}?access_token=${token}`);
     const segmentData = await response.json();
     return cleanSegment(segmentData);
   } catch (error) {
@@ -62,9 +61,9 @@ export const statsCall = async(token, id) => {
   }
 };
 
-export const activitiesCall = async(id) => {
+export const activitiesCall = async(id, token) => {
   try {
-    const response = await fetch(`${root}/athletes/${id}/activities?access_token=${key}`);
+    const response = await fetch(`${root}/athletes/${id}/activities?access_token=${token}`);
     const activityData = await response.json();
     return cleanActivities(activityData);
   } catch (error) {

@@ -6,6 +6,7 @@ import {
   addNewGoal
 } from "../../actions/actionIndex.js";
 import { loginUser, getUser } from '../../api';
+import './Login.css';
 
 class Login extends Component {
   constructor(){
@@ -20,17 +21,15 @@ class Login extends Component {
   }
 
   login = async () => {
-    loginUser();
-
+    //loginUser();
     // this.props.loginUser(true);
     // this.props.history.push('/home');
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.login}>login</button>
-        <p>hi</p>
+      <div className='login-page'>
+        <button className="sign-in-btn" onClick={this.login}>login</button>
       </div>
     );
   }

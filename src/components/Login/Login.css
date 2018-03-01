@@ -1,0 +1,19 @@
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/splash.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.sign-in-btn {
+  height: 100px;
+  width: 300px;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  background: orangered;
+  opacity: 0.9;
+  border: 1px solid #fff;
+}
