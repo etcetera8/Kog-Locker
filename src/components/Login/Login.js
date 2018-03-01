@@ -5,7 +5,7 @@ import {
   addMap,
   addNewGoal
 } from "../../actions/actionIndex.js";
-import { loginUser } from '../../api';
+import { loginUser, getUser } from '../../api';
 
 class Login extends Component {
   constructor(){
@@ -16,12 +16,14 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    console.log(loginUserAction)    
+  
   }
 
   login = async () => {
-    console.log(this.props);
-    //loginUser();
+    loginUser();
+
+    // this.props.loginUser(true);
+    // this.props.history.push('/home');
   }
 
   render() {

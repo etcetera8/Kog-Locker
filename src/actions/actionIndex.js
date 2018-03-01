@@ -36,4 +36,9 @@ export const addMap = (map) => ({
 export const loginUserAction = (login) => ({
   type: 'LOGIN_USER',
   payload: login
-})
+});
+
+export const addToken = (token) => ({
+  type: 'ADD_TOKEN',
+  payload: token
+});

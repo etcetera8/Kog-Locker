@@ -6,6 +6,8 @@ import { addUserTarget } from './addUserTargetReducer';
 import { addBadge } from './addBadgeReducer.js';
 import { addMap } from './addMapReducer.js'
 import { loginUser } from './loginUserReducer';
+import { addToken } from './addTokenReducer';
+
 const rootReducer = combineReducers(
   {
     userData: addUserData,
@@ -14,7 +16,8 @@ const rootReducer = combineReducers(
     userTarget: addUserTarget,
     defaultBadges: addBadge,
     targetMap: addMap,
-    loginStatus: loginUser
+    loginStatus: loginUser,
+    token: addToken
   }
 );
 

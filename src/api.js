@@ -29,6 +29,7 @@ export const getUser = async () => {
   const { access_token, athlete } = data;
   console.log(athlete);
   console.log(access_token);
+  return data;
 };
 
 export const initialCall = async () => {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { addUserData, addUserStats, addUserActivities, addUserTarget } from '../../actions/actionIndex.js';
+import { addUserData, addUserStats, addUserActivities, addUserTarget, loginUserAction, addToken } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
 import  Login  from '../../components/Login/Login'
 import Header from '../../components/Header/Header';
@@ -24,13 +24,24 @@ export class App extends Component {
   }
 
   componentWillMount = () => {
+    const url = window.location.href;
+    const path = url.substr(url.length + 29);
+    console.log(path);
+    if (path === 'localhost:3000/exchange_token') {
+      console.log('in the right place');
+      
+    } 
     if (!this.props.loginStatus) {
       //this.props.history.push('/login');
     }
   }
   
-  async componentDidMount() {    
-    getUser();
+  async componentDidMount() {
+     
+    const tokenAndAthlete = await getUser();
+    this.props.addToken(tokenAndAthlete);
+    console.log("I'm on app", tokenAndAthlete);
+    
     // try {
     //   const userData = await initialCall();
     //   await this.props.setUserData(userData);
@@ -61,6 +72,7 @@ export class App extends Component {
     //   const segment = JSON.parse(localStorage.getItem('target'));
     //   await this.props.setUserTarget(segment);
     // }
+    this.props.loginUser(true)
   }
 
   render() {
@@ -108,7 +120,9 @@ export const mapDispatchToProps = (dispatch) => ({
   setUserData: (uData) => dispatch(addUserData(uData)),
   setUserStats: (uData) => dispatch(addUserStats(uData)),
   setUserActivities: (uData) => dispatch(addUserActivities(uData)),
-  setUserTarget: (uData) => dispatch(addUserTarget(uData))
+  setUserTarget: (uData) => dispatch(addUserTarget(uData)),
+  loginUser: (load) => dispatch(loginUserAction(load)),
+  addToken: (token) => dispatch(addToken(token))
 });
 
 App.propTypes = {
