@@ -32,9 +32,9 @@ export const getUser = async () => {
   return data;
 };
 
-export const initialCall = async () => {
+export const initialCall = async (token) => {
   try {
-    const response = await fetch(`${root}/athlete?access_token=${key}`);
+    const response = await fetch(`${root}/athlete?access_token=${token}`);
     const userData = await response.json();
     return cleanUser(userData);
   } catch (error) {
