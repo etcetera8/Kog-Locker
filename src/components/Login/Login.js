@@ -21,9 +21,9 @@ class Login extends Component {
   }
 
   login = async () => {
-    //loginUser();
-    // this.props.loginUser(true);
-    // this.props.history.push('/home');
+    loginUser();
+    this.props.loginUser(true);
+    //this.props.history.push('/home');
   }
 
   render() {

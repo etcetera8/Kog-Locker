@@ -3,7 +3,7 @@ import { cleanUser, cleanSegment, cleanStats, cleanActivities } from './cleaner.
 const root = `https://www.strava.com/api/v3`;
 
 export const loginUser = async () => {
-  window.locations = `https://www.strava.com/oauth/authorize?client_id=22618&response_type=code&redirect_uri=http://localhost:3000/exchange_token&approval_prompt=force`;
+  window.location = `https://www.strava.com/oauth/authorize?client_id=22618&response_type=code&redirect_uri=http://localhost:3000/exchange_token&approval_prompt=force`;
 };
 
 export const getUser = async () => {

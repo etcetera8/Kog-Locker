@@ -32,7 +32,7 @@ export class App extends Component {
       
     } 
     if (!this.props.loginStatus) {
-      this.props.history.push('/login');
+      //this.props.history.push('/login');
     }
   }
   
@@ -74,6 +74,7 @@ export class App extends Component {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
     }
+
     //await this.props.loginUser(true);
     //await this.props.history.push('/');
   }
@@ -84,7 +85,7 @@ export class App extends Component {
       return <Route path="/login" component={Login} />;
     }
 
-    if (this.props.loginStatus) {
+  
       return (
         <div className="App">
           <div>
@@ -111,7 +112,7 @@ export class App extends Component {
       );
     }
   }
-}
+
 
 export const mapStateToProps = (state) => ({
   userData: state.userData,
