@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, NavLink, withRouter } from 'react-router-dom';
+import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget, loginUserAction, addToken } from '../../actions/actionIndex.js';
@@ -37,7 +37,7 @@ export class App extends Component {
   }
   
   async componentDidMount() {
-     
+    
     const tokenAndAthlete = await getUser();
     this.props.addToken(tokenAndAthlete);
     const { access_token, athlete } = tokenAndAthlete;
@@ -75,8 +75,9 @@ export class App extends Component {
       await this.props.setUserTarget(segment);
     }
 
-    //await this.props.loginUser(true);
-    //await this.props.history.push('/');
+    await this.props.loginUser(true);
+    // <Redirect to="/" />;
+
   }
 
   render() {
@@ -85,7 +86,8 @@ export class App extends Component {
       return <Route path="/login" component={Login} />;
     }
 
-  
+    if (this.props.loginStatus) {
+
       return (
         <div className="App">
           <div>
@@ -112,6 +114,7 @@ export class App extends Component {
       );
     }
   }
+}
 
 
 export const mapStateToProps = (state) => ({
