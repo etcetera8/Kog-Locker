@@ -36,8 +36,7 @@ export class App extends Component {
     }
   }
   
-  async componentDidMount() {
-    
+  async componentDidMount() {    
     const tokenAndAthlete = await getUser();
     this.props.addToken(tokenAndAthlete);
     const { access_token, athlete } = tokenAndAthlete;
@@ -75,6 +74,14 @@ export class App extends Component {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
     }
+
+    console.log(this.props.token);
+    if (this.props.token.message) {
+      console.log("Error getting message");
+      
+      this.props.history.push('login');
+    }
+
   }
 
   render() {
@@ -84,7 +91,6 @@ export class App extends Component {
     }
 
     if (this.props.loginStatus) {
-      
       return (
         <div className="App">
           <Redirect to="/" />
@@ -118,7 +124,8 @@ export class App extends Component {
 export const mapStateToProps = (state) => ({
   userData: state.userData,
   userStats: state.userStats,
-  loginStatus: state.loginStatus
+  loginStatus: state.loginStatus,
+  token: state.token
 });
 
 export const mapDispatchToProps = (dispatch) => ({
