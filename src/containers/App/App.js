@@ -59,6 +59,7 @@ export class App extends Component {
     try {
       const userActivities = await activitiesCall(athlete.id, access_token);
       await this.props.setUserActivities(userActivities);
+      await this.props.loginUser(true);
     } catch (error) {
       this.setState({error: true});
     }
@@ -74,10 +75,6 @@ export class App extends Component {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
     }
-
-    await this.props.loginUser(true);
-    // <Redirect to="/" />;
-
   }
 
   render() {
@@ -87,9 +84,10 @@ export class App extends Component {
     }
 
     if (this.props.loginStatus) {
-
+      
       return (
         <div className="App">
+          <Redirect to="/" />
           <div>
             <Header 
               userName={firstname}
