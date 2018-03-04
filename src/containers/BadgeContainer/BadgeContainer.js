@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Badge from '../Badge/Badge';
 import PropTypes from 'prop-types';
+import './BadgeContainer.css'
 
 export class BadgeContainer extends Component {
   

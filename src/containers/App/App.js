@@ -4,14 +4,17 @@ import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget, loginUserAction, addToken } from '../../actions/actionIndex.js';
-import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
+import { initialCall, segmentCall, statsCall, activitiesCall, getUser, photosCall } from '../../api.js';
 import  Login  from '../../components/Login/Login';
+
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import PhotoGallery from '../../components/PhotoGallery/PhotoGallery';
 import Home from '../Home/Home';
 import StatsContainer from '../StatsContainer/StatsContainer';
 import BadgeContainer from '../BadgeContainer/BadgeContainer';
 import TargetContainer from '../TargetContainer/TargetContainer';
+
 import './App.css';
 
 export class App extends Component {
@@ -19,7 +22,9 @@ export class App extends Component {
     super();
     this.state = {
       loggedIn: false,
-      error: false
+      error: false,
+      photoArray: [],
+      pageCount: 1
     };
   }
   
@@ -61,11 +66,24 @@ export class App extends Component {
       const segment = JSON.parse(localStorage.getItem('target'));
       await this.props.setUserTarget(segment);
     }
-
+    const photoArray = await photosCall(9560317, 1);
+    this.setState({photoArray});
+     
     if (this.props.token.message) {      
       this.props.history.push('login');
     }
+  }
 
+  lazyLoad = async () => {
+    try {
+      const number = this.state.pageCount += 1;
+      this.setState({pageCount: number});
+      const morePhotos = await photosCall(9560317, number);
+      const fullArray = [...this.state.photoArray, ...morePhotos];
+      this.setState({photoArray: fullArray});
+    } catch (error) {
+      console.log('no more photos');
+    }
   }
 
   render() {
@@ -96,8 +114,11 @@ export class App extends Component {
               <Route path="/achievments" component={BadgeContainer} />
               <Route path="/target" component={TargetContainer} />
             </div>
-            <Footer />
           </div>
+          <PhotoGallery 
+            photoArray={this.state.photoArray}
+            lazyLoad={this.lazyLoad}/>
+          <Footer />
         </div>
       );
     }
