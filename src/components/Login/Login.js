@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  loginUserAction,
-  addMap,
-  addNewGoal
-} from "../../actions/actionIndex.js";
-import { loginUser, getUser } from '../../api';
+import { loginUserAction } from "../../actions/actionIndex.js";
+import { loginUser } from '../../api';
 import './Login.css';
+import PropTypes from "prop-types";
+
 
 class Login extends Component {
-  constructor(){
-    super();
-    this.state = {
-      loggedIn: false
-    };
-  }
-
-  componentDidMount() {
-  
-  }
 
   login = async () => {
     loginUser();
@@ -28,7 +16,8 @@ class Login extends Component {
   render() {
     return (
       <div className='login-page'>
-        <button className="sign-in-btn" onClick={this.login}>login</button>
+        <h1 className='login-title'>Kog Locker</h1>
+        <button className='sign-in-btn' onClick={this.login}></button>
       </div>
     );
   }
@@ -41,5 +30,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   loginUser: (load) => dispatch(loginUserAction(load))
 });
+
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

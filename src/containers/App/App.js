@@ -22,19 +22,6 @@ export class App extends Component {
       error: false
     };
   }
-
-  componentWillMount = () => {
-    const url = window.location.href;
-    const path = url.substr(url.length + 29);
-    console.log(path);
-    if (path === 'localhost:3000/exchange_token') {
-      console.log('in the right place');
-      
-    } 
-    if (!this.props.loginStatus) {
-      //this.props.history.push('/login');
-    }
-  }
   
   async componentDidMount() {    
     const tokenAndAthlete = await getUser();
@@ -45,7 +32,6 @@ export class App extends Component {
       const userData = await initialCall(access_token);
       await this.props.setUserData(userData);
     } catch (error) {
-      console.log('didnt work', error);
       this.setState({error: true});
     }
 
@@ -75,10 +61,7 @@ export class App extends Component {
       await this.props.setUserTarget(segment);
     }
 
-    console.log(this.props.token);
-    if (this.props.token.message) {
-      console.log("Error getting message");
-      
+    if (this.props.token.message) {      
       this.props.history.push('login');
     }
 
@@ -120,7 +103,6 @@ export class App extends Component {
   }
 }
 
-
 export const mapStateToProps = (state) => ({
   userData: state.userData,
   userStats: state.userStats,
@@ -143,7 +125,11 @@ App.propTypes = {
   setUserData: PropTypes.func.isRequired,
   setUserStats: PropTypes.func.isRequired,
   setUserActivities: PropTypes.func.isRequired,
-  setUserTarget: PropTypes.func.isRequired
+  setUserTarget: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  loginStatus: PropTypes.func.isRequired,
+  token: PropTypes.object.isRequired,
+  addToken: PropTypes.func.isRequired
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
