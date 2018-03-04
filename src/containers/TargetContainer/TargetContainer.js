@@ -24,7 +24,7 @@ export class TargetContainer extends Component {
   }
 
   helper = async (event) => {
-    const {access_token} = this.props.token
+    const { access_token } = this.props.token;
     event.preventDefault();
     const response = await segmentCall(this.state.input, access_token);
     if (response.message) {
@@ -94,7 +94,8 @@ const wrapper = GoogleApiWrapper({apiKey:gKey})(TargetContainer);
 TargetContainer.propTypes = {
   userTarget: PropTypes.object.isRequired,
   google: PropTypes.object.isRequired,
-  setUserTarget: PropTypes.func.isRequired
+  setUserTarget: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(wrapper);

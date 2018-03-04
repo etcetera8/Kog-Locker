@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { addUserData, addUserStats, addUserActivities, addUserTarget, loginUserAction, addToken } from '../../actions/actionIndex.js';
 import { initialCall, segmentCall, statsCall, activitiesCall, getUser } from '../../api.js';
-import  Login  from '../../components/Login/Login'
+import  Login  from '../../components/Login/Login';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Home from '../Home/Home';
@@ -41,6 +41,7 @@ export class App extends Component {
     } catch (error) {
       this.setState({error: true});
     }
+
     try {
       const userActivities = await activitiesCall(athlete.id, access_token);
       await this.props.setUserActivities(userActivities);
