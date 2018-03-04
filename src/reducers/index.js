@@ -5,6 +5,8 @@ import { addUserActivities } from './addUserActivitiesReducer';
 import { addUserTarget } from './addUserTargetReducer';
 import { addBadge } from './addBadgeReducer.js';
 import { addMap } from './addMapReducer.js'
+import { loginUser } from './loginUserReducer';
+import { addToken } from './addTokenReducer';
 
 const rootReducer = combineReducers(
   {
@@ -13,7 +15,9 @@ const rootReducer = combineReducers(
     userActivities: addUserActivities,
     userTarget: addUserTarget,
     defaultBadges: addBadge,
-    targetMap: addMap
+    targetMap: addMap,
+    loginStatus: loginUser,
+    token: addToken
   }
 );
 

@@ -24,8 +24,9 @@ export class TargetContainer extends Component {
   }
 
   helper = async (event) => {
+    const { access_token } = this.props.token;
     event.preventDefault();
-    const response = await segmentCall(this.state.input);
+    const response = await segmentCall(this.state.input, access_token);
     if (response.message) {
       this.setState({ segmentError: true, input: '' });
     } else {
@@ -77,11 +78,11 @@ export class TargetContainer extends Component {
       </main>
     );
   }
-  
 }
 
 export const mapStateToProps = (state) => ({
-  userTarget: state.userTarget
+  userTarget: state.userTarget,
+  token: state.token
 });
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -93,7 +94,8 @@ const wrapper = GoogleApiWrapper({apiKey:gKey})(TargetContainer);
 TargetContainer.propTypes = {
   userTarget: PropTypes.object.isRequired,
   google: PropTypes.object.isRequired,
-  setUserTarget: PropTypes.func.isRequired
+  setUserTarget: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(wrapper);

@@ -1,0 +1,32 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/splash.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.login-title {
+  text-align: center;
+  padding: 10px;
+  width: 100vw;
+  color: #fff;
+  font-size: 5em;
+  font-family: sans-serif;
+  background: rgba(0,0,0, 0.5)
+
+}
+
+.sign-in-btn {
+  cursor: pointer;
+  border:1px solid #FC4C02;
+  border-radius: 2px;
+  background-image: url('../../assets/connect-small.png');
+  padding: 0;
+  margin: 0;
+  height: 25px;
+  width: 115px;
+  background-size: cover;
+}
