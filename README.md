@@ -10,17 +10,37 @@ Users have the ability to set a 'target' segment that defaults to giving them a 
 
 I built this app using React/Router and Redux. 
 
-#### login page
+## Run This Project
+
+#### Front-End
+- Clone down the project into a folder
+- run `npm install`
+- Apply and receive an api key from [google](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- create a file in the src directory, name it apiKey.js
+- In that file add in `export const gKey = "yourGoogleApiKeyHere";`
+- Run `npm start` and visit localhost:3000
+
+#### Back-End
+- Clone down into the root project directory the [strava api proxy](https://github.com/JamesRandall/StravaAPIProxy) from `https://github.com/JamesRandall/StravaAPIProxy.git`
+- Get a Strava Developer account setup from [Strava](https://developers.strava.com/)
+- Go into the back-end and open up App.js, place your client ID and client secret into the appropriate variables.
+- `npm install`
+- `npm start` and visit localhost:3100
+
+#### Login page
 <img width="1417" alt="login page" src="https://user-images.githubusercontent.com/22607072/36940911-0c4c89e0-1f0c-11e8-9860-459134387354.png">
 
-#### home page
+#### Home page
 <img width="1420" alt="home page" src="https://user-images.githubusercontent.com/22607072/36940914-122c0c6e-1f0c-11e8-9001-e18a06d8dbba.png">
 
-#### page
+#### Photo Gallery
+<img width="1409" alt="lazy load photos" src="https://user-images.githubusercontent.com/22607072/36984180-80222f96-2051-11e8-8110-ebc175799a74.png">
+
+#### Stats page
 <img width="1404" alt="screen shot 2018-03-03 at 5 53 16 pm" src="https://user-images.githubusercontent.com/22607072/36940922-485a6114-1f0c-11e8-8c24-654cbd451f89.png">
 
-#### page
+#### Badge page
 <img width="1156" alt="screen shot 2018-03-03 at 5 54 13 pm" src="https://user-images.githubusercontent.com/22607072/36940923-4a37c260-1f0c-11e8-8818-8926a797df0f.png">
 
-#### page
+#### Target Segment page
 <img width="1149" alt="screen shot 2018-03-03 at 5 54 41 pm" src="https://user-images.githubusercontent.com/22607072/36940924-4c2120d0-1f0c-11e8-81ed-fa7535877fb0.png">
