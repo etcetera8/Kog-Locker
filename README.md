@@ -27,6 +27,8 @@ I built this app using React/Router and Redux.
 - `npm install`
 - `npm start` and visit localhost:3100
 
+## Screen Shots
+
 #### Login page
 <img width="1417" alt="login page" src="https://user-images.githubusercontent.com/22607072/36940911-0c4c89e0-1f0c-11e8-9860-459134387354.png">
 
@@ -44,3 +46,7 @@ I built this app using React/Router and Redux.
 
 #### Target Segment page
 <img width="1149" alt="screen shot 2018-03-03 at 5 54 41 pm" src="https://user-images.githubusercontent.com/22607072/36940924-4c2120d0-1f0c-11e8-81ed-fa7535877fb0.png">
+
+#### Mobile view
+<img width="375" alt="mobile" src="https://user-images.githubusercontent.com/22607072/36985595-f16af54a-2054-11e8-95bf-f2d398b977b5.png">
+
